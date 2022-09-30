@@ -1,4 +1,4 @@
-# Technical lMarkdown Demo
+# Technical Markdown Demo
 
 Markdown setup of a master thesis which was submitted.
 
