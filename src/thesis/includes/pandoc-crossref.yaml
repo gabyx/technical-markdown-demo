@@ -1,0 +1,10 @@
+cref: true
+linkReferences: true
+figureTitle: "Abbildung"
+tableTitle: "Tabelle"
+secPrefix: "Kap."
+figPrefix: "Abb."
+eqnPrefix: "Gl."
+tblPrefix: "Tab."
+loftitle: "# Abbildungsverzeichnis"
+lotTitle: "# Tabellenverzeichnis"

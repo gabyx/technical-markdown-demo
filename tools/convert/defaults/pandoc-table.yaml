@@ -1,0 +1,13 @@
+number-sections: true
+eol: lf
+columns: 60
+wrap: auto
+
+# TODO: Should be parsed from Content.md...(?)
+bibliography: ["literature/bibliography.bib"]
+csl: "literature/deutsche-gesellschaft-fur-psychologie.csl"
+metadata:
+    link-citations: true
+    suppress-bibliography: true
+    crossrefYaml: "includes/pandoc-crossref.yaml"
+    lang: en-GB

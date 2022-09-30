@@ -1,0 +1,11 @@
+[
+    {
+        "globs": "{rootDir}/chapters/tables/TabelleIntegrationVsInklusion.md",
+        "to": "latex",
+        "outputDir": "{rootDir}/chapters/tables-{ext}",
+        "defaultPostProcessing": true,
+        "scaleColumnsToFull": true,
+        "scaleColumnsToFullMargin": 0.05,
+        "addMidRules" : true
+    }
+]

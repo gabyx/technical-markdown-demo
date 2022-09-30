@@ -1,0 +1,58 @@
+\begin{titlepage}
+\makeatletter
+\vphantom{A}\vspace{0.5cm}
+$if(titlepage-logo)$
+\begin{center}
+\includesvg[inkscapearea=page,width=0.5\textwidth]{$titlepage-logo$}
+\end{center}
+\vspace{2cm}
+$endif$
+\begin{center}
+\fontsize{22pt}{24pt}\selectfont\textbf{\@title}
+\end{center}
+$if(subtitle)$
+\begin{center}
+\fontsize{16pt}{18pt}\selectfont
+$for(subtitle)$$subtitle$$sep$\\ $endfor$\\
+\end{center}
+$endif$
+$if(title-picture)$
+\vspace{0.5cm}
+\adjustbox{center}{\adjustbox{cfbox=white!90!black 2pt 0pt}{\includegraphics[width=0.7\textwidth]{$title-picture$}}}
+\addcontentsline{lof}{figure}{Titelbild: Foto von I. N.}
+$endif$
+$if(thesis-where)$
+\begin{center}
+$for(thesis-where)$$thesis-where$$sep$\\ $endfor$
+\end{center}
+$endif$
+\begin{center}
+$if(handed-in-by)$
+$handed-in-by$
+$endif$
+\end{center}
+\begin{center}
+\textbf{\@author}
+\end{center}
+\begin{center}
+$if(date)$
+$on-date$ \@date\\
+$endif$
+$if(on-recommendation)$
+$on-recommendation$\\
+$endif$
+$if(recommended-by)$
+\vspace{0.5cm}
+$for(recommended-by)$$recommended-by$$sep$\\ $endfor$\\
+$endif$
+$if(location)$
+\vfill
+$location$
+$endif$
+\end{center}
+\makeatother
+% \tikz [remember picture, overlay] %
+% \node [shift={(1cm,-1cm)}] at (current page.north west) %
+% [anchor=north west] %
+% {\includesvg[inkscapearea=page,inkscapepath=svgsubdir]{files/HFHLogo.svg}};
+\end{titlepage}

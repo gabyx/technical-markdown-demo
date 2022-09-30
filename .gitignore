@@ -1,0 +1,12 @@
+.DS_Store
+.gradle
+
+*.bak
+*.sav
+__pycache__
+*.pyc
+
+Test*
+
+.venv
+.envrc

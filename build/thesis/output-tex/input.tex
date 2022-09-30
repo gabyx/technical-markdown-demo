@@ -1,0 +1,4356 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode,linktoc=all,hidelinks}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  ngerman,
+  11pt,
+  paper=a4,
+  twoside,
+  titlepage=true,
+  openright,
+  abstract=on,
+  toc=listofnumbered,
+  numbers=noenddot,
+  chapterprefix=true,
+  headings=optiontohead,
+  svgnames,
+  dvipsnames]{scrreprt}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{Latin Modern Roman}
+  \setsansfont[]{Latin Modern Sans}
+  \setmonofont[]{Latin Modern Mono}
+  \setmathfont[]{Latin Modern Math}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{3}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{ngerman}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Mit KITAplus einen Schritt Richtung Inklusion},
+  pdfauthor={I. N.},
+  pdflang={de-DE},
+  colorlinks=true,
+  linkcolor={DarkBlue},
+  filecolor={DarkBlue},
+  citecolor={DarkBlue},
+  urlcolor={MediumBlue},
+  pdfcreator={LaTeX via pandoc}}
+
+% Set include paths
+\makeatletter
+\providecommand*{\input@path}{}
+\edef\input@path{{/Users/isabellenussli/Desktop/HFH/Praxisprojekt/HFHWork/tools/convert/includes/}{/Users/isabellenussli/Desktop/HFH/Praxisprojekt/HFHWork/src/thesis/}{./}\input@path}% prepend
+\makeatother
+
+% Calculations =======================================
+\usepackage{etoolbox}
+\usepackage{calc}
+% ====================================================
+
+%% Geometry ==========================================
+\newlength{\innermargin}
+\setlength{\innermargin}{2.15cm}
+\usepackage[nomarginpar,
+            textwidth=16.0cm,
+            textheight=252mm,
+            bottom=2.0cm,
+            headheight=15pt,
+            headsep=20pt,
+            footskip=20pt,
+            bindingoffset=7mm,
+            inner=\innermargin,
+            twoside
+            ]{geometry}
+% ====================================================
+
+%% Grafics ===========================================
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[export]{adjustbox}
+\usepackage[final]{pdfpages}
+\usepackage{wrapfig}
+\usepackage[section]{placeins} % float barrier at
+                               % each section
+\usepackage{svg}
+\svgsetup{extractpath=files/generated/svg-extract, inkscapepath=files/generated/svg-inkscape}
+% ====================================================
+
+%% Linespacing =======================================
+\usepackage[nodisplayskipstretch]{setspace}
+\onehalfspacing
+% ====================================================
+
+%% Caption ===========================================
+\usepackage[%
+    format=plain,%
+    justification=justified,%
+    margin=3mm,%
+    font={normal,small},%
+    labelfont=it%
+]{caption}
+
+\DeclareCaptionStyle{figcaption}{
+    justification=centering,
+    font={normal,small},
+    labelfont=it,
+    aboveskip=5pt,
+}
+
+\DeclareCaptionStyle{tablecaption}{
+    justification=raggedright,
+    font={normal,small},
+    labelfont=it,
+    belowskip=3pt%
+}
+
+\usepackage[]{subcaption}
+\captionsetup[figure]{style=figcaption}
+\captionsetup[table]{style=tablecaption}
+\captionsetup[longtable]{style=tablecaption}
+% ====================================================
+
+%% Header/Footer =====================================
+\usepackage[automark,headsepline]{scrlayer-scrpage}
+\clearpairofpagestyles
+\setkomafont{pagehead}{\normalfont\rmfamily\bfseries}
+%\setkomafont{pagenumber}{\normalfont\rmfamily}
+
+\automark[chapter]{chapter}
+\renewcommand{\chaptermarkformat}{}
+\renewcommand{\sectionmarkformat}{\thesection\autodot\enskip}
+\cfoot[\pagemark]{\pagemark}
+\lehead{Kapitel \thechapter}
+\rohead{\headmark}
+\rehead{}
+\lohead{}
+
+% Footnotes
+\usepackage[perpage,para]{footmisc}
+% ====================================================
+
+%% Enumitems =========================================
+\usepackage{enumitem}
+\setlist[description,1]{leftmargin=0.5cm,font=\rmfamily}
+
+%% Tables ============================================
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{collcell}
+\usepackage{makecell}
+\usepackage{footnotehyper}
+\usepackage{tablefootnote}
+\AtBeginEnvironment{longtable}{%
+\setlist[itemize]{nosep=0pt,
+                 leftmargin=*,
+                 label=\textbullet,
+                 after=\end{minipage},
+                 before=\begin{minipage}[t]{\linewidth}
+}
+}
+
+% Define default table spacing...
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{0.2\baselineskip}
+\setlength{\cellspacebottomlimit}{0.2\baselineskip}
+% ====================================================
+
+%% Quotes =============================================
+\usepackage{relsize}% http://ctan.org/pkg/{relsize,etoolbox}
+\AtBeginEnvironment{quote}{\smaller}
+\usepackage[font=itshape,vskip=5pt]{quoting}
+
+%% Todo Notes =========================================
+% \usepackage[textsize=tiny,disable]{todonotes}
+% \newcommand{\disscomment}[1]{%
+%     \todo[color=black!40]{#1}%
+% }%
+
+%% Glossary ==========================================
+% \usepackage[hyperfirst=true]{glossaries}
+% \glstoctrue
+% \renewcommand*{\glstextformat}[1]{\textnormal{#1}}
+% \newcommand{\glsp}{\protect\gls}
+% \loadglsentries{chapter/GlossaryEntries}
+%\makeglossaries
+% ====================================================
+
+%% Own styles! ========================================
+\input{GeneralMacros.sty}
+\input{Math.sty}
+% ====================================================
+
+%% Custom Part Heading ===============================
+\addtokomafont{part}{\Huge\selectfont\rmfamily\bfseries}
+\addtokomafont{partprefix}{\Large\rmfamily\bfseries}
+%\newcommand*\partcolor{\color{blue!50}}% Part is coloured blue
+\renewcommand*\partheadstartvskip{\vspace*{.2\textheight}}
+\renewcommand*\partheadmidvskip{%
+    \par
+    \vspace*{30pt}%
+}
+\makeatletter
+\renewcommand*\partheadendvskip{%
+    \vspace{\baselineskip}%
+    \partquotenote%
+    \vfil\newpage%
+    \if@twoside%
+        \if@openright%
+        \null%
+        \thispagestyle{plain}%
+        \vspace*{\fill}%
+        \partnote%
+        \vspace*{\fill}%
+        \fi%
+    \else%
+         \thispagestyle{plain}%
+         \vspace*{\fill}%
+         \partnote%
+         \vspace*{\fill}%
+         \newpage%
+    \fi%
+    \if@tempswa%
+    \twocolumn%
+    \fi%
+}
+\makeatother
+
+\newcommand\partnote{}
+\newcommand\partquotenote{}
+\renewcommand\partformat{\hfill\color{lightgray}\partname~\fontsize{60}{60}\selectfont\thepart\if@altsecnumformat.\fi}
+%=====================================================
+
+%% Custom Chapter Heading ============================
+\renewcommand*\chapterheadstartvskip{\vspace*{-0.5cm}}
+\renewcommand*\chapterheadendvskip{%
+    \noindent{\setlength{\parskip}{0pt}\hrulefill\par}%
+    \vspace*{0.5\baselineskip}%
+}
+\renewcommand*{\chapterformat}{%
+    \parbox{\textwidth}{\hfill\chapappifchapterprefix{\ }\fontsize{60}{60}\selectfont\thechapter\autodot\enskip}%
+    \vspace{0ex}%
+    }
+\addtokomafont{disposition}{\normalfont\bfseries}
+\addtokomafont{chapterprefix}{\Large\bfseries\color{lightgray}}
+%=====================================================
+
+%% Part Quotes =======================================
+\setkomafont{dictumtext}{\itshape\small}
+\setkomafont{dictumauthor}{\normalfont}
+\renewcommand*\dictumwidth{0.9\linewidth}
+\renewcommand*\raggeddictum{\centering}
+\renewcommand*\dictumauthorformat[1]{--- #1}
+\renewcommand*\dictumrule{
+    %\vskip-1ex\hrulefill\par}
+}
+%=====================================================
+
+%% Heading fonts =====================================
+\setkomafont{chapter}{\huge\rmfamily}
+\addtokomafont{section}{\rmfamily}
+\addtokomafont{subsection}{\rmfamily}
+\addtokomafont{subsubsection}{\rmfamily}
+%=====================================================
+
+%% Heading spacing ===================================
+% \RedeclareSectionCommand[
+%   runin=false,
+%   afterindent=false,
+%   beforeskip=1.0\baselineskip,
+%   afterskip=0.3\baselineskip]{section}
+% \RedeclareSectionCommand[
+%   runin=false,
+%   afterindent=false,
+%   beforeskip=0.5\baselineskip,
+%   afterskip=0.0\baselineskip]{subsection}
+% \RedeclareSectionCommand[
+%   runin=false,
+%   afterindent=false,
+%   beforeskip=0.5\baselineskip,
+%   afterskip=0.0\baselineskip]{subsubsection}
+%=====================================================
+
+%% Table of Content ==================================
+\usepackage{titling}
+% \usepackage{titletoc}
+% \newcommand{\setupTOC}[2]{%
+%     \titlecontents{#1}
+%     [8em] % ie, 1.5em (chapter) + 2.3em
+%     {\rightskip=10mm plus 1fil\hyphenpenalty=10000\normalsize\bfseries\protect\addvspace{15pt}\contentsmargin{3em}}
+%     {\contentslabel[{\color{gray}#2\enspace\thecontentslabel}]{8em}}
+%     {\hspace*{-8em}}
+%     {\hfill\contentspage}
+% }
+% \setupTOC{chapter}{\chaptername}
+% =====================================================
+
+% Layout Placing Settings ==============================
+% \setcounter{topnumber}{2}
+% \setcounter{bottomnumber}{2}
+% \setcounter{totalnumber}{3}     % 2 may work better
+% \setcounter{dbltopnumber}{2}    % for 2-column pages
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.8}
+%\renewcommand{\dbltopfraction}{.66}
+%\renewcommand{\dblfloatpagefraction}{.8}
+
+% Allow display break
+%\allowdisplaybreaks[3]
+%=======================================================
+
+% Tocless Command ======================================
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+
+% Clever Refs ==========================================
+\usepackage[capitalise]{cleveref} % load it after thmtools (there is some problem)
+\crefname{appsec}{appendix}{appendices}
+%=======================================================
+
+% General Settings
+\KOMAoptions{cleardoublepage=empty}
+\KOMAoptions{parskip=half}
+\raggedbottom
+
+\title{Mit KITAplus einen Schritt Richtung Inklusion}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Eine quantitative Studie zur Fremdbetreuung von Kindern mit
+sonderpädagogischem Förderbedarf im KITAplus-Programm}
+\author{I. N.}
+\date{Juni 2022}
+
+\begin{document}
+%
+%
+\begin{titlepage}
+\makeatletter
+\vphantom{A}\vspace{0.5cm}
+\begin{center}
+\includesvg[inkscapearea=page,width=0.5\textwidth]{files/HFHLogo.svg}
+\end{center}
+\vspace{2cm}
+\begin{center}
+\fontsize{22pt}{24pt}\selectfont\textbf{\@title}
+\end{center}
+\begin{center}
+\fontsize{16pt}{18pt}\selectfont
+Eine quantitative Studie zur Fremdbetreuung von Kindern mit
+sonderpädagogischem Förderbedarf im KITAplus-Programm\\
+\end{center}
+\begin{center}
+Masterarbeit im Studiengang Sonderpädagogik\\ mit Vertiefungsrichtung
+Heilpädagogische Früherziehung
+\end{center}
+\begin{center}
+eingereicht von
+\end{center}
+\begin{center}
+\textbf{\@author}
+\end{center}
+\begin{center}
+im \@date\\
+\vspace{0.5cm}
+Begleitung: M. L.\\
+\vfill
+Luzern, 2022
+\end{center}
+\makeatother
+% \tikz [remember picture, overlay] %
+% \node [shift={(1cm,-1cm)}] at (current page.north west) %
+% [anchor=north west] %
+% {\includesvg[inkscapearea=page,inkscapepath=svgsubdir]{files/HFHLogo.svg}};
+\end{titlepage}%
+\cleardoublepage
+\pagenumbering{roman}
+\pagestyle{scrheadings}
+\setcounter{page}{1}
+%
+\newcommand{\abstracttitle}{Abstract}
+\chapter*{\abstracttitle}
+\thispagestyle{plain}
+Die Schweiz hat laut Fischer, Häfliger und Pestalozzi (2021) viel in die
+familienergänzende Betreuung im Vorschulalter investiert. Die Auswahl
+ist gross, jedoch sind Eltern von Kindern mit Beeinträchtigung in der
+Suche eines Fremdbetreuungsplatzes benachteiligt. Das Angebot ist
+kantonsabhängig, z.T. nicht vorhanden oder extrem teuer. Die Studie
+widmet sich folgender Frage: «Welche Kinder mit sonderpädagogischem
+Förderbedarf nehmen im Kanton Luzern das KITAplus-Programm in Anspruch?»
+Die quantitative Erhebung bei 37 Fachpersonen der Heilpädagogischen
+Früherziehung / KITAplus-Mitarbeitenden zeigt eine enorme Heterogenität
+der KITAplus-Kindergruppe, sowie Anliegen der Kindertagesstätten. Alle
+Kinder weisen einen erhöhten Unterstützungsbedarf auf. Es werden
+vorwiegend Kinder mit mittlerer und starker Beeinträchtigung integriert.
+Das Hauptanliegen der Kitas gegenüber dem beantragten Coaching kann mit
+dem Begriff «soziale Teilhabe» zusammengefasst werden.
+\cleardoublepage%
+\newcommand{\acknowledgementtitle}{Danksagung}
+\thispagestyle{plain}
+\chapter*{\acknowledgementtitle}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies
+aliquet facilisis. Aliquam sit amet nisl suscipit, mattis metus ac,
+molestie lorem. Fusce erat nisi, bibendum eu nibh eget, rhoncus ultrices
+velit. Aenean posuere est lectus, in porta ipsum euismod eget. Integer
+efficitur diam eget libero ornare commodo. Vivamus ultrices, lectus
+vulputate condimentum fermentum, purus nunc sodales lacus, sit amet
+maximus neque ante vitae turpis. Ut ultrices, eros tincidunt dictum
+condimentum, leo felis rhoncus lectus, ac imperdiet lectus sem et neque.
+
+Mauris egestas ex at ipsum consequat egestas. Nullam sit amet odio ante.
+Suspendisse molestie scelerisque iaculis. Vestibulum et suscipit velit.
+Donec nulla ante, luctus vestibulum dui tincidunt, dapibus vulputate
+nibh. Fusce nec magna quis turpis dignissim vehicula. Praesent a libero
+metus. Morbi ullamcorper mi ut nulla euismod, a dapibus sem vulputate.
+Etiam sagittis lectus in elit dignissim, sit amet pharetra neque
+ultrices.
+
+Mauris id posuere lacus. Nunc efficitur ac risus lobortis dignissim.
+Etiam maximus orci nec magna dapibus malesuada. Maecenas eget venenatis
+nibh. Praesent vestibulum risus pellentesque purus elementum ornare. In
+aliquet dapibus ante, et venenatis velit cursus at. Ut non auctor dui.
+Praesent porta nec lectus in auctor. Aliquam nec tellus non libero
+lobortis posuere eget in velit. Duis aliquam tristique risus semper
+luctus. Nulla accumsan urna massa, ac condimentum velit gravida eu.
+Quisque tellus libero, fermentum sed velit non, consequat blandit massa.
+\cleardoublepage%
+{
+\hypersetup{linkcolor=Black}
+\tableofcontents
+\cleardoublepage
+}
+%
+\cleardoublepage
+\pagenumbering{arabic}
+\newcommand{\adjustTableFormat}{
+\begingroup\singlespacing\fontsize{10pt}{11pt}\selectfont\setlength{\LTpre}{0pt}\setlength{\LTpost}{6pt}
+}
+\newcommand{\adjustTableFormatEnd}{
+\endgroup
+}
+
+\hypertarget{sec:hinfuxfchrungzurarbeit}{%
+\chapter{Hinführung}\label{sec:hinfuxfchrungzurarbeit}}
+
+Die Thematik rund um institutionelle Fremdbetreuung ist hochaktuell. Ein
+Grund dafür könnte der Wandel des traditionellen Familienbildes sein.
+Die Forderung von Gleichstellung von Mann und Frau hat in den letzten
+Jahren zugenommen. Die Vereinbarkeit von Beruf und Familie rückt dabei
+ins Zentrum. Laut Bundesamt für Statistik (BFS,
+\protect\hyperlink{ref-bfs}{2020}) ist die Zahl der berufstätigen Frauen
+gestiegen. Damit gewinnt die familien- und schulergänzende
+Kinderbetreuung an Stellenwert. Es wird dabei zwischen institutioneller
+und nicht institutioneller Betreuung unterschieden.
+
+Laut Fischer, Häfliger \& Pestalozzi
+(\protect\hyperlink{ref-angebotsmangel}{2021}) besuchen heute über 116
+000 Kinder eine Kindertagesstätte. Den Eltern steht ein breites Angebot
+vor Ort zur Verfügung. Wie bereits erwähnt, gestaltet sich die Suche für
+Eltern von Kindern mit Beeinträchtigung schwieriger. Es fehlen
+entsprechende Fremdbetreuungsplätze, wie auch Finanzierungsmechanismen,
+welche die behinderungsbedingten Mehrkosten regeln und decken. Diese
+Diskriminierung gilt es auszugleichen. Nach einer Hochrechnung von
+Fischer et al. (\protect\hyperlink{ref-angebotsmangel}{2021}) wird von
+ca. 3000 Kindern mit Behinderungen ausgegangen, welche ein
+Fremdbetreuungsangebot beanspruchen würden, sofern der Zugang ermöglicht
+wird. Die Schweiz hat im Jahr 2014 der Ratifizierung der
+UNO-Behindertenrechtskonvention zugestimmt und sich dazu verpflichtet “…
+Hindernisse zu beheben, mit denen Menschen mit Behinderungen
+konfrontiert sind, sie gegen Diskriminierungen zu schützen und ihre
+Inklusion und ihre Gleichstellung in der Gesellschaft zu fördern”
+(\protect\hyperlink{ref-uno}{Schweizerische Eidgenossenschaft}).
+Demzufolge haben Kinder mit speziellen Bedürfnisse ein Recht auf
+Bildung, Betreuung, sowie Erziehung und dies von Geburt an
+(\protect\hyperlink{ref-stamm}{Stamm, 2009}). In der Schweiz zählt der
+Frühbereich (Kinder von null bis vier Jahren) nicht zum staatlichen
+Bildungssystem. Es besteht daher kein Rechtsanspruch auf einen
+Betreuungsplatz und wird nicht unentgeltlich angeboten wie zum Beispiel
+der Kindergarten (ebd.).
+
+Im Rahmen dieser Arbeit soll die Inklusionsthematik in
+Kindertagesstätten (Kita) aufgearbeitet und erläutert werden. Im Zentrum
+stehen Kinder mit sonderpädagogischem Förderbedarf, welche das
+KITAplus-Programm in Luzern in Anspruch nehmen.
+
+\hypertarget{sec:fragestellung}{%
+\section{Fragestellungen}\label{sec:fragestellung}}
+
+Folgende drei Fragestellungen stehen im Zentrum und sollen mithilfe der
+Forschungsstudie beantwortet werden.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Welche Kinder mit sonderpädagogischem Förderbedarf nehmen im Kanton
+  Luzern das KITAplus-Programm in Anspruch?
+\item
+  Aufgrund welcher Anliegen wird das KITAplus im Kanton Luzern
+  beantragt?
+\item
+  Lassen sich Prädikatoren für eine Beantragung von KITAplus
+  ausarbeiten?
+\end{enumerate}
+
+Das Forschungsprojekt umfasst zwei standardisierte und anonymisierte
+Fragebögen, welche pro Kind ausgefüllt werden. Heilpädagogische
+Fachpersonen (\cref{sec:erhebungsfragebogenallgemein}) und
+KITAplus-Mitarbeitende (\cref{sec:erhebungsfragebogen}) bearbeiten je
+einen Fragebogen. Damit werden «Persönliche Informationen» und «Angaben
+zur Fremdbetreuungssituation» der Kinder zusammengetragen. Im Anschluss
+werden die Fragebögen ausgewertet und mit einem explorativen und
+deskriptiven Blick beschrieben (Stichprobe, \cref{sec:stichprobe} und
+Ergebnisse, \cref{sec:evaluation}).
+
+\hypertarget{sec:aufbau}{%
+\section{Aufbau der Arbeit}\label{sec:aufbau}}
+
+In \cref{sec:grundlagen} steht die Aufarbeitung von Literatur rund um
+die Thematik Inklusion im Vordergrund. Es werden unter anderem die
+Begriffe Integration und Inklusion erläutert und einander
+gegenübergestellt. Zudem werden Gelingensbedingungen beschrieben, sowie
+kursierende Vorstellungen über Inklusion aufgegriffen. Des weiteren wird
+der Schlüsselfaktor “Haltung” von pädagogischen Fachpersonen in der
+Thematik erläutert, bevor die Integrationschance von Kindern mit
+speziellen Bedürfnissen seitens der Kita-Mitarbeitenden eingeschätzt
+wird. Zudem werden Vorstellungen von Peers gegenüber Kindern mit
+speziellen Bedürfnissen aufgegriffen. Der Begriff “soziale Teilhabe”
+wird erläutert und in Zusammenhang mit Inklusion gestellt. Danach werden
+Vorteile und Risiken von Inklusion aufgezählt. Im zweitletzten Kapitel
+wird auf die Frage eingegangen, welche Kinder mit sonderpädagogischem
+Förderbedarf integrativ / inklusiv in Kindertagesstätten betreut werden.
+Der Abschluss des Kapitels bildet die Erläuterung des KITAplus-Programm
+im Kanton Luzern.
+
+In \cref{sec:forschungsmethode} steht das Forschungsmethodische Vorgehen
+im Vordergrund. Darin sind Forschungsansatz, Erhebungsinstrument und
+Ablauf der Erhebung geschildert. Zudem wird die verwendete Methode der
+Datenaufbereitung und Datenanalyse beschrieben. Der Abschluss des
+Kapitels bildet die Stichprobe (\cref{sec:stichprobe}), in welcher erste
+Ergebnisse der Erhebung präsentiert sind. Das Kapitel Ergebnisse folgt
+(\cref{sec:evaluation}). Darin findet die Gegenüberstellung ausgewählter
+Daten und die Beantwortung der Fragestellungen statt. Danach folgt die
+Diskussion (\cref{sec:diskussion}), in welcher ausgewählte Ergebnisse
+interpretiert werden. Die Arbeit schliesst mit dem Ausblick
+(\cref{sec:fazit}) ab.
+
+\hypertarget{sec:grundlagen}{%
+\chapter{Grundlagen}\label{sec:grundlagen}}
+
+In \cref{sec:hinfuxfchrungzurarbeit} sind rechtliche Aspekte kurz
+genannt worden. Die Partizipation und Teilhabe von Menschen mit
+besonderen Bedürfnissen rücken dabei in den Vordergrund. Diese gilt es
+in allen Lebensbereichen wie zum Beispiel der Bildung, dem Arbeitsmarkt
+oder in der Benützung öffentlicher Verkehrsmittel zu berücksichtigen und
+voranzutreiben.
+
+Dabei fallen Wörter wie Integration und Inklusion. Folgende Fragen
+stellen sich in diesem Diskurs:
+
+Ist Integration gleichzusetzen mit Inklusion? Welche Unterschiede
+zwischen Inklusion und Integration lassen sich formulieren? Wie sieht
+die Forschungsgrundlage in der frühen Bildung dazu aus? Gibt es
+Gelingensfaktoren, welche der Integration von Kindern mit besonderen
+Bedürfnissen in Kindertagesstätten begünstigen?
+
+Die aufgezählten Fragen sind wegleitend für die Aufarbeitung der Theorie
+in den nachfolgenden Abschnitten. Als Erstes wird der Begriff Inklusion
+mithilfe von Theorie erörtert und anschliessend dem Integrationsbegriff
+gegenübergestellt. Zuvor wird jedoch der Begriff “Behinderung”
+erläutert.
+
+\hypertarget{begriff-behinderung}{%
+\section{Begriff “Behinderung”}\label{begriff-behinderung}}
+
+In dieser Arbeit trifft man auf Bezeichnungen wie “Kinder mit
+Behinderung, Kinder mit Beeinträchtigung, Kinder mit speziellen
+Bedürfnissen, Kinder mit Förder- oder Unterstützungsbedarf”. Damit sind
+allgemein Kinder gemeint, welche in der Bewältigung des Alltags, in
+ihrer Aktivität und Partizipation eingeschränkt und auf Unterstützung
+angewiesen sind. Es ist selbstverständlich, dass jüngere Kinder vermehrt
+auf Unterstützung der Eltern angewiesen sind. Nichtsdestotrotz gibt es
+Kinder, welche einen erhöhten Unterstützungsbedarf benötigen und einen
+sonderpädagogischen Förderbedarf aufweisen. In dieser Arbeit stehen
+solche Kinder im Vordergrund.
+
+Das ICF-Modell (International Classification of Functioning and
+Disability) der WHO ist dabei wegleitend \footnote{Weiterführende
+  Informationen zum ICF-Modell sind auf der folgenden Seite zu finden:\\
+  \url{https://www.soziale-initiative.net/wp-content/uploads/2013/09/icf_endfassung-2005-10-01.pdf}}.
+
+\begin{quote}
+Behinderung wird von der WHO als mehrdimensionales Konstrukt verstanden,
+zu dem neben Körperfunktionen und Strukturen auch die Dimension der
+Aktivität und Partizipation gehören. Alle Dimensionen stehen in
+Wechselwirkung miteinander sowie mit den personenbezogenen und
+umweltbezogenen Kontextfaktoren. Behinderung wird nicht als Zustand
+einer Person, sondern einer Situation verstanden.
+(\protect\hyperlink{ref-albersmittendrin}{Albers, 2011, S. 31})
+\end{quote}
+
+\hypertarget{sec:integrationinklusion}{%
+\section{Begriffserklärung Inklusion}\label{sec:integrationinklusion}}
+
+In wissenschaftlichen Diskursen liefern sich Inklusion und Integration
+eine regelrechte Schlacht. Wocken (\protect\hyperlink{ref-wocken}{2009,
+S. 2}) benennt diese sogar als “babylonische Sprachverwirrung” und dies
+zurecht. In Fachdiskussionen sind dazu unterschiedliche Positionen
+vertreten. Die einen benützen die Begriffe als Synonyme und andere
+plädieren auf eine klare Differenzierung und Abstufung: “Inklusion ist
+mehr und anders als Integration” (\protect\hyperlink{ref-wocken}{Wocken,
+2009, S. 2}). Übrig bleibt ein unscharfer Begriff, welcher in aller
+Munde ist. Bei jeder Diskussion müsste deshalb nachgefragt werden, was
+der Einzelne unter Inklusion versteht, damit die Ausgangslage dieselbe
+ist. Nachfolgend werden die beiden Begriffe voneinander differenziert.
+Schattenmann (\protect\hyperlink{ref-schattenmann_inklusion_2014}{2014,
+S. 26}) weist daraufhin, dass eine Annäherung an den Begriff Inklusion
+nicht ohne Abgrenzung zu Integration erfolgen kann. Sie unternimmt fünf
+Annäherungsversuche um Inklusion zu erläutern.
+
+\hypertarget{sec:annuxe4herungsversuch}{%
+\subsection{Fünf Annäherungsversuche zum
+Inklusions-Begriff}\label{sec:annuxe4herungsversuch}}
+
+Als Erstes verweist sie auf das Alltagsverständnis. Inklusion wird zum
+Beispiel mit “Einschluss” oder “Dazugehören” assoziiert
+(\protect\hyperlink{ref-schattenmann_inklusion_2014}{Schattenmann, 2014,
+S. 26}). Die zweite Annäherung, die sprachgeschichtliche, weist in
+dieselbe Richtung. Der Begriff Inklusion lässt sich vom
+mittellateinischen Substantiv “inclusio” ableiten. Dieses kann mit
+“Einschliessung” oder wie bereits genannt mit “Einschluss” im Sinne von
+Zugehörigkeit interpretiert werden.
+
+In der dritten Annäherung wird die historische Entwicklung hinzugezogen.
+Schattenmann (\protect\hyperlink{ref-schattenmann_inklusion_2014}{2014})
+verweist dabei auf das fünfstufige Modell (\cref{fig:extinktion}, von
+Extinktion zu Inklusion). Wocken (\protect\hyperlink{ref-wocken}{2009})
+weist jedoch explizit daraufhin, dass dieses fünfstufige Modell nicht
+als strenge Abfolge von epochalen Etappen angesehen werden soll. Die
+menschliche Geschichte verlaufe selten linear. Ein Beispiel von Menschen
+mit Behinderung verdeutliche dies. Die Tötung behinderter Menschen fand
+bereits im Mittelalter statt und erfuhr leider in der Zeit des
+Nationalsozialismus neuen Aufschwung. Wocken
+(\protect\hyperlink{ref-wocken}{2009, S. 12}) plädiert auf die
+Umbenennung von “Stufenmodell” hin zu „Qualitätsstufen der
+Behindertenpolitik und -pädagogik”. Diese Umbenennung ist zu begrüssen,
+da sie auf die Abstufung und Differenzierung von Integration und
+Inklusion aufmerksam macht. Sie schafft ausserdem ein klares Verhältnis
+zwischen den zwei Begriffen.
+
+\svgWithCaption{files/Extinktion.svg}{Von Extinktion zu Inklusion in
+Saalfrank \& Zierer
+(\protect\hyperlink{ref-saalfrank_inklusion_2017}{2017, S. 36}) (im
+Anschluss an Aehnelt, o.J.)}{width=0.6\textwidth}[fig:extinktion]
+
+Für ihn stellt Integration ein “Antragsrecht” dar, welchem nachgekommen
+werden kann oder nicht (\protect\hyperlink{ref-wocken}{Wocken, 2009, S.
+14}). In der Realität stösst man an Grenzen in der Integration. Dabei
+spielen vorhandene “Ressourcen” oder die zugeschriebene
+“Integrationsfähigkeit” eines Kindes mit Beeinträchtigung eine Rolle.
+Auf der Stufe der Inklusion ist jedes Kind “integrationsfähig”, sie
+müssen keine Vorbedingungen erfüllen. Vielmehr muss die Umgebung
+“integrationsfähig” gestaltet werden (ebd.). Eine klare Abstufung der
+beiden Begriffe wird im Stufenmodell ersichtlich. Die fünfte Stufe
+“Inklusion” kann dabei als höchste anzustrebende Qualitätsstufe
+interpretiert werden.
+
+Einen Aufschwung erlebte Inklusion dank der Verabschiedung der
+UN-Behindertenrechtskonvention im Jahr 2006 in New York. Zwei Jahre
+später, im Jahr 2008, tritt sie in Kraft. Die Schweiz hat das Abkommen
+am 15. Mai 2014 ratifiziert. Das Übereinkommen fordert allgemeine
+Menschenrechte für Menschen mit Behinderungen ein
+(\protect\hyperlink{ref-uno}{Schweizerische Eidgenossenschaft}).
+
+Nach Wocken (\protect\hyperlink{ref-wocken}{2009}) drängt die Bewegung
+auf die Auflösung der Etikettierung von Menschen mit einer
+Beeinträchtigung und fordert stattdessen die Anerkennung der Vielfalt
+als Normalzustand ein.
+
+Schattenmann (\protect\hyperlink{ref-schattenmann_inklusion_2014}{2014})
+nennt als vierte Annäherung zu Inklusion die Abgrenzung zu Integration.
+Es wird aufgezeigt, was Inklusion nicht ist. Dazu wird in
+\cref{sec:inklusionversusintegration} (Inklusion versus Integration)
+ausführlich Stellung genommen. Die zentralen Punkte der jeweiligen
+Ideologie werden in Tabellenform festgehalten und einander
+gegenübergestellt.
+
+Als fünfte und letzte Annäherung erwähnt sie die theoretische Grundlage
+am Beispiel der Luhmannschen Systemtheorie. In diesem theoretischen
+Konzept wird das Begriffspaar “Inklusion und Exklusion” zur Beschreibung
+von sozialer Ungleichheit hinzugezogen. Schattenmann
+(\protect\hyperlink{ref-schattenmann_inklusion_2014}{2014, S. 41})
+verweist für weitere Informationen auf Farzin (2006).
+
+Laut Saalfrank \& Zierer
+(\protect\hyperlink{ref-saalfrank_inklusion_2017}{2017}) kann und muss
+Inklusion sehr breit gefasst werden, da sie den Anspruch hat gerechte
+Verhältnisse weltweit zu schaffen.
+
+Heimlich (\protect\hyperlink{ref-inklusionQualituxe4t_Heimlich}{2015})
+nennt Folgendes bezüglich Integration und Inklusion:
+
+\begin{quote}
+Inklusion beinhaltet im Unterschied zu Integration ein erweitertes
+Verständnis von selbstbestimmter sozialer Teilhabe, in dem von
+vornherein auf Situationen und Institutionen der Aussonderung verzichtet
+wird, die Unterschiedlichkeit der Mitglieder eines Gemeinwesens
+(Heterogenität) als Bereicherung für alle betrachtet wird und alle die
+gleiche Möglichkeit haben, an diesem Gemeinwesen zu partizipieren und zu
+diesem Gemeinwesen beizutragen.
+(\protect\hyperlink{ref-inklusionQualituxe4t_Heimlich}{Heimlich, 2015,
+S. 29})
+\end{quote}
+
+Demzufolge sollen alle am Unterricht teilnehmen können. Ein gemeinsames
+Lernen wird angestrebt, in einer Umgebung, die sich den Kindern anpasst.
+Saalfrank \& Zierer
+(\protect\hyperlink{ref-saalfrank_inklusion_2017}{2017}) unterscheiden
+auf Inklusion bezogen fünf Gruppen. Diese sind in \cref{fig:dimensionen}
+dargestellt. Die Grafik verdeutlicht, dass es nicht nur Kinder mit einer
+Beeinträchtigung zu berücksichtigen gilt, sondern der Blickwinkel
+breiter gefasst werden muss. Diese Grafik hilft, die Vielfalt der
+anzutreffenden Kindern fassbarer zu machen und den Fokus auf Kinder mit
+besonderen Bedürfnissen zu entschärfen.
+
+\svgWithCaption{files/Dimension.svg}{Dimensionen der Inklusion von
+Saalfrank \& Zierer
+(\protect\hyperlink{ref-saalfrank_inklusion_2017}{2017, S.
+35})}{width=0.6\textwidth}[fig:dimensionen]
+
+Die Erläuterungen um Inklusion und Integration könnten noch weiter
+ausgeführt und diskutiert werden. Jedoch würde es den Rahmen dieser
+Arbeit sprengen. Der Abschluss der Ausführungen wird mit der
+tabellarischen Gegenüberstellung in
+\cref{sec:inklusionversusintegration} vollzogen.
+
+\hypertarget{sec:inklusionversusintegration}{%
+\subsection{Inklusion versus
+Integration}\label{sec:inklusionversusintegration}}
+
+Die wichtigsten Grundsätze von Inklusion und Integration sind wie folgt
+von Hinz (\protect\hyperlink{ref-hinz2002}{2002, S. 11}) und Hundegger
+(\protect\hyperlink{ref-kindergartenheute2019}{2019, S. 5}) festgehalten
+worden. Der Fokus wird dabei auf das Bildungssystem gelegt.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4884}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5116}}@{}}
+\caption{Unterschiede von Integration und
+Inklusion}\tabularnewline
+\toprule
+\textbf{Integration}
+ & 
+\textbf{Inklusion}
+ \\
+\midrule
+\endhead
+Eingliederung von Kindern mit Behinderungen in ein
+bestehendes System & Gemeinsames Leben und Lernen aller
+Kinder \\ \midrule
+
+Differenziertes System je nach Schädigung & Umfassendes
+System für alle \\ \midrule
+
+Zwei-Gruppen-Theorie: Unterscheidung zwischen
+\begin{itemize}
+\item
+  behindert / nicht behindert
+\item
+  Integrations- und Regelkindern
+\item
+  Kinder mit und ohne besonderem Förderbedarf
+\end{itemize}
+ & Theorie der heterogenen Gruppe: Jeder
+Mensch ist anders, hat Kompetenzen und Schwächen. Es gibt
+viele Minderheiten und Mehrheiten. Eine Zugehörigkeit ist
+nicht abhängig von bestimmten individuellen Merkmalen,
+sondern ist selbstverständlich \\ \midrule
+
+Finanzielle und personelle Ressourcen für Kinder mit
+Etikettierung:
+Kinder werden erst ausgesondert und als ``von der Norm
+abweichend'' gekennzeichnet, um dann wieder eingegliedert zu
+werden & Ressourcen für Systeme:
+Kitas und Kindergruppen werden mit Ressourcen gefördert.
+Eine Etikettierung und Ausgrenzung einzelner Kinder ist
+nicht notwendig \\ \midrule
+
+Gesonderte Förderpläne und spezielle Förderung für Kinder
+mit Behinderungen & Ein Curriculum für alle Kinder:
+Gemeinsames und individuelles Lernen unter Einsatz von
+Binnendifferenzierung \\ \midrule
+
+Anliegen und Auftrag der Sonder- und Heilpädagogik und
+spezieller Fachkräfte & Anliegen und Auftrag der
+Frühpädagogik und aller Fachkräfte \\ \midrule
+
+Integrationsfachkräfte als Unterstützung für Kinder mit
+sonderpädagogischem Förderbedarf & Inklusionsfachkräfte als
+Unterstützung für Erzieher*innen, Kindergruppen und das
+ganze System \\ \midrule
+
+Kontrolle durch Fachpersonen & Kollegiales Problemlösen im
+Team \\
+\bottomrule
+\end{longtable}
+
+Im Laufe der Arbeit wechseln sich die Begriffe Inklusion und Integration
+miteinander ab. Dies, weil Begriffe der jeweiligen Fachliteratur
+übernommen werden. Zu beachten gilt es ausserdem, dass in der englischen
+Literatur oftmals der Inklusion’s Begriff verwendet wird. Grundsätzlich
+ist die Forschungsarbeit von der Haltung geprägt, dass zurzeit grosse
+Bemühungen und Bestrebungen Richtung Inklusion vorhanden sind, diese
+jedoch selten in dessen Reinform umgesetzt werden. Der
+Integrationsgedanke und die Umsetzung diesbezüglich sind vorherrschend.
+
+Mit dem Anspruch und Diskussionen rund um die Thematik Inklusion wachsen
+Erwartungen und Ansprüche, diese auch im Frühbereich umzusetzen.
+Hinzukommt, dass die Nachfrage an familien- und schulergänzenden
+Fremdbetreuungsangeboten steigt (siehe
+\cref{sec:hinfuxfchrungzurarbeit}). Kindertagesstätten müssen sich
+früher oder später mit der Thematik auseinandersetzen. Im Gegensatz zu
+den Volksschulen in der Schweiz, sind sie nicht gezwungen einen
+Bildungsauftrag zu verfolgen und zu erfüllen. Die Betreuung von Kindern
+steht im Vordergrund. Demzufolge sollten die Hürden, Inklusion zu leben,
+so klein sein wie in keinem anderen Bereich. Die Heterogenität und
+Individualität der jungen Kinder sollten in diesem Setting Platz haben.
+In \cref{sec:inklusionkita} wird auf anzutreffende Vorstellungen zu
+Inklusion in Kindertagesstätten eingegangen. Zuvor wird in
+\cref{sec:oekosystemischesmodel} das ergänzte Ökosystemische Modell
+(nach Bronfenbrenner, 1981) durch die “European Agency for Special Needs
+and Inclusive Education” erläutert. Es stellt alle Ebenen, welche
+Einfluss auf die frühkindliche Inklusion nehmen, in einem Modell dar.
+
+\hypertarget{sec:oekosystemischesmodel}{%
+\section{Ökosystemisches Modell der frühen
+Inklusion}\label{sec:oekosystemischesmodel}}
+
+Laut Lanners (\protect\hyperlink{ref-lanners}{2018}) wurde in den
+letzten Jahren im Bereich der schulischen Integration von Kindern mit
+besonderem Bildungsbedarf grosse Fortschritte erzielt. Nichtsdestotrotz
+bestehe nach wie vor Handlungsbedarf. Die European Agency for Special
+Needs and Inclusive Education (EASNIE) lancierte 2015 das dreijährige
+Projekt “Inklusive frühkindliche Bildung und Erziehung”. Dieses hat sich
+zur Aufgabe gemacht, die wichtigsten Faktoren einer hochwertigen
+inklusiven frühkindlichen Bildung und Erziehung für alle Kinder im
+Vorschulalter (ab drei bis ca. sieben Jahre) zu untersuchen (EASNIE,
+\protect\hyperlink{ref-europaischeagentur}{2017}). Ihre Erkenntnisse
+sind im Internet zugänglich.\footnote{Die Dokumente und Berichte zum
+  Projekt “Inklusive Frühkindliche Bildung” sind auf der Homepage in
+  verschiedenen Sprachen verfügbar:
+  https://www.european-agency.org/Deutsch/publications} Neben dem
+erweiterten Ökosystemischen Modell gilt es den erarbeiteten
+“Selbstreflexionsbogen” hervorzuheben.\footnote{Selbstreflexionsbogen
+  für das Umfeld der inklusiven frühkindlichen Bildung und Erziehung
+  (EASNIE, \protect\hyperlink{ref-web-selbstreflex}{2022}).} Er ist für
+die Vorschule gedacht und bezieht sich auf die Befragung von Prozess-
+Strukturbezogenen Faktoren (ebd.). Dieser kann zum Beispiel in einer
+Kindertagesstätte eingesetzt werden, damit laufende Massnahmen bezüglich
+Inklusion ausgewertet werden, Mitarbeitende auf die Thematik zu
+sensibilisieren und Ziele oder Anpassungen innerhalb der Organisation
+vorzunehmen. Im Anschluss wird einzig auf das Ökosystemische Modell
+eingegangen.
+
+Das Ökosystemische Modell der frühen Inklusion vereint alle gewonnenen
+Aspekte aus dem dreijährigen Projekt. Nach EASNIE
+(\protect\hyperlink{ref-europaischeagentur}{2017}) kann das Modell “…
+als Rahmen für die Planung, Verbesserung, Beobachtung/Überwachung und
+Evaluation der Qualität der IECE auf lokaler, regionaler und nationaler
+Ebene dienen” (S. 9).
+
+Zudem haben individuelle Zielsetzungen und Anforderungen Platz darin.
+Das Modell (\cref{fig:oekosystemischesmodell}) umfasst fünf Dimensionen,
+welche im Abschlussbericht (EASNIE,
+\protect\hyperlink{ref-europaischeagentur}{2017, S. 12}) beschrieben
+sind. Sie alle beeinflussen entweder direkt oder indirekt die aktive
+Teilnahme eines Kind im integrativen Setting im Vorschulbereich
+(\protect\hyperlink{ref-lanners}{Lanners, 2018}).
+
+Der Kern des Modells bildet die erste Dimension. Sie enthält die drei
+wichtigsten Ergebnisse der “Inklusiven Frühkindlichen Bildung und
+Erziehung” welche beim Kind angestrebt werden. Diese sind “aktive
+Teilnahme, Zugehörigkeit und Lernen” (EASNIE,
+\protect\hyperlink{ref-europaischeagentur}{2017, S. 12}). Auf der
+zweiten Dimension werden fünf Schlüsselprozesse beschrieben, in welche
+das Kind direkt involviert ist und auf welcher Fördermöglichkeiten
+definiert werden können. Die dritte Dimension beschreibt unterstützende
+Strukturen in der Vorschule und die vierte Dimension Strukturen in der
+Gesellschaft. Die Letzte weist auf förderliche Strukturen in regionaler
+und nationaler Ebene hin.
+
+\svgWithCaption{files/OekosystemischesModell.svg}{Ökosystemisches Modell
+der frühkindlichen Inklusion (EASNIE,
+\protect\hyperlink{ref-europaischeagentur}{2017, S.
+10})}{width=1.0\textwidth}[fig:oekosystemischesmodell]
+
+Das Ökosystematische Modell verdeutlicht Wechselwirkungen und
+Überschneidungen auf lokalen, regionaler und nationaler Ebene (EASNIE,
+\protect\hyperlink{ref-europaischeagentur}{2017}). Auf nationaler Ebene
+wird zum Beispiel festgehalten, dass allen Kindern Zugang zu Bildungs-
+und Betreuungsangeboten gewährt wird. Demnach muss auf der vierten
+Dimension sichergestellt werden, dass entsprechende Fort- und
+Weiterbildungen angeboten werden, damit qualifiziertes Personal
+vorhanden ist. Auf der dritten Dimension ist die Kindergartenstätte
+gefordert genügend ausgebildetes Personal für die Betreuung
+zusammenzustellen und eine Lernumgebung zu schaffen, in welcher
+Heterogenität willkommen ist. In der zweiten Dimension steht zum
+Beispiel die Kindertagesstätte der Aufgabe gegenüber, allen Bedürfnissen
+gerecht zu werden und den Kindern positive soziale Interaktionen in der
+Gruppe zu ermöglichen. Fehlen Weiterbildungsangebote, könnte ein Mangel
+an gut ausgebildetem Personal entstehen, welches sich wiederum auf die
+Qualität der Betreuung auswirken kann.
+
+In einem weiteren Schritt wird in \cref{sec:gelingensfaktoren} auf die
+Ebene der Kindertagesstätte eingegangen. Es sollen Faktoren aufgezeigt
+werden, welche eine inklusive Betreuung positiv beeinflussen.
+
+\hypertarget{sec:gelingensfaktoren}{%
+\section{Gelingensfaktoren der inklusiven
+Betreuung}\label{sec:gelingensfaktoren}}
+
+Kitas haben die Chance eine Vorreiterrolle in dieser ganzen
+Inklusionsdebatte einzunehmen. Sie haben die Möglichkeit mit bestem
+Beispiel voranzuschreiten und der Gesellschaft wie auch dem Schulsystem
+zu zeigen, wie mit Vielfalt umgegangen werden kann. Das Ökologische
+Mehrebenenmodell von Heimlich
+(\protect\hyperlink{ref-inklusionQualituxe4t_Heimlich}{2015}) zeigt fünf
+Kompetenzschwerpunkte, welche für die Entwicklung inklusiver
+Kindertageseinrichtungen von Bedeutung sind (siehe
+\cref{fig:mehrebenenmodell}). Der Kern des Modells bilden die Kinder mit
+ihren individuellen Förderbedürfnissen. Eine weitere Kompetenz ist das
+Gestalten und Ermöglichen von inklusiven Spiel- und Lernsituationen. Die
+Zusammensetzung eines multiprofessionellen Teams wird auch als
+Kompetenzschwerpunkt angesehen. Zudem zählen inklusive
+Eintrichtungskonzeptionen und externe Unterstützungssysteme zu den
+Schwerpunkten im Mehrebenenmodell. Diese fünf Ebenen tragen dazu bei,
+Kindern und ihren individuellen Bedürfnissen gerecht zu werden.
+
+\svgWithCaption{files/Heimlich.svg}{Ökologisches Mehrebenenmodell der
+Entwicklung inklusiver Kindertageseinrichtungen Heimlich
+(\protect\hyperlink{ref-inklusionQualituxe4t_Heimlich}{2015, S.
+35})}{width=1.0\textwidth}[fig:mehrebenenmodell]
+
+Damit eine inklusive Kindertageseinrichtung zustande kommt, nennt
+Heimlich (\protect\hyperlink{ref-inklusionQualituxe4t_Heimlich}{2015, S.
+35}) die Erarbeitung von fünf Entwicklungsprozessen. Sie werden
+nachfolgend umschrieben.
+
+\textbf{Mit Heterogenität umgehen lernen}\\
+Pädagogische Fachkräfte sind gefordert die vorhandene Heterogenität
+wahrzunehmen und Spielangebote den Fähigkeiten der Kinder anzupassen.
+Aus diesem Grund sollten Beobachtungsfähigkeiten der pädagogischen
+Fachpersonen besonders geschult werden (ebd.). Dadurch bauen sie
+Verständnis für vorhandene Risikofaktoren und Entwicklungsproblemen auf.
+Weitere Ressourcen welche hinzugezogen werden könnten sind Eltern und
+externe Fachpersonen
+(\protect\hyperlink{ref-sarimskiBehinderteKinder2011}{Sarimski, 2011}).
+Die Kindertagesstätte sollte zudem die Möglichkeit haben, eine
+Zweitmeinung, zum Beispiel von einer Heilpädagogischen Fachperson,
+einholen zu können. Dadurch könnte die Qualität der Kita gesteigert
+werden und der Besuch einer Kindertagesstätte würde einen stärkeren
+präventiven Charakter erhalten.
+
+\textbf{Inklusive Gruppenarbeit gestalten}\\
+Das “Spiel” ist der gemeinsame Nenner bei Kindern. Pädagogische
+Fachkräfte sollten demnach in der Lage sein solche gemeinsame “Spiel-
+und Lernsituationen” bewusst zu initiieren und zu leiten. Nach Heimlich
+(\protect\hyperlink{ref-inklusionQualituxe4t_Heimlich}{2015}) sollten
+sie sich in das Spiel der Kinder einbringen, sodass neue Spielideen
+entstehen können und die Spielintensität der Kinder beibehalten wird.
+Pädagogische Fachpersonen sollten zudem in der Lage sein den Raum
+flexibel zu nutzen, sowie Spielmaterialien einzusetzen, welche
+unterschiedliche Sinneskanäle anregen.
+
+\textbf{Teamarbeit entwickeln}\\
+Heimlich (\protect\hyperlink{ref-inklusionQualituxe4t_Heimlich}{2015})
+betont die Wichtigkeit der Teamarbeit für den Inklusionsprozess. In der
+Inklusionsarbeit setzt sich das Team oftmals aus unterschiedlichen
+Professionen zu einem multiprofessionellen Team zusammen. In diesen
+können Vorstellungen und Umsetzung betreffend Inklusion gemeinsam
+geplant und diskutiert werden. Ein multiprofessionelles Team bietet die
+Chance, voneinander zu lernen und bei auftretenden Schwierigkeiten auf
+unterschiedliches Wissen zurückgreifen zu können. Nach Rafferty \&
+Griffin (\protect\hyperlink{ref-raffertyux5cux26Griffin2005}{2005}) sind
+Personen welche über eine höhere Ausbildung verfügen, im allgemeinen
+positiver gegenüber Inklusion eingestellt. Sie können ihr Wissen und
+ihre Einstellung in die Kindertagesstätte miteinfliessen lassen und den
+Inklusionsgedanken weiter vorantreiben.
+
+\textbf{Inklusive Konzeptionen erstellen}\\
+Pädagogische Fachkräfte in Kindertagesstätten sollten fähig sein,
+Prozesse der institutionellen Entwicklung bewusst wahrzunehmen und in
+gemeinsamer Zusammenarbeit Zielsetzungen zur Umsetzung von Inklusion
+aufzustellen
+(\protect\hyperlink{ref-inklusionQualituxe4t_Heimlich}{Heimlich, 2015}).
+Ein Qualitätsmerkmal von inklusiven Kindertageseinrichtungen ist das
+fortlaufende Reflektieren des pädagogischen Konzepts.
+
+\textbf{Regionale Netzwerke bilden}\\
+Dazugehören Elternarbeit und interdisziplinäre und interinstitutionelle
+Zusammenarbeit. Eltern können den Fachpersonen wichtige Informationen
+über den Umgang mit ihrem Kind liefern (ebd.). Sie kennen es am Besten.
+Dieser Austausch schafft gegenseitiges Vertrauen. Schlussendlich
+profitieren beide Parteien voneinander. Seitz \& Finnern
+(\protect\hyperlink{ref-seitzfinnern}{2012}) spricht von gleichwertigen
+Erziehungspartnerschaften, welche sich auf Augenhöhe begegnen. Weiter
+ist die Kindertagesstätte auf “…externe Kooperationspartner und
+Unterstützungssysteme angewiesen“
+(\protect\hyperlink{ref-inklusionQualituxe4t_Heimlich}{Heimlich, 2015,
+S. 36}). Fachpersonen aus anderen Professionen können hinzugezogen
+werden, damit den individuellen Förderbedürfnissen von Kindern mit
+Beeinträchtigung gerecht werden kann. Dazu zählen zum Beispiel Behörden
+oder Institutionen, welche Fremdbetreuung mitfinanzieren
+(\protect\hyperlink{ref-tiki}{Lütolf \& Schaub, 2021}).
+
+Hervorzuheben gilt die positive Einstellung / Haltung gegenüber der
+anzutreffenden Vielfalt (siehe dazu \cref{sec:haltungsfrage}). Diese
+leistet einen wichtigen Beitrag zur Inklusion
+(\protect\hyperlink{ref-einstellungPuxe4dagogischerFachkruxe4ften_Weltzien}{Weltzien
+\& Söhnen, 2020}).
+
+\hypertarget{sec:forschungsgrundlageneu}{%
+\section{Forschungsgrundlage zu Inklusion in
+Kindertagesstätten}\label{sec:forschungsgrundlageneu}}
+
+In den nächsten Abschnitten wird anhand von Studien erläutert, welche
+Vorstellungen über Inklusion in Kindertagesstätten kursieren und wieso
+“Haltung” als Schlüsselfaktor in dieser Thematik bezeichnet werden kann,
+nicht nur von Erwachsenen, sondern auch von gleichaltrigen Kindern.
+Danach wird die Integrationschance von Kindern mit Beeinträchtigung
+unter Berücksichtigung der Art und Schwere der Beeinträchtigung seitens
+pädagogischen Fachpersonen eingeschätzt. Im Anschuss wird der Begriff
+“soziale Teilhabe” erläutert. Zuletzt werden Vorteile und Risiken von
+Inklusion aufgegriffen.
+
+\hypertarget{sec:inklusionkita}{%
+\subsection{Anzutreffende Vorstellungen zu
+Inklusion}\label{sec:inklusionkita}}
+
+Der diffuse Begriff “Inklusion” erschwert die Umsetzung in der Praxis.
+Trescher (\protect\hyperlink{ref-eineKriseDieKeineSeinDarf}{2018})
+bestätigt, dass eine grosse begriffliche Unsicherheit bei den
+pädagogischen Fachpersonen vorhanden ist. Inklusive Handlungspraxis ist
+für sie das, was gegenwärtig praktiziert wird und was im Vorfeld stets
+betrieben worden ist. Daraus lässt sich schliessen, dass eine kritische
+Auseinandersetzung mit dem Inklusionsparadigma und der eigenen
+Handlungspraxis fehlt.
+
+Der Fachbeitrag von Knauf \& Graffe
+(\protect\hyperlink{ref-alltagsTheorienUeberInklusion}{2016}) soll einen
+Einblick in vorhandene Alltagstheorien gewähren. Dazu wurden 104
+Situationsbeschreibungen, welche von pädagogischen Fachkräften als
+inklusive Situationen wahrgenommen werden, analysiert. Die gewonnenen
+Erkenntnisse über sogenannte Alltagstheorien halten sie in Form von fünf
+zugespitzten Thesen fest. Diese werden im Anschluss erläutert. Sie
+liefern einen wertvollen Einblick in mögliche, anzutreffende
+Vorstellungen über Inklusion in der Praxis.
+
+\begin{description}
+\item[These 1:]
+\textbf{Inklusion bezieht sich auf Behinderung}
+(\protect\hyperlink{ref-alltagsTheorienUeberInklusion}{Knauf \& Graffe,
+2016, S. 193})
+
+Die Erhebung zeigt, dass 80 \% der Befragten eine Situation beschreibt,
+in welcher ein Kind mit Beeinträchtigung im Zentrum steht. Daraus kann
+die Schlussfolgerung gezogen werden, dass in Alltagstheorien der Begriff
+“Inklusion” mit Menschen mit einer Beeinträchtigung in Verbindung
+gebracht wird (ebd.).
+
+Hinz (\protect\hyperlink{ref-Hinz2013}{2013}) bezeichnet dies als enge
+Auffassung. Laut Lüders (\protect\hyperlink{ref-luders2014}{2014})
+können weitere Heterogenitätsmerkmale wie zum Beispiel ethnische
+Herkunft, sozioökonomischer Status oder Religion miteinbezogen werden.
+Saalfrank \& Zierer
+(\protect\hyperlink{ref-saalfrank_inklusion_2017}{2017}) nennen fünf
+Dimensionen zur Inklusion (siehe \cref{fig:dimensionen} in
+\cref{sec:annuxe4herungsversuch}).
+\item[These 2:]
+\textbf{Der Fokus der inklusiven Arbeit liegt auf einzelnen Kindern}
+(\protect\hyperlink{ref-alltagsTheorienUeberInklusion}{Knauf \& Graffe,
+2016, S. 194})
+
+In der Situationsanalyse von Knauf \& Graffe
+(\protect\hyperlink{ref-alltagsTheorienUeberInklusion}{2016}) stellt
+sich heraus, dass ein einzelnes Kind, welches anders ist als andere, im
+Vordergrund steht. Es soll in eine Gruppe integriert werden. Diese
+Haltung ist der Integration zuzuordnen, welche von der
+“Zwei-Gruppen-Theorie” ausgeht. In dieser wird zwischen Kindern mit
+sonderpädagogischem Förderbedarf und solchen ohne unterschieden
+(\protect\hyperlink{ref-wocken}{Wocken, 2009}). Die Begriffe Inklusion
+und Integration werden hier als Synonym verwendet. Rohrmann
+(\protect\hyperlink{ref-rohrmann_inklusion_2014}{2014}) hat diese
+Entwicklung vorausgesagt.
+\item[These 3:]
+\textbf{Die Kindergruppe wird als wesentliche Ressource für Inklusion
+gesehen} (\protect\hyperlink{ref-alltagsTheorienUeberInklusion}{Knauf \&
+Graffe, 2016, S. 194})
+
+Die Gruppe wird als wichtige Ressource für eine gelingende Inklusion
+verstanden. Es kristallisiert sich heraus, dass die Befragten die
+Kindergruppe als ein Instrument betrachten, welches helfen soll, dass
+Kind mit Beeinträchtigung zu integrieren. Nicht die Gruppe steht im
+Zentrum sondern das zu integrierende Kind (ebd.). Damit wären wir wieder
+bei der Zwei-Gruppen-Theorie (\cref{sec:inklusionversusintegration}).
+Kordulla (\protect\hyperlink{ref-peer-learning}{2017}) spricht von
+Peer-Learning-Prozessen. In Gruppen mit gleichaltrigen Kindern ergeben
+sich Lernchancen für die Erweiterung von sozialen und kognitiven
+Fähigkeiten. Jedoch verbirgt sich bei zu grossen Unterschieden die
+Gefahr, dass vermehrt Konflikte, negative Emotionen und ein erhöhter
+koordinativer Aufwand entstehen könnte. Laut
+(\protect\hyperlink{ref-buysse}{Buysse, Goldman \& Skinner, 2002})
+erleben Kinder mit Beeinträchtigung in inklusiven Kindertagesstätten
+mehr soziale Interaktionen. Sie haben dadurch eine grössere Chance,
+Freundschaftsbeziehungen aufzubauen.
+\item[These 4:]
+\textbf{Inklusion wird als Überwinden von Barrieren und nicht als Abbau
+von Barrieren gesehen}
+(\protect\hyperlink{ref-alltagsTheorienUeberInklusion}{Knauf \& Graffe,
+2016, S. 194})
+
+In der Analyse von Knauf \& Graffe
+(\protect\hyperlink{ref-alltagsTheorienUeberInklusion}{2016}) stellt
+sich heraus, dass das Überwinden von Barrieren von einzelnen Kindern für
+die Befragten im Vordergrund steht. Dabei sollen Barrieren in der
+Leistungsfähigkeit und in der sozialen Interaktion mit anderen Kindern
+überwunden werden. Dies erinnert an die “Zwei-Gruppen-Theorie” welche
+der Integration zugeschrieben wird. Kinder mit besonderen Bedürfnissen
+sollen in eine Gruppe integriert werden. Die Entwicklungssrückstände der
+betroffenen Kindern sollen minimiert werden. Der Fokus liegt auf
+einzelnen Kindern und nicht wie in der Inklusion auf der ganzen Gruppe.
+Albers (\protect\hyperlink{ref-albers_vielfalt_2012}{2012}) betont, dass
+in der Umsetzung einer inklusiven Pädagogik der Vielfalt der Kinder
+Rechnung getragen werden sollte. Dies setzt eine Professionalität der
+Kindertageseinrichtung sowie der Mitarbeitenden voraus.
+\item[These 5:]
+\textbf{Fachkräfte sehen sich als Begleiter und Moderatoren}
+(\protect\hyperlink{ref-alltagsTheorienUeberInklusion}{Knauf \& Graffe,
+2016, S. 194})
+
+Die Befragten unterstützen die Kinder in ihrer Entwicklung und setzen
+sich dafür ein, dass sie mit unterschiedlichen Kindern in Kontakt
+treten. Fachpersonen stehen zudem für die Bedürfnisse der Kinder gegen
+aussen ein und verteidigen oder werben für das Verständnis von
+skeptischen Mitarbeitenden. Die interdisziplinäre Zusammenarbeit mit
+externen Fachpersonen sehen sie als Ressource an (ebd.).
+\end{description}
+
+\hypertarget{sec:haltungsfrage}{%
+\subsection{Haltung als Schlüsselfaktor}\label{sec:haltungsfrage}}
+
+Aus den zusammengetragenen Thesen in \cref{sec:inklusionkita} wird nicht
+ersichtlich, wie sich das Kita-Personal zur Thematik “Inklusion in
+Kindertagesstätten” positioniert. Es wurde lediglich ein Einblick in das
+Verständnis über Inklusion gewährt. Jedoch deuten die Thesen auf eine
+Defizit orientierte Einstellung hin. Im Anschluss wird ein Versuch
+gestartet, den Hergang, welcher zu dieser Sichtweise führen kann, zu
+rekonstruieren.
+
+Auf der Suche nach einem Fremdbetreuungsplatz werden spätestens bei der
+Hospitation erste Informationen über das Kind ausgetauscht. Die Leitung
+nimmt eine Einschätzung der benötigten Ressourcen, wie zum Beispiel
+Personal, vor. Bereits bei diesem Schritt kann eine Familie
+zurückgewiesen werden.
+
+Die Kita selbst muss gewisse Vorgaben einhalten. Die Räumlichkeiten
+einer Kita geben zum Beispiel die maximale Kinderzahl vor, welche sich
+gleichzeitig darin aufhalten dürfen. Eine weitere Richtlinie ist der
+Betreuungsschlüssel, welcher der Verband Kinderbetreuung Schweiz
+(kibesuisse,
+\protect\hyperlink{ref-richtlinienKindertagessstuxe4tten_2020}{2020})
+vorgibt. In diesem ist geregelt, wie viele Kinder auf eine
+Betreuungsperson hochgerechnet werden können.
+
+Hat eine Platzierung stattgefunden, ist die Wahrscheinlichkeit gross,
+dass das Kind mit einer Beeinträchtigung in den Fokus der
+Kita-Mitarbeitenden rückt. Es sticht durch besonderes Verhalten oder
+zusätzlichen Unterstützungsbedarf im Alltag hervor. Fachkräfte sind
+gefordert mit diesen Besonderheiten umzugehen. Diese Kinder weichen von
+den Erwartungen des Betreuungspersonals ab und fordern sie in ihren
+pädagogischen und didaktischen Fähigkeiten und Kompetenzen. Graumann
+(\protect\hyperlink{ref-unerfullbarevision}{2018}) nennt diesbezüglich,
+dass je unflexibler der Unterricht oder die Sozialformen sind, desto
+eher werden Kinder, welche nicht dem Durchschnitt entsprechen, als
+störend empfunden. Die Vielfalt der Kinder kann somit als eine
+didaktische Herausforderung betrachtet werden.
+
+Die Haltung einzelner pädagogischen Fachpersonen und der Leitung
+bezüglich Inklusion ist dabei entscheidend und beeinflusst ihr Handeln
+gegenüber Kindern mit speziellen Bedürfnissen. Die Besonderheiten können
+negativ interpretiert oder der allgemeinen Vielfalt der Kinder
+zugeschrieben werden. Bestenfalls werden Wege für die Teilhabe im Alltag
+gesucht. Im schlimmsten Fall wird eine Kita-Platzierung verweigert oder
+aufgelöst.
+
+Daraus kann abgeleitet werden, dass die Haltung des Kita-Personals
+massgeblich über Gelingen oder Scheitern einer Kita-Platzierung von
+Kindern mit besonderen Bedürfnissen mitbestimmt. Die Haltung gegenüber
+Inklusion kann als Gelingensfaktor (siehe \cref{sec:gelingensfaktoren})
+gezählt werden.
+
+In der Studie von Rafferty \& Griffin
+(\protect\hyperlink{ref-raffertyux5cux26Griffin2005}{2005}) wird
+ersichtlich, dass eine allgemeine Bereitschaft der Kindertagesstätten,
+Kinder mit besonderen Bedürfnissen aufzunehmen, vorhanden ist. Dies
+bestätigt die Befragung pädagogischer Fachkräfte von Wiedebusch, Lohmann
+\& Hensen (\protect\hyperlink{ref-wiedebusch2015}{2015}) zur Betreuung
+von chronisch kranken Kindern. Die Vorbereitung auf Kinder mit
+chronischen Krankheiten in der Berufsausbildung wie auch Erfahrungen in
+der Kindertagesstätte prägen die Einstellung von Fachkräften positiv
+(\protect\hyperlink{ref-wiedebusch2015}{Wiedebusch et al., 2015}). Dies
+bestätigen Engstrand \& Roll-Pettersson
+(\protect\hyperlink{ref-zakirova}{2012}).
+
+Mangelndes Wissen von pädagogischen Fachkräften über eine
+Beeinträchtigung oder das nicht Einschätzen können der Bedürfnisse von
+Kindern mit einer Beeinträchtigung lösen Verunsicherung aus. Es besteht
+die Möglichkeit, dass Fachpersonen das Gefühl verspüren, zu wenig Zeit
+für das betreffende Kind aufbringen zu können. Dies hinterlässt ein
+Gefühl von Unzufriedenheit und kann die Einstellung gegenüber Inklusion
+negativ beeinflussen
+(\protect\hyperlink{ref-raffertyux5cux26Griffin2005}{Rafferty \&
+Griffin, 2005}). Weiter wird erwähnt, dass die Einstellung zu Inklusion
+unabhängig davon sei, wie viele Jahre an Arbeitserfahrung jemand
+mitbringe (ebd.). Zudem spiele der Schweregrad oder die Art der
+Beeinträchtigung eine Rolle. Auf diese Thematik wird im nachfolgenden
+Kapitel (\cref{sec:schweregradBeeintruxe4chtigung}) eingegangen.
+
+Die Auswertung des Weiterbildungsprogramm InkluKiT von Weltzien \&
+Söhnen
+(\protect\hyperlink{ref-einstellungPuxe4dagogischerFachkruxe4ften_Weltzien}{2020,
+S. 102}) zeigt, dass Einstellungen zu Inklusion veränderbar sind.
+Grundlegend sei dabei die kompetenzorientierte Arbeit mit allen
+pädagogischen Fachpersonen auf den Ebenen “Haltung, Wissen, Handeln und
+Team”. Weiterbildungsprogramme können folglich einen wertvollen Beitrag
+zur Erweiterung des Inklusionsverständnis in Kitas leisten. Weiter
+nennen sie, dass anzutreffende Merkmale in der Einrichtung wie zum
+Beispiel eine ausgewogene Arbeitsdichte und Arbeitsrhythmus, die
+Einstellung positiv beeinflussen können.
+
+Ein Stolperstein ist, dass externe Unterstützung oder Beratung im Kanton
+Luzern in Form von KITAplus (eine Fachperson aus dem Frühbereich berät
+oder coacht das Personal der Kita) erst erfolgen kann, wenn das
+betreffende Kind am Heilpädagogischen Dienst Luzern angemeldet ist.
+
+\hypertarget{sec:schweregradBeeintruxe4chtigung}{%
+\subsection{Schweregrad und Art der
+Beeinträchtigung}\label{sec:schweregradBeeintruxe4chtigung}}
+
+Miedander (\protect\hyperlink{ref-miedander}{1997, S. 13}) stellte nach
+einer Befragung von 30 integrativen Einrichtungen fest, dass
+Integrationschance aufgrund der Schwere der Beeinträchtigung
+unterschiedlich eingeschätzt wurde. Ihre Erkenntnisse werden im
+Anschluss zusammengefasst, da laut Sarimski
+(\protect\hyperlink{ref-sarimskiBehinderteKinder2011}{2011}) solche
+Einstellungen bis heute anzutreffen sind.
+
+\begin{itemize}
+\tightlist
+\item
+  Die Integration von Kindern mit einer körperlichen Behinderung wird
+  von den pädagogischen Fachpersonen als problemlos angesehen. Es sei
+  höchstens eine Frage des verfügbaren Personals.
+\item
+  Genauso problemlos wird die Integration von Kindern mit einer
+  Sprachbehinderung bewertet. Interessant ist, dass bei
+  Integrationsversuchen dieser Kindergruppe jedoch vermehrt von
+  Problemen berichtet wurde.
+\item
+  Als nicht schwierig wird die Integration von blinden Kindern
+  angesehen, sofern keine schwere Beeinträchtigungsform hinzukommt.
+\item
+  Kinder mit einer geistigen Behinderung stellen eine grössere
+  Herausforderung für die Integration dar. Integrationserfolge seien
+  schwerer zu erreichen im Vergleich mit anderen Behinderungsgruppen.
+\item
+  In der Bewertung der Integration wird zwischen Gehörlosen und
+  Hörgeschädigten unterschieden. Kinder mit einer leichten Hörschädigung
+  könnten ohne weiteres integriert werden. Hingegen sei die Integration
+  von gehörlosen Kindern nicht empfehlenswert, da diese einen geringen
+  Wortschatz ausbilden würden.
+\item
+  Bei der Kindergruppe mit Verhaltensauffälligkeiten weisen pädagogische
+  Fachpersonen daraufhin, dass diese Gruppe im Vergleich mit anderen
+  Sinnesbehinderungen weit grössere Probleme für die Integration
+  aufwirft. Des Weiteren fühle sich das Personal überfordert, sofern
+  keine Unterstützung veranlasst wird.
+\end{itemize}
+
+Nach Miedander (\protect\hyperlink{ref-miedander}{1997}) lässt sich
+zusammenfassend sagen, dass die Art der Beeinträchtigung kein Grund für
+einen Ausschluss in ein integratives Setting sein kann und darf. Jedoch
+wird ersichtlich, dass je nach Art der Beeinträchtigung und
+Beeinträchtigungsgrad unterschiedliche Anforderungen an das Personal
+gestellt werden. Anbieter haben die Arbeit im integrativen Setting mit
+körper- und sprachbehinderten, blinden oder gehörbeeinträchtigten
+Kindern als leichter empfunden als mit Kindern welche gehörlos, eine
+geistige Beeinträchtigung oder eine Verhaltensauffälligkeit aufweisen.
+Pädagogische Fachpersonen weisen zusätzlich darauf hin, dass eine
+pauschale Bewertung einer spezifischen Beeinträchtigung nicht möglich
+sei. Jeder Fall sollte einzeln betrachtet und beurteilt werden.
+
+In der Studie von Rafferty \& Griffin
+(\protect\hyperlink{ref-raffertyux5cux26Griffin2005}{2005}) wird
+bestätigt, dass Anbieter und Eltern Inklusion von Kindern mit einer
+Sprach-, Motorik- oder Gehörbeeinträchtigung grösstenteils befürworten.
+Bei vorhandenen emotionalen Thematiken, Autismus-Spektrum-Störungen oder
+kognitiven Einschränkungen fällt die Bereitschaft geringer aus.
+
+Weiter nennen Rafferty \& Griffin
+(\protect\hyperlink{ref-raffertyux5cux26Griffin2005}{2005}) den
+Schweregrad der Beeinträchtigung als Schlüsselfaktor für die Einstellung
+zu Inklusion. Je schwerer die Beeinträchtigung, desto geringer fällt die
+Bereitschaft aus. Avramidis \& Norwich
+(\protect\hyperlink{ref-europeanjournal}{2002}) bestätigen, dass
+Lehrpersonen eher dazu bereit sind Kinder mit einer milden, körperlichen
+oder sensorischen Beeinträchtigung zu integrieren, als Kinder mit
+komplexeren Bedürfnissen. Zudem fanden sie genügend Hinweise, die darauf
+schliessen lassen, dass starke Lerneinschränkungen oder
+Verhaltensprobleme sich negativ auf die Einstellung von Lehrpersonen
+auswirken (siehe \cref{sec:haltungsfrage}). Es fehle an Wissen im Umgang
+mit Kindern mit speziellen Bedürfnissen. Vor allem wenn eine schwere
+Beeinträchtigung vorliege, in welcher die Kommunikationsform erschwert
+oder ein erhöhter Pflegebedarf vorhanden sei, welcher spezifisches
+Fachwissen voraussetze. Weiter wird erwähnt, dass ungünstige
+Konstellationen in der Gruppe zur Überforderung der pädagogischen
+Fachpersonen führen kann. Dies sei zum Beispiel der Fall, wenn mehrere
+Kinder in einer Gruppe mit einem erhöhten Pflegebedarf oder ausgeprägten
+Verhaltensauffälligkeiten aufeinander treffen und Kinder ohne
+Beeinträchtigung hinzukommen, welche das Betreuungspersonal zusätzlich
+herausfordert
+(\protect\hyperlink{ref-sarimskiBehinderteKinder2011}{Sarimski, 2011}).
+Haben die Eltern die Beeinträchtigung ihres Kindes akzeptiert und
+kooperieren mit der Kita, so seien die Integrationschancen erhöht.
+
+\hypertarget{sec:peersEinstellung}{%
+\subsection{Peers und ihre Einstellung}\label{sec:peersEinstellung}}
+
+Nachdem die Sichtweisen bezüglich Inklusion aus dem Blickwinkel von
+Erwachsenen beschrieben worden ist, rücken in diesem Abschnitt die
+Einstellungen von gleichaltrigen Kindern in den Vordergrund.
+Schliesslich steht das Miteinander und das voneinander Lernen im
+Zentrum. Dies wird erst möglich, wenn gegenseitige Akzeptanz und
+Verständnis vorhanden sind. Laut Siperstein, Parker, Bardon \& Widaman
+(\protect\hyperlink{ref-siperstein2007}{2007}) werden Kinder mit einer
+intellektuellen Beeinträchtigung von Gleichaltrigen oftmals nicht
+akzeptiert. Sie seien ihnen gegenüber negativ eingestellt und würden mit
+ihnen in der Freizeit wenig zu tun haben wollen. Walker \& Berthelsen
+(\protect\hyperlink{ref-walker}{2007}) widersprechen dieser Aussage. In
+ihrer Studie haben sie Hinweise gefunden, dass Kinder mit
+Beeinträchtigungen von anderen Kindern sozial akzeptiert würden und
+Freundschaften schliessen, im Vergleich mit anderen jedoch weniger. Die
+Studie von Walker \& Berthelsen (\protect\hyperlink{ref-walker}{2007})
+wurde mit Kindern aus dem Vorschulbereich durchgeführt und die Studie
+von Siperstein et al. (\protect\hyperlink{ref-siperstein2007}{2007}) mit
+Kindern aus der “middle school” (Oberstufe). Die gegensätzlichen
+Studienergebnisse könnten auf den Altersunterschied zurückzuführen sein.
+Jüngere Kinder stellen vielleicht weniger hohe Ansprüche an ihre
+Spielkameraden und sind jeweils noch sehr auf ihr eigenes Spiel
+fokussiert. Ältere Kinder nehmen die Unterschiedlichkeit deutlich
+bewusster wahr und sind vielleicht weniger dazu bereit Kompromisse
+einzugehen oder empfinden die Freundschaft als weniger gewinnbringend
+oder sogar als Last.
+
+Gerade weil Peers eine wertvolle Ressource darstellen wird der Frage
+nachgegangen, welche Faktoren eine negative Einstellung gegenüber Kinder
+mit speziellen Bedürfnissen und Beeinträchtigungen begünstigen und wie
+dagegen vorgegangen werden kann.
+
+Fehlendes Wissen zu Beeinträchtigungen ist ein möglicher Faktor.
+Ausserdem finden sich Lehrpersonen in der Situation wieder, zwei
+unterschiedliche Kindergruppen aneinander zu gewöhnen. Dies kann
+gelingen oder scheitern. Weiter kann eine negative Einstellung gegenüber
+Beeinträchtigung zu Hause oder von der Gesellschaft vermittelt werden,
+sowie ein allgemeines Unwohlsein gegenüber Verschiedenartigkeit
+(\protect\hyperlink{ref-storytelllingprogram}{Giagazoglou \& Papadaniil,
+2018}).
+
+In \cref{sec:haltungsfrage} wurde bereits erwähnt, dass Einstellungen zu
+Inklusion veränderbar sind, wieso also auch nicht die Einstellung von
+Kindern gegenüber Kindern mit speziellen Bedürfnissen?
+
+Giagazoglou \& Papadaniil
+(\protect\hyperlink{ref-storytelllingprogram}{2018}) führten in einer 1.
+Klasse mit sechs bis siebenjährigen Kindern eine Pilotstudie durch.
+Folgende Frage stand im Vordergrund: “Lässt sich die Einstellung von
+Peers in Bezug auf Beeinträchtigung anhand eines Förderprogramms
+beeinflussen?” Das Programm nimmt zwölf Stunden in Anspruch und setzt
+sich aus Lese-Sequenzen und Rollenspielen zusammen. Die Leitfigur ist
+eine kleine Schildkröte mit Down-Syndrom. Aus ihrer Studie geht hervor,
+dass ein signifikant positiver Effekt bezüglich Akzeptanz und
+Verständnis für Kinder mit einer kognitiven Beeinträchtigung bewirkt
+werden konnte. Dank einem Rollenspiel können sie in die Haut eines
+anderen schlüpfen. Dies erleichtert ihnen den Perspektivenwechsel. Sie
+erfahren demzufolge am eigenen Leib, wie schwierig es sein kann, den
+Alltag mit einer Beeinträchtigung zu bewältigen. Mit diesen
+Interventionen wird emphatisches Verhalten gefördert, was sich wiederum
+auf die Akzeptanz und ein positives Klassenklima auswirken kann. Damit
+ein solches Programm durchgeführt wird, ist jedoch ein Grundinteresse
+seitens der Institution notwendig, sowie das Wissen, dass solche
+Programme existieren. Schlussendlich ist dies eine Haltungsfrage.
+
+In einer Kita sind Rollenspiele aufgrund des Alters der Kinder nicht
+durchführbar. Was sich jedoch anbieten würde sind zum Beispiel
+inszenierte Tischtheater. Zudem können die Kinder mit simplen Fragen wie
+zum Beispiel “Wie fühlt sich die Schildkröte? Was könnte mit der
+Schildkröte gespielt werden? Was kann die Schildkröte besonders gut und
+was ist für sie schwieriger?” auf die Thematik der Andersartigkeit
+sensibilisiert werden. Der Zugang über Bilderbücher ist eine weitere
+wundervolle Methode, welche in den Kita-Alltag eingebaut werden kann.
+Pädagogische Fachpersonen übernehmen zudem eine Vorbildfunktion
+gegenüber den Kindern.
+
+\hypertarget{sec:sozialeteilhabe}{%
+\subsection{Soziale Teilhabe}\label{sec:sozialeteilhabe}}
+
+“Dabeisein ist nicht alles - oder doch?” Dieser Titel bestückt den
+Artikel von Sarimski
+(\protect\hyperlink{ref-dabeiseinIstNichtAllesOderDoch}{2015}). Er setzt
+sich mit der Frage auseinander, wie es um die soziale Teilhabe von
+Kindern mit sehr schwerer und mehrfacher Behinderung in
+Kindertagesstätten steht.
+
+Nur weil ein Kind eine Kindertagesstätte besucht, darf nicht davon
+ausgegangen werden, dass Kinder mit speziellen Bedürfnissen in das
+soziale Geschehen eingebunden sind und somit von einer gelingenden
+Inklusion gesprochen werden kann. Die Situation muss genauer betrachtet
+werden. Der Titel “Dabeisein ist nicht alles - oder doch?” lässt zwei
+Interpretationen zu: Sobald das Kind mit besonderen Bedürfnissen eine
+Kita besucht, ist von sozialer Teilhabe auszugehen, dabei musss es nicht
+aktiv am Geschehen teilnehmen. Es genügt, wenn es mit seinem Rollstuhl
+im Kreis platziert ist. Andererseits könnte behauptet werden, dass erst
+von sozialer Teilhabe die Rede ist, wenn es sich in die Aktivität
+einbringt. Folgende Fragestellung lässt sich daraus ableiten: Was wird
+unter sozialer Teilhabe verstanden?
+
+Heimlich (\protect\hyperlink{ref-inklusionQualituxe4t_Heimlich}{2015})
+betrachtet “soziale Teilhabe” als ein Teil von Inklusion, in welcher das
+Kind selbstbestimmt partizipieren und bei gemeinsamen Aktivitäten, wie
+alle anderen die Möglichkeit hat, sich einzubringen. Die World Health
+Organization (\protect\hyperlink{ref-worldhealthorganisation}{2005})
+verwendet den Begriff “Teilhabe” als Synonym zu Partizipation und
+bezieht sich auf das “Einbezogensein” in einer Lebenssituation. Laut
+Klein, Lorenz-Medick \& Bamikol-Veit
+(\protect\hyperlink{ref-kleineva}{2012}) zeigt sich Teilhabe anhand von
+Interaktion und Kooperation. Innerhalb einer Kindertagesstätte kann
+Teilhabe durch pädagogische Fachpersonen bewusst gefördert oder
+antizipiert werden. Gruppenaktivitäten oder Spielsequenzen eigenen sich
+dafür wunderbar.
+
+Sarimski (\protect\hyperlink{ref-dabeiseinIstNichtAllesOderDoch}{2015,
+S. 149}) untersucht in einer quantitativen explorativen Studie die
+soziale Teilhabe von Kindern mit schwerer und mehrfacher Behinderung in
+sonderpädagogischen und integrativen Kindergärten. Zu folgenden
+Erkenntnisse ist er gelangt:
+
+\begin{itemize}
+\tightlist
+\item
+  Für eine gelingende soziale Kontaktaufnahme waren visuelle und
+  körperliche Zuwendung charakteristisch. Diese gingen gleich oft von
+  Kindern mit schwerer und mehrfacher Behinderung als auch von anderen
+  Kindern aus.
+\item
+  In 30 \% der Beobachtungszeit lässt sich von sozialer Teilhabe
+  sprechen. Während der Hälfte der Zeit sind andere Kinder in der Nähe.
+  Die Möglichkeit für eine Kontaktaufnahme wäre gegeben. In 25 \% der
+  Zeit ist das Kind alleine. Die Mehrzahl der Kontaktaufnahmen gelingen
+  im Freispiel.
+\item
+  Die Anzahl gelingender sozialer Kontaktaufnahmen von Kindern mit
+  schwerer und mehrfacher Behinderung ist im Vergleich mit anderen
+  Kindern niedrig. Hervorzuheben gilt, dass Interesse und Initiative der
+  Kinder für eine Kontaktaufnahme vorhanden sind.
+\item
+  Es sind grosse individuelle Unterschiede im Gelingen von
+  Kontaktaufnahmen zu verzeichnen.
+\item
+  Sie finden keinen Hinweis darauf, dass die Art der Behinderung
+  Einfluss auf die Häufigkeit von sozialen Kontaktaufnahmen nimmt.
+  Dasselbe gilt für den Ort.
+\item
+  Vielmehr sei die Bereitschaft der anderen Kinder oder die
+  Unterstützung durch pädagogische Fachpersonen für eine soziale
+  Teilhabe entscheidend.
+\end{itemize}
+
+In der Studie von Walker \& Berthelsen
+(\protect\hyperlink{ref-walker}{2007}) schätzen Lehrpersonen Kinder mit
+Beeinträchtigungen in der sozialen Kompetenz tiefer ein als Kinder ohne
+Beeinträchtigungen. Sie seien weniger kompetent im prosozialem
+Verhalten, neigen eher zu aggressiven Verhaltensweisen und würden sich
+öfters zurück ziehen.
+
+Des Weiteren ist eine Beobachtungsstudie zur sozialen Teilhabe von
+Kindern mit Behinderung in Kindertagesstätten von Lütolf \& Schaub
+(\protect\hyperlink{ref-beobachtungsstudie}{2019}) durchgeführt worden.
+Dabei wurden die Aspekte “Beteiligung in Spiel- und Gruppenprozessen und
+Interaktionen” untersucht und miteinander verglichen. Aus der
+Beobachtungsstudie geht hervor:
+
+\begin{quote}
+Kinder mit einer Behinderung waren seltener in Interaktion als ihre
+Peers, waren weniger oft Senderin oder Sender von Interaktionsangeboten
+und standen seltener in Interaktion mit anderen Kindern aus der Gruppe.
+Auch reagierten die Kinder mit Behinderung auf ein Interaktionsangebot
+seltener aufrechterhaltend als ihre Peers.
+(\protect\hyperlink{ref-beobachtungsstudie}{Lütolf \& Schaub, 2019, S.
+187})
+\end{quote}
+
+Im allgemeinen weisen Lütolf \& Schaub
+(\protect\hyperlink{ref-beobachtungsstudie}{2019}) daraufhin, dass
+aufgrund der enormen Heterogenität der Kinder mit sonderpädagogischem
+Förderbedarf eine grosse Vielfalt an unterschiedlichen Verhaltensweisen
+gezeigt wird. Die Schwierigkeit von pädagogischen Fachpersonen besteht
+einerseits darin, das gezeigte Verhalten in der Situation wahrzunehmen,
+zu interpretieren und entsprechend zu reagieren. Andererseits sind
+Kinder mit Beeinträchtigung darauf angewiesen, dass pädagogische
+Fachpersonen soziale Kontaktaufnahmen initiieren oder fördern. Dies kann
+zum Beispiel in Form von Vermitteln zwischen anderen Peers und dem Kind
+sein oder dem Herstellen von Situationen, in welchen Interaktion möglich
+werden. Dies stellt pädagogische Fachpersonen vor eine grosse
+Herausforderung
+(\protect\hyperlink{ref-schwerermehrfachbehinderung}{Gutekunst, Schreier
+\& Sarimski, 2012}; \protect\hyperlink{ref-beobachtungsstudie}{Lütolf \&
+Schaub, 2019};
+\protect\hyperlink{ref-dabeiseinIstNichtAllesOderDoch}{Sarimski, 2015}).
+Freispielsituationen, Übergänge oder Routinen, in welchen Fachpersonen
+unterstützend und begleitend tätig sind, stellen eine grosse
+Herausforderung dar. Laut Reyhing, Frei, Burkhardt Bossi \& Perren
+(\protect\hyperlink{ref-fachkraftkindinteraktion}{2019}) sind dafür hohe
+mentale Flexibilität und Sicherheit im Gestalten solcher
+Lerngelegenheiten gefragt. Sie haben herausgefunden, dass Fachpersonen
+die aktive Lernunterstützung in planbaren Einheiten wie zum Beispiel
+Kreissequenzen leichter fällt als in freien Situationen.
+Heilpädagogische Beratung (z.B. KITAplus Luzern) setzt dort an. Die
+pädagogischen Fachpersonen der Kita werden mithilfe des Coaching auf die
+Bedürfnisse der Kinder sensibilisiert. Sie werden bei der Interpretation
+von gezeigten Verhaltensweiten von Kindern mit speziellen Bedürfnissen
+unterstützt, erhalten einen Input, wie sie Übergänge oder Rituale im
+Alltag einbauen können oder werden dabei angeleitet, wie sie Kinder mit
+sonderpädagogischem Förderbedarf in Freispiel-Aktivitäten
+miteinzubeziehen können.
+
+Ausser Frage steht, dass pädagogische Fachkräfte das Gelingen sozialer
+Teilhabe von Kindern mit Beeinträchtigung massgeblich mitbestimmen. Eine
+weitere Rolle spielen die individuellen Voraussetzungen des Kindes
+(\protect\hyperlink{ref-beobachtungsstudie}{Lütolf \& Schaub, 2019}).
+Ein Kind mit schwerer oder mehrfacher Beeinträchtigung, welches sich zum
+Beispiel anhand von blinzeln verständigt, hat weniger Möglichkeiten sich
+aktiv in Situationen einzubringen oder in Interaktion mit anderen Peers
+zu gelangen, als ein Kind, welches rein körperlich eingeschränkt ist.
+Das blinzelnde Kind ist auf ein aufmerksames Gegenüber angewiesen,
+welches sein Blinzeln zu deuten weiss.
+
+Fakt ist, mit einem Besuch in der Kindertagesstätte kann nicht
+automatisch von einer gelingenden sozialer Teilhabe gesprochen werden.
+Jedes Kind bringt individuelle Voraussetzungen und Bedürfnisse mit um am
+sozialen Geschehen in der Kindertagesstätte teilzunehmen. Die
+Herausforderung der pädagogischen Fachpersonen besteht darin, jedes
+einzelne Kind entsprechend seinen Möglichkeiten am Kita-Alltag
+teilnehmen zu lassen.
+
+\hypertarget{sec:forschungsgrundlageInklusion}{%
+\subsection{Vorteile und Risiken von
+Inklusion}\label{sec:forschungsgrundlageInklusion}}
+
+Rafferty \& Griffin
+(\protect\hyperlink{ref-raffertyux5cux26Griffin2005}{2005}) führten eine
+Studie mit 237 Eltern von Kindern mit und ohne Beeinträchtigung durch.
+Im Vordergrund stand die Ermittlung zu Vorteilen und Risiken von
+Inklusion im Vorschulbereich. Parallel dazu sind 118 Anbieter, welche
+ein inklusives Setting im Vorschulbereich anbieten, mit denselben Fragen
+konfrontiert worden.
+
+Die Studie nennt Vorteile der Inklusion für Kinder mit Beeinträchtigung.
+Dabei werden Perspektiven der Eltern von Kindern mit oder ohne
+speziellen Bedürfnissen berücksichtigt, sowie Ansicht der Anbieter. Im
+Anschluss werden fünf Vorteile aus der Studie beschrieben, bei welchen
+alle drei Parteien eine hohe Übereinstimmung erzielten. Danach werden
+mögliche Risiken aufgezählt.
+
+Vorteile für Kinder mit einer Beeinträchtigung im inklusiven Setting
+nach Rafferty \& Griffin
+(\protect\hyperlink{ref-raffertyux5cux26Griffin2005}{2005, S. 182}):
+
+\begin{itemize}
+\tightlist
+\item
+  Alle drei Parteien vertreten die Sichtweise, dass das inklusive
+  Setting eine positive Auswirkung auf Kinder mit Beeinträchtigung hat.
+\item
+  Die Mehrheit der drei Parteien vertritt die Ansicht, dass Inklusion
+  von Kindern mit Beeinträchtigung im Vorschulalter die Akzeptanz in der
+  Gesellschaft fördert.
+\item
+  Zudem stimmen sie zu, dass das inklusive Setting zur Entwicklung ihrer
+  Selbständigkeit beiträgt und sie somit angemessen auf die Realität
+  vorbereitet werden.
+\item
+  Die Kinder haben vermehrt die Möglichkeit an unterschiedlichen
+  Aktivitäten teilzunehmen.
+\item
+  Das inklusive Setting ermöglicht Lernen am Modell.
+\end{itemize}
+
+NSW Department of Education and Communities
+(\protect\hyperlink{ref-centreforeducation2014}{2014}) (NSWDEC) weist
+darauf hin, dass umfangreiche Beweise vorliegen, in welchen der Nutzen
+der Fremdbetreuung für alle Kinder und vor allem für benachteiligte
+Kinder erläutert werden. Sie machen darauf aufmerksam, dass inklusive
+Fremdbetreuung oder frühe Bildung, ein Angebot aus vielen sein kann,
+welches Kinder mit speziellen Bedürfnissen in der Entwicklung
+unterstützt oder fördert.
+
+Als Nächstes werden mögliche Risiken/ Sorgen betreffend Inklusion für
+Kinder mit speziellen Bedürfnissen aufgezählt. Es werden drei von sechs
+möglichen Risiken aus der Studie von Rafferty \& Griffin
+(\protect\hyperlink{ref-raffertyux5cux26Griffin2005}{2005, S. 182})
+genannt:
+
+\begin{itemize}
+\tightlist
+\item
+  Lehrpersonen könnten die nötige Qualifikation oder Schulung im Umgang
+  mit Kindern mit speziellen Bedürfnissen fehlen.
+\item
+  Kinder mit Beeinträchtigung könnten weniger spezialisierte Hilfe oder
+  individuelle Instruktionen von Lehrpersonen erhalten.
+\item
+  Kinder mit Beeinträchtigung laufen Gefahr, weniger Physiotherapie oder
+  Logopädie zu erhalten.
+\end{itemize}
+
+Diese drei Risiken bewerten Eltern von Kindern mit oder ohne
+Beeinträchtigung höher als Anbieter selbst. Beim dritten Punkt stellt
+sich die Frage, ob die Übersetzung vom englischen ins Deutsche korrekt
+erfolgte oder sich die beiden Autoren Rafferty \& Griffin
+(\protect\hyperlink{ref-raffertyux5cux26Griffin2005}{2005}) auf den
+Kindergarten beziehen. Die Kitas in der Schweiz haben einen
+Betreuungsauftrag, jedoch keinen Förderauftrag. Individuelle Therapien
+wie zum Beispiel Logopädie oder Physiotherapie müssen ausserhalb der
+Kita organisiert werden. Ein Auszug aus den Richtlinien von kibesuisse
+(Verband der Kinderbetreuung Schweiz) beschreibt den Auftrag von Kitas
+folgendermassen:
+
+\begin{quote}
+Kindertagesstätten übernehmen eine zentrale Aufgabe bei der
+frühkindlichen Bildung, Betreuung und Erziehung (FBBE), bei der
+Vereinbarkeit von Familie und Erwerbstätigkeit oder Ausbildung sowie bei
+der sozialen und sprachlichen Inklusion von Kindern. Die Betreuung in
+Kindertagesstätten leistet damit einen wesentlichen Beitrag zur
+Chancengerechtigkeit. (kibesuisse,
+\protect\hyperlink{ref-richtlinienKindertagessstuxe4tten_2020}{2020, S.
+7})
+\end{quote}
+
+Im Regelkindergarten werden Kinder durch Fachpersonen der Heilpädagogik
+in Gruppen oder einzeln unterstützt. Auch der DaZ Unterricht (Deutsch
+als Zweitsprache) erfolgt innerhalb des Schulunterrichtes in kleinen
+Gruppen. Logopädie kann bei Bedarf in Anspruch genommen werden und
+erfolgt über die Dienststelle für Logopädie in der betreffenden Gemeinde
+(\protect\hyperlink{ref-logopuxe4dieKantonLuzern}{Stadt Luzern, 2022a}).
+Ist ein Bedarf an Psychomotorik-Therapie vorhanden, erfolgt die
+Anmeldung wie bei der Logopädie über die zuständige Therapiestelle in
+der jeweiligen Gemeinde (\protect\hyperlink{ref-psychomotorik}{Stadt
+Luzern, 2022b}).
+
+Besucht ein Kind im Kanton Luzern hingegen den Heilpädagogischen
+Kindergarten (separatives Setting), kann die schulinterne Logopädie oder
+Musiktherapie in Anspruch genommen werden. Schulextern werden Ergo- und
+Physiotherapie angeboten \footnote{Mehr Informationen auf der Homepage
+  von www.volksschulbildung.lu.ch unter HPS Luzern, Förderung und
+  Beratung, Therapieangebote.}.
+
+Rafferty \& Griffin
+(\protect\hyperlink{ref-raffertyux5cux26Griffin2005}{2005}) kamen in
+ihrer Studie zum Schluss, dass Anbieter im Vergleich zu den beiden
+Elterngruppen sich positiver gegenüber Inklusion ausgesprochen haben.
+Dies ist ein erfreuliches Resultat und kann wie bereits in
+\cref{sec:haltungsfrage} erläutert, zu den Gelingensfaktoren gezählt
+werden. Auf der anderen Seite überrascht es, dass Eltern von Kindern mit
+Beeinträchtigung sich nicht positiver gegenüber Inklusion geäussert
+haben.
+
+Es lassen sich folgende Gedanken dazu ableiten: Eltern von Kindern mit
+Beeinträchtigung sind zurückhaltender oder scheuen die Organisation von
+institutioneller Fremdbetreuung, obwohl sie laut Rafferty \& Griffin
+(\protect\hyperlink{ref-raffertyux5cux26Griffin2005}{2005}) viele
+Chancen im inklusiven Setting sehen. Ein Grund dafür könnte sein, dass
+sie sich soweit selbst organisiert haben und eine institutionelle
+Fremdbetreuung überflüssig wird. Es könnte aber auch sein, dass sich
+Eltern den externen Blicken und Fragen betreffend ihres Kindes entziehen
+möchten oder sie eine mögliche Ablehnung seitens der Kita befürchten und
+vermeiden möchten. Vielleicht haben Eltern aber auch Mühe mit der
+Ablösung und der Abgabe von Verantwortung.
+
+\hypertarget{sec:werintegriert}{%
+\section{Welche Kinder werden integriert/inklusiv
+betreut?}\label{sec:werintegriert}}
+
+In diesem Kapitel wird der Blick auf die Kindertagesstätten gerichtet
+und anhand von Literatur und Studien erläutert, welche Kinder mit
+sonderpädagogischem Förderbedarf in Kindertagesstätten anzutreffen sind.
+In \cref{sec:schweregradBeeintruxe4chtigung} wurde bereits die
+Integrationschancen von Kindern mit unterschiedlichen
+Beeinträchtigungsarten und Schweregraden seitens des Kita-Personals
+eingeschätzt.
+
+Das NSWDEC (\protect\hyperlink{ref-centreforeducation2014}{2014}) weist
+daraufhin, dass es methodische Limitierungen in Studien mit jungen
+Kindern mit Behinderungen gibt. Das breite Angebot in der Fremdbetreuung
+und der frühen Bildung, sowie die Vielfältigkeit der Auslegung von
+Behinderung, erschweren es, eine allgemein gültige Schlussfolgerung
+betreffend früher Bildung und Fremdbetreuung von Kindern mit besonderen
+Bedürfnissen vorzunehmen.
+
+Der Studienvergleich von Kißgen et al.
+(\protect\hyperlink{ref-studienvergleichbayernrheinland}{2021}) hat
+ergeben, dass in den untersuchten Kitas die diagnostizierte (drohende)
+Behinderungsart “Verhaltensstörung” und “allgemeine
+Entwicklungsverzögerung” vorherrschend sind. Sie betreuen deutlich
+weniger Kinder mit einer Sinnesbehinderung, chronischer Krankheit,
+geistigen Behinderung und Körperbehinderung (siehe
+\cref{fig:Diagnostizierte-Behinderungen}). Des Weiteren geben die
+befragten Kitas an, Risikokinder (ohne diagnostizierte Behinderung) zu
+betreuen. Die Auffälligkeiten dieser Kinder beziehen sich auf die
+Bereiche der Sprachentwicklung, des Sozialverhaltens und der
+Emotionsregulation. Weiter sind Auffälligkeiten im Bereich der
+Wahrnehmung, der Motorik, wie auch in der Kognition und der allgemeinen
+Entwicklungsverzögerung gemeldet worden.
+
+\imageWithCaption{files/Diagnostizierte-Behinderungen.png}{Diagnostizierte
+Behinderungen im Vorschulalter nach Angabe der befragten Kita-Leitungen
+von Wölfl, Wertfein \& Wirts
+(\protect\hyperlink{ref-ivo-studie}{2017})}{width=0.8\textwidth}[fig:Diagnostizierte-Behinderungen]
+
+Ein Erklärungsversuch von Kißgen et al.
+(\protect\hyperlink{ref-studienvergleichbayernrheinland}{2021})
+betreffend vorherrschenden Kindern mit einer Verhaltensauffälligkeit und
+allgemeinen Entwicklungsverzögerung ist, dass diese erst nach Aufnahme
+in einer Kita erkannt und diagnostiziert werden. Fakt ist, dass diese
+Kinder das Personal fordern und einen besonderen Unterstützungsbedarf
+aufweisen. Aufgrund der fehlenden Diagnose erhält die Kita aber keine
+finanzielle Unterstützung.
+
+Wie bereits in \cref{sec:schweregradBeeintruxe4chtigung} erläutert,
+werden Kindern mit einer schweren Beeinträchtigung eine geringe
+Integrationschance zugeschrieben. Nichtsdestotrotz sind
+Mehrfachbehinderungen in \cref{fig:Diagnostizierte-Behinderungen} an
+dritter Stelle zu finden. Wobei daraus nicht abzulesen ist, wie hoch der
+Schweregrad der Beeinträchtigung ist und wie es mit dem Mehraufwand der
+Kitas steht. Im Evaluationsbericht von Ecoplan
+(\protect\hyperlink{ref-ecoplan}{2017}) sind unterschiedliche Ansichten
+vorhanden bezüglich zu betreuende Kinder in Kindertagesstätten mit sehr
+intensiven Betreuungsaufwand. Einige äussern, dass es nicht das Ziel
+einer Kita sei, Kinder mit einer Eins-zu-Eins-Betreuung zu begleiten. Es
+fehle an ausgebildetem Kita-Personal und geeigneter Infrastruktur.
+
+Grundsätzlich darf die Art der Beeinträchtigung nicht gleichgesetzt
+werden mit Betreuungsaufwand. Es kann zum Beispiel der Fall sein, dass
+ein Kind mit einer Mehrfachbehinderung das Kita-Personal weniger
+herausfordert als ein Kind mit einer Autismus-Spektrums-Störung. Zudem
+spiele der Charakter des Kindes eine grosse Rolle
+(\protect\hyperlink{ref-ecoplan}{Ecoplan, 2017}). Andererseits können
+innerhalb der Beeinträchtigungsform grosse Unterschiede auftreten.
+(NSWDEC, \protect\hyperlink{ref-centreforeducation2014}{2014}) schreiben
+diesbezüglich folgendes:
+
+\begin{quote}
+For example, there is no such thing as a ‘universal’ experience of Down
+syndrome or autism spectrum disorder. This means there can be wide
+variance in levels of functioning and additional needs of individual
+children even within the same type of diagnosed disability, resulting in
+very small comparative sample sizes in evaluations of programs. (NSWDEC,
+\protect\hyperlink{ref-centreforeducation2014}{2014, S. 3})
+\end{quote}
+
+Als Nächstes wird die Situation betreffend Fremdbetreuung im Kanton
+Luzern betrachtet und dessen Angebot (KITAplus-Programm) vorgestellt.
+
+\hypertarget{sec:kantonluzern}{%
+\chapter{Kanton Luzern}\label{sec:kantonluzern}}
+
+Eine Mehrzahl an Studien haben laut Anders
+(\protect\hyperlink{ref-anders_2013}{2013}) ergeben, dass
+institutionelle Fremdbetreuung von Kindern in den ersten drei
+Lebensjahren einen Nulleffekt in Bezug auf die soziale-emotionale
+Entwicklung nimmt. Hingegen wird ein positiver Effekt auf die
+kognitive-sprachliche Entwicklung verzeichnet. Bei einem Besuch einer
+frühkindlichen, institutionellen Betreuung und Bildung ab drei Jahren
+seien positive Effekte im Bereich der kognitiv-leistungsbezogenen
+Entwicklung deutlicher sichtbar. Dabei spiele die Dauer der Nutzung der
+frühkindlichen, institutionelle Fremdbetreuung eine grössere Rolle als
+die Intensität.
+
+Laut Amberg \& Heller
+(\protect\hyperlink{ref-kinderbetreuungluzern}{2018}) besuchten im Jahr
+2017 im Kanton Luzern rund 6’866 Kinder ein familienergänzendes Angebot
+(Kita, Tagesfamilie, Spielgruppe).
+
+In Luzern wird seit 2009 auf das System der “Betreuungsgutscheine”
+gesetzt. Dieses soll in den nächsten Jahren weiterentwickelt werden.
+Bischof (\protect\hyperlink{ref-luzernerzeitung}{2021}) schreibt, dass
+der Kanton Luzern die Subventionierung der familienergänzenden
+Kinderbetreuung in der Stadt Luzern um einen Drittel erhöhen wird.
+Familien mit mittlerem und tiefem Einkommen sollen dadurch entlastet
+werden. Luzern habe einen Nachholbedarf, da die Kosten der Kita
+gestiegen, die Höhe der Betreuungsgutscheine jedoch gleich geblieben
+sind.
+
+In der Stadt Luzern fand aufgrund der Initiative der Stiftung Kifa (Kind
+und Familie) von 2012 bis 2017 das Pilotprojekt KITAplus statt. Das
+KITAplus ist ein gemeinsames Projekt der Stiftung Kifa Schweiz, des
+Heilpädagogischen Früherziehungsdienstes des Kantons Luzern (HFD), der
+Stadt Luzern, kibesuisse (Verband Kinderbetreuung Schweiz) und der
+Pädagogischen Hochschule Luzern.
+
+Im Zentrum dieser Masterarbeit stehen KITAplus-Kinder. Aus diesem Grund
+wird das Konzept von KITAplus Luzern in \cref{sec:kitaplus} ausführlich
+beschrieben. Dabei werden Zielgruppe, Ablauf, Finanzierung und
+Auswertung der Pilotphase von 2012 bis 2017 zusammengefasst. Grundlage
+dafür ist der Konzeptbeschrieb von KITAplus Luzern aus dem Jahr 2020
+(\protect\hyperlink{ref-konzeptKitaPlus}{KITAplus Luzern, 2020}). In
+\cref{sec:fazit} (Ausblick) wird auf die Revision des
+Volksschulbildungsgesetz (VBG) und deren Ausführungsbestimmungen
+KITAplus im Kanton Luzern, welche ab dem 01.08.2022 in Kraft treten,
+eingegangen.
+
+\hypertarget{sec:kitaplus}{%
+\section{KITAplus}\label{sec:kitaplus}}
+
+Seit 2018 ist das KITAplus in das Regelangebot des Heilpädagogischen
+Früherziehungsdienstes überführt worden. Das erfolgreiche
+KITAplus-Modell wird inzwischen ihn ähnlicher Form in den Kantonen
+Nidwalden, Uri, St.~Gallen, Basel-Landschaft und in der Stadt Bern
+umgesetzt (\protect\hyperlink{ref-stiftungkifa}{Stiftung Kifa Schweiz,
+2022}).
+
+\hypertarget{zielgruppe}{%
+\subsection{Zielgruppe}\label{zielgruppe}}
+
+Die Zielgruppe von KITAplus sind Kinder mit besonderen Bedürfnissen. Sie
+sind in ihrer “Entwicklungs- und Bildungsmöglichkeit” beeinträchtigt
+(\protect\hyperlink{ref-konzeptKitaPlus}{KITAplus Luzern, 2020, S. 4}).
+Den Kita-Alltag können sie ohne erhöhte Unterstützung nicht bewältigen.
+Entscheidend für die Aufnahme in das KITAplus-Programm sind die
+Einschätzungen der KITAplus-Mitarbeitenden des Heilpädagogischen
+Früherziehungsdienstes Luzern und Sursee-Willisau. Grundlagen dafür sind
+Verhaltensbeobachtungen und/ oder Abklärungsberichte.
+
+Folgende Kinder werden im KITAplus berücksichtigt: Kinder mit
+Entwicklungsbehinderungen, mit Entwicklungsverzögerungen und mit
+gesundheitlichen Beeinträchtigungen (ausführlichere Infos dazu in
+KITAplus Luzern (\protect\hyperlink{ref-konzeptKitaPlus}{2020}), S. 5).
+Kinder mit einer medizinischen Indikation können nur dann im KITAplus
+berücksichtig werden, wenn medizinisch ausgebildetes Fachpersonal in der
+Kita vorhanden ist, die z.B. die Sondierung der Nahrung vornehmen.
+
+Das KITAplus setzt bei folgenden Punkten an:
+
+\begin{quote}
+KITAplus setzt auf eine enge Begleitung der Mitarbeitenden in den
+Kindertagesstätten bei pädagogischen und / oder medizinischen Fragen,
+unterstützt die Kita-Leitung bei der Schaffung von Erfolg versprechenden
+Rahmenbedingungen und klärt mit allen Beteiligten die Chancen,
+Erwartungen und Ängste und unterstützt sie bei der Formulierung von
+realistischen Zusammenarbeitszielen. Wichtigste Akteur, neben den
+Kindern, Eltern und Kitas, ist der Heilpädagogische Früherziehungsdienst
+des Kantons Luzern (HFD), welcher den direkten Kontakt mit den
+Beteiligten sicherstellt.
+(\protect\hyperlink{ref-konzeptKitaPlus}{KITAplus Luzern, 2020, S. 4})
+\end{quote}
+
+Das Ziel ist, Kinder mit speziellen Bedürfnissen in bestehende
+Kindertagesstätten zu integrieren. Sie profitieren von der förderlichen
+Umgebung und der ihnen angepassten Förderung und Betreuung. Dahinter
+steht eine inklusive Grundhaltung
+(\protect\hyperlink{ref-konzeptKitaPlus}{KITAplus Luzern, 2020}).
+
+\hypertarget{voraussetzung-einer-kita}{%
+\subsection{Voraussetzung einer Kita}\label{voraussetzung-einer-kita}}
+
+Der Schlüsselbegriff dazu lautet “Haltung”. Ist die Kita motiviert und
+offen Kinder mit speziellen Bedürfnissen in ihre Institution
+aufzunehmen, ist ein grosser Meilenstein erreicht
+(\protect\hyperlink{ref-konzeptKitaPlus}{KITAplus Luzern, 2020, S. 10}).
+Sie nennen vier weitere Voraussetzungen:
+
+\textbf{Institutionelle Voraussetzungen:}\\
+Leitung und Personal stehen hinter dem KITAplus-Ansatz und öffnen ihre
+Institution für Kinder mit speziellen Bedürfnissen. Zudem erklären sie
+sich bereit, individuelle Lösungsansätze zu überprüfen und flexibel zu
+bleiben.
+
+\textbf{Pädagogische Voraussetzungen:}\\
+Sie erklären sich dazu bereit regelmässige Rundtischgespräche mit Eltern
+und KITAplus-Mitarbeitenden zu führen.
+
+\textbf{Personelle Voraussetzungen:}\\
+Regelmässige Austauschrunden müssen eingeplant werden. Zudem erklärt
+sich die Leitung bereit, bei Bedarf die personellen Ressourcen zu
+überprüfen und allenfalls anzupassen. Es muss eine allgemeine
+Bereitschaft vorhanden sein, sich neues Fachwissen aneignen zu wollen.
+
+\textbf{Räumliche Voraussetzungen:}\\
+Infrastruktur und Räumlichkeiten entsprechen den individuellen
+Voraussetzungen der Kinder oder könnten ihren Bedürfnissen entsprechend
+angepasst werden.
+
+Die Kita erklärt sich indirekt dazu bereit ihre gelebten pädagogische
+Ansätze kritisch zu betrachten und allfällige Umstrukturierungen
+vorzunehmen. Es entsteht ein Mehraufwand, welcher sie in Kauf nehmen
+müssen. Gleichzeitig bietet sich der Kita eine Chance ihr Personal
+weiterzubilden. Dank dem Coaching der Heilpädagogischen Fachperson wird
+der Blick auf das Kind und seine Bedürfnisse geschärft. Sie lernen neue
+Handlungsansätze zu entwickeln. Dies führt zu einer Steigerung der
+Qualität in der Kita selbst.
+
+\hypertarget{beantragung-von-kitaplus}{%
+\subsection{Beantragung von KITAplus}\label{beantragung-von-kitaplus}}
+
+Zwei Ausgangssituationen sind möglich. Das Kind besucht bereits eine
+Kindertagesstätte oder eine Anmeldung ist in Planung. Unabhängig davon
+lassen sich folgende drei Schritte beschreiben:
+
+\textbf{Abklärungsphase}\\
+In dieser Phase übernimmt der Heilpädagogische Früherziehungsdienst die
+Koordination. Besucht das Kind bereits eine Kita, sind die
+Mitarbeitenden des KITAplus zuständig. Ist ein Kita-Platz erst in
+Planung so übernimmt die involvierte Heilpädagogische Fachperson die
+Koordinationsfäden.
+
+Die Eltern müssen zudem mit der Beantragung einverstanden und die
+Finanzierung der Betreuungskosten geklärt sein. Das Kind sollte zudem
+die Aufnahmekriterien des KITAplus und des Heilpädagogischen
+Früherziehungsdienstes erfüllen (weitere Infos zur Abklärungsphase sind
+in KITAplus Luzern (\protect\hyperlink{ref-konzeptKitaPlus}{2020}), S.
+12 zu finden).
+
+Eine Anmeldung erfolgt via Anmeldeformular \footnote{Das Anmeldeformular
+  ist auf folgender Seite abrufbar:\\
+  \url{https://www.kindertagesstaette-plus.ch/das-projekt/kitaplus-luzern}}.
+Zur Anmeldung wird ein Bericht des Früherziehungsdienstes und, falls
+vorhanden, ein Arztberichtes beigelegt. Die Abklärungsphase ist
+abgeschlossen, sobald die Leitung den Aufnahmeentscheid bekannt gibt.
+Danach folgt der nächste Schritt.
+
+\textbf{Umsetzungsphase}\\
+Das Kind besucht die Kita an den vereinbarten Tagen. Die Fachpersonen
+der Kita werden je nach Bedürfnis und Anliegen von den zuständigen
+KITAplus-Mitarbeitenden gecoacht. Zudem leiten sie regelmässige
+Standortgespräche mit allen betreffenden Parteien. Müssen die
+Infrastruktur oder die Personalressourcen angepasst werden, stehen sie
+der Kita mit Rat zur Seite.
+
+\textbf{Abschlussphase}\\
+Das Ende der Teilnahme im KITAplus wird von den KITAplus-Mitarbeitenden
+geplant und koordiniert. Die Leitung des Heilpädagogischen
+Früherziehungsdienstes bestätigt den formalen Abschluss des KITAplus.
+
+\hypertarget{finanzierung}{%
+\subsection{Finanzierung}\label{finanzierung}}
+
+Es wird zwischen “ordentlichen Betreuungskosten” in der Kita und den
+Kosten der “Inklusion” unterschieden. Beim letzteren zählen Sonder- und
+Koordinationskosten, sowie die Vergütung der KITAplus-Mitarbeitenden
+dazu. Die Kostenfaktoren müssen bei jedem Kind einzeln betrachtet und im
+Voraus abgeklärt werden.
+
+Die “ordentlichen Betreuungskosten” sind von dem vor Ort zu liegenden
+Finanzierungssystem abhängig.
+
+Die Personalkosten der KITAplus-Mitarbeitenden werden über das
+Regelbudget des Kantons Luzern finanziert.
+
+Die Kita erhält einen Pauschalbetrag von 30 Franken pro Betreuungstag.
+Er begleicht den Mehraufwand der Kita, welcher bei der Begleitung eines
+Kindes mit besonderen Bedürfnissen entsteht. Die Übernahme des
+Koordinationsbeitrags von 30 Franken wird den Gemeinden ans Herzen
+gelegt.
+
+Sollten bei einem Kind Sonderkosten anfallen, wie zum Beispiel die
+Anschaffung eines Spezialstuhls oder werden zusätzliche
+Personalressourcen notwendig, so wird den Gemeinden empfohlen, diese
+Mehrkosten zu übernehmen. Eine weitere Möglichkeit ist die Zuziehung
+Dritter, wie zum Beispiel die Stiftung Kifa Schweiz.
+
+\hypertarget{sec:pilotphase2017}{%
+\subsection{Auswertung Pilotphase}\label{sec:pilotphase2017}}
+
+Die Evaluation der Pilotphase
+(\protect\hyperlink{ref-evalPilotphase}{Tanner Merlo, Buholzer \&
+Näpflin, 2014}) zeigt, dass Kinder mit einer Beeinträchtigung unabhängig
+von ihrer Art und Schwere der Behinderung von Peers akzeptiert werden
+und in unterschiedlichen Interaktionen in der Kita eingebunden sind. Sie
+profitieren von vielfältigen Interaktionsangeboten und Rollenvorbildern
+und können dadurch ihr Sozialverhalten erweitern. Im Pilotprojekt wird
+ersichtlich, dass Kinder mit speziellen Bedürfnissen im Bereich der
+sozial-emotionalen Kompetenzen grosse Fortschritte erzielen konnten.
+Zudem wurde beobachtet, dass Kinder ohne Behinderung ein hohes
+Einfühlungsvermögen entwickelten und gegenüber Kindern mit
+Beeinträchtigung viel Verständnis aufbringen.
+
+Eltern von Kindern mit speziellen Bedürfnissen berichten, dass ihre
+Kinder in vielen Bereichen (sozial, sprachlich und emotional) von einem
+Besuch der Kita profitieren. Das KITAplus-Konzept stösst bei Eltern von
+Kindern ohne Beeinträchtigung auf grosse Akzeptanz. In den Augen vieler
+Eltern gewinne eine Kita, welche Kinder mit speziellen Bedürfnissen
+integriere, sogar an Attraktivität.
+
+\hypertarget{weiterfuxfchrung}{%
+\subsection{Weiterführung}\label{weiterfuxfchrung}}
+
+Eine mögliche Erweiterung könnte in Richtung Prävention angestrebt
+werden. Es wäre erstrebenswert, wenn Heilpädagogische Fachpersonen
+regelmässig oder bei Bedarf Kitas besuchen würden. Das Kita-Personal
+hätte dadurch die Möglichkeit bei aufkommenden Fragestellungen
+betreffend Kindern mit oder ohne Beeinträchtigung Unterstützung zu
+erhalten. Durch allgemeine Beobachtungssequenzen durch die
+Heilpädagogische Fachperson könnten ruhige, unauffällige Kinder, welche
+zum Beispiel ein auffälliges, repetitives Spielverhalten zeigen,
+entdeckt werden. Diese Kindergruppe benötigt gezielte Anleitung und
+Förderung, damit nächste Entwicklungsschritte angestossen werden können.
+Somit würde das KITAplus verstärkt einen präventiven und inklusiven
+Charakter annehmen.
+
+\hypertarget{sec:forschungsmethode}{%
+\chapter{Methodik}\label{sec:forschungsmethode}}
+
+In diesem Kapitel steht das methodische Vorgehen im Zentrum. In
+\cref{sec:forschungsansatz} wird die ausgewählte Forschungsmethode
+mithilfe von Literatur begründet und hergeleitet. Danach wird das
+Erhebungsinstrument (\cref{sec:erhebungsinstrument}) und dessen Aufbau
+(\cref{sec:fragebogen}) vorgestellt. Darin werden unter anderem die
+Antwortformate, sowie die Herleitung der einzelnen Fragen erläutert. Das
+Vorgehen der Datenerhebung ist in \cref{sec:datenerhebung} geschildert.
+Danach folgt die Erläuterung der Datenaufbereitung und die Beschreibung
+der verwendeten Methodik zur Datenanalyse
+(\cref{sec:datenaufbereitung}). Den Abschluss des Kapitels bildet die
+Stichprobe (\cref{sec:stichprobe}).
+
+\hypertarget{sec:forschungsansatz}{%
+\section{Forschungsansatz}\label{sec:forschungsansatz}}
+
+Für diese Forschungsstudie ist die schriftliche Befragung in Form von
+zwei ausgearbeiteten, sich ergänzenden, standardisierten Fragebögen
+gewählt worden. Dies entspricht der quantitativen Erhebungsmethode. In
+dieser werden grundsätzlich grössere Datensätze verwendet. Sie werden
+mit geeigneten statistischen Methoden ausgewertet, um im Anschluss
+nachvollziehbare Schlussfolgerungen formulieren zu können, welche
+repräsentativ sind (\protect\hyperlink{ref-hug2020}{Poscheschnik,
+Lederer, Perzy \& Hug, 2020}). Der Datensatz von 37 Kindern ist in
+dieser Studie zu klein um repräsentative Aussagen zu formulieren.
+
+Laut Koch \& Ellinger (\protect\hyperlink{ref-Koch2015}{2015}) geht es
+in der quantitativen empirischen Forschung darum, “Phänomene in
+Häufigkeit und Verteilung darzustellen” (S. 41). Die aufgearbeitete
+Theorien in \cref{sec:grundlagen} sollen mit den erhobenen Daten
+verglichen werden. “Theorien werden hier verstanden als Abstraktionen
+der Wirklichkeit, die versuchen, einen Ausschnitt dieser Wirklichkeit
+allgemeingültig (über den Einzelfall hinaus) und widerspruchsfrei zu
+erklären” (\protect\hyperlink{ref-Koch2015}{Koch \& Ellinger, 2015, S.
+42}). Sie weisen auf ein deduktives Vorgehen hin. Dabei werden in
+Anlehnung an die Theorie passende Hypothesen formuliert, welche im
+Anschluss mithilfe von empirischen Daten überprüft werden. Sie erwähnen
+aber auch, dass dies nicht immer möglich ist. Gründe dafür können
+unzureichende Theorien sein. In diesem Fall wird eine explorative Phase
+eingeschoben. Der Fokus wird dabei nicht auf die Überprüfung der
+Hypothesen gerichtet, sondern auf Erstellung oder Erweiterung von
+passenden Hypothesen. Im Bereich des KITAplus-Programm sind wenige
+Auswertungsberichte vorhanden. In dieser Studie wird auf die Erstellung
+von Hypothesen verzichtet. Die Deskription des Datensatzes steht im
+Vordergrund. Koch \& Ellinger (\protect\hyperlink{ref-Koch2015}{2015})
+bezeichnen dies als Populationsbeschreibung. Leitend sind dabei die
+Forschungsfragen.
+
+Die Wahl fiel auf die quantitative Methode, da anhand eines
+standardisierten Fragebogens grössere Datenmengen in kurzer Zeit
+generiert werden können. Zudem lässt diese Methode die Sammlung von
+spezifischen Informationen von unterschiedlichen Kindern zu. Hinzukommt,
+dass der Datensatz einen deskriptiven Blick für die Auswertung und somit
+für die Beantwortung der aufgestellten Fragestellungen zulässt.
+
+\hypertarget{sec:erhebungsinstrument}{%
+\section{Erhebungsinstrument}\label{sec:erhebungsinstrument}}
+
+In diesem Kapitel steht die Herleitung der beiden Fragebögen im
+Vordergrund. Pro Kind sind zwei Fragebögen erstellt worden. Einer wird
+von den KITAplus-Mitarbeitenden ausgefüllt
+(\cref{sec:erhebungsfragebogen}) und einer von den Fachpersonen der
+Heilpädagogischen Früherziehung
+(\cref{sec:erhebungsfragebogenallgemein}). Die KITAplus-Mitarbeitenden
+pflegen engen Kontakt mit Kitas und haben dadurch wertvollen Einblick in
+das Kita-Setting. Hinzukommt, dass sie Fragen oder Anliegen welche die
+Betreuenden bezüglich des betreffenden Kindes äussern, kennen. Im
+Gegensatz zu den Fachpersonen der Heilpädagogischen Früherziehung
+erleben sie das Kind in einer Gruppensituation. Die Fachpersonen der
+Heilpädagogischen Früherziehung hingegen pflegen einen engen Kontakt mit
+der Familie, können die Beweggründe für die Initiierung der
+Fremdbetreuung herleiten und kennen das Kind mit seinen Stärken und
+Schwächen. Der Einsatz zweier Fragebögen ermöglicht die Erfassung der
+“Fremdbetreuungssituation” sowie “Persönliche Angaben” des Kindes.
+
+Raab-Steiner \& Benesch (\protect\hyperlink{ref-raabsteiner}{2015})
+sehen im standardisierten Fragebogen “… eines der typischen
+Messinstrumente in den empirischen Sozialwissenschaften …” (S. 47). Die
+Erstellung eines brauchbaren Fragebogendesigns für die schriftliche
+Befragung, in welcher die Probanden den Fragebogen selbständig ausfüllen
+müssen, ist laut Poscheschnik et al.
+(\protect\hyperlink{ref-hug2020}{2020}) eine Kunst für sich.
+Raab-Steiner \& Benesch (\protect\hyperlink{ref-raabsteiner}{2015})
+erwähnen, dass die schriftliche Befragung eine hohe Strukturiertheit des
+Inhalts erfordert und auf die steuernde Inputs des Herausgebers
+verzichtet werden muss. Der Fragebogen sollte einige Punkte erfüllen,
+damit er für die Auswertung verwendbare Daten liefert. Der Fragebogen
+muss klar und verständlich formuliert sein, sodass keine
+Missverständnisse entstehen können. Die Anleitung muss exakt sein und
+die gestellten Fragen in eine logische Reihenfolge gebracht werden. Die
+vorgegebenen Antworten sollten zudem für die Auswertung dienlich sein
+(\protect\hyperlink{ref-hug2020}{Poscheschnik et al., 2020}). Nach
+Raab-Steiner \& Benesch (\protect\hyperlink{ref-raabsteiner}{2015}) wird
+zwischen vollstandardisierter, teilstandardisierter und
+nichtstandardisierter Befragung unterschieden. Für diese Studie wurde
+die vollstandardisierte Befragung mit geschlossenen, halboffenen und
+zwei offenen Fragen gewählt (weitere Infos dazu in \cref{sec:fragebogen}
+und \cref{sec:skalierung}).
+
+Der Vorteil von standardisierten Fragebögen ist, dass sie den
+Fachpersonen der Heilpädagogischen Früherziehung sowie den
+KITAplus-Mitarbeitenden zur selben Zeit ausgehändigt werden können. Die
+Verteilung gestaltet sich als effizient, da der grösste Teil der
+Befragten am selben Dienst arbeiten. Die Rücklaufquote der Fragebögen
+kann dank eines kleinen Datensatzes von 37 Kindern kontrolliert werden.
+Ein Begleitschreiben informiert über den Grund der Befragung und dessen
+Ablauf. Ein weiterer grosser Vorteil der Fragebögen ist die hohe
+Anonymisierung. Darauf weist auch Poscheschnik et al.
+(\protect\hyperlink{ref-hug2020}{2020}) hin. Im Anschluss wird der
+Aufbau der Fragebögen sowie die Herleitung der Fragen erläutert.
+
+\hypertarget{sec:fragebogen}{%
+\section{Aufbau der Fragebögen}\label{sec:fragebogen}}
+
+Das Fundament der Fragebögen bilden die formulierten Fragestellungen zu
+Beginn der Arbeit. Als Erinnerung werden sie noch einmal aufgeführt:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Welche Kinder mit sonderpädagogischem Förderbedarf nehmen im Kanton
+  Luzern das KITAplus-Programm in Anspruch?
+\item
+  Aufgrund welcher Anliegen wird das KITAplus im Kanton Luzern
+  beantragt?
+\item
+  Lassen sich Prädikatoren für eine Beantragung von KITAplus
+  ausarbeiten?
+\end{enumerate}
+
+Die Fragebögen sind für eine bessere Übersicht in zwei Bereiche
+aufgeteilt worden: “Personalangaben” und “Angaben zur
+Fremdbetreuungssituation”. Damit die Fragebögen den Kindern zugeordnet
+werden können, wird vor der Verteilung die Laufnummer und die Initialen
+des Kindes in “Personalangaben” vermerkt.
+
+Die Probanden erhalten zusätzlich zum Fragebogen ein
+Informationsschreiben (mehr Infos dazu in \cref{sec:datenerhebung}).
+Nichtsdestotrotz wird der Fragebogen mit einer kurzen Einleitung und
+einem Schlusswort ergänzt (siehe \cref{sec:einleitungfragebogen}). In
+\cref{sec:skalierung} werden die Antwortformate erläutert, bevor in
+\cref{sec:personalangaben} und \cref{sec:fremdbetreuungangaben} die
+Fragestellungen mit den dazugehörigen Gedanken aufgelistet werden. Dabei
+wird nicht zwischen Fragebogen für KITAplus-Mitarbeitenden und
+Heilpädagogischen Fachpersonen unterschieden. Die erstellten Fragebögen
+sind in \cref{sec:erhebungsfragebogen} und
+\cref{sec:erhebungsfragebogenallgemein} zu finden.
+
+\hypertarget{sec:einleitungfragebogen}{%
+\subsection{Einleitung \& Dankesworte}\label{sec:einleitungfragebogen}}
+
+Wie auch Kallus Wolfgang (\protect\hyperlink{ref-kallus2016}{2016})
+erwähnt, werden zu Beginn die Befragten darauf aufmerksam gemacht, den
+Fragebogen ohne Rücksprache mit Eltern oder Kita auszufüllen. Am Ende
+des Fragebogens wird ein Dank ausgesprochen und auf das Enddatum der
+Rücksendung aufmerksam gemacht. Auf diese Notwendigkeit weisen auch
+Raab-Steiner \& Benesch (\protect\hyperlink{ref-raabsteiner}{2015}) hin.
+
+\hypertarget{sec:skalierung}{%
+\subsection{Antwortformate}\label{sec:skalierung}}
+
+In den Fragebögen sind geschlossene Antwortformate, Mischformen sowohl
+auch zwei offene Fragen zu finden. Bei den Mischformen haben die
+Befragten die Möglichkeit, passende Antwortalternativen hinzuzufügen.
+Mit offenen Fragen wurde sparsam umgegangen, da Raab-Steiner \& Benesch
+(\protect\hyperlink{ref-raabsteiner}{2015}) auf deren schwierige und
+zeitaufwendige Auswertung hinweist. Bei Erstellung der Fragen und deren
+Beantwortung wurde stets die statistische Auswertung im Blick behalten.
+
+Die “Tendez zur Mitte”, wie sie zum Beispiel in Kallus Wolfgang
+(\protect\hyperlink{ref-kallus2016}{2016}) erwähnt wird, möchte bei der
+Frage “Wie hoch schätzt du den Unterstützungsbedarf des Kindes in der
+Kita ein?” vermieden werden. Eine klare Positionierung soll erreicht
+werden. Aus diesem Grund wurden vier Antwortmöglichkeiten zur Auswahl
+gegeben (kein besonderer Unterstützungsbedarf / leicht / hoch / sehr
+hoch). Hingegen ist bei der Frage “Wie schätzt du die Beeinträchtigung
+des Kindes ein?” darauf verzichtet worden. Den Probanden stehen drei
+Antwortformate zur Verfügung (leicht / mittel / hoch). Diese Skalierung
+wird in der Kurzusammenfassung von Zimmermann
+(\protect\hyperlink{ref-zimmermannExpertise}{2021, S. 2}) erwähnt.
+
+Als Nächstes stehen die Fragen und deren Herleitung im Vordergrund. Dazu
+sind die Fragen aus \cref{sec:erhebungsfragebogen} und
+\cref{sec:erhebungsfragebogenallgemein} aufgelistet. Sie werden mit den
+dazugehörigen Überlegungen ergänzt. Zuerst werden “Personalangaben”
+erschlossen. Danach folgen Fragen zur “Fremdbetreuungssituation”
+(\cref{sec:fremdbetreuungangaben}).
+
+\hypertarget{sec:personalangaben}{%
+\subsection{Personalangaben}\label{sec:personalangaben}}
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Alter des Kindes?
+\end{itemize}
+
+Wie sieht die Altersverteilung der Kinder aus? Kann ein Durchschnitt
+errechnet werden? Sind es eher jüngere oder ältere Kinder welche die
+Kita in Anspruch nehmen oder zeichnet sich eine Durchmischung ab?
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Biologisches Geschlecht?
+\end{itemize}
+
+Ist ein biologisches Geschlecht übervertreten oder erweist sich die
+Verteilung als ausgeglichen?
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Welches ist die Erstsprache des Kindes?
+\end{itemize}
+
+Sticht eine Sprachgruppe hervor? Zeichnet sich eine Tendenz ab?
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Hat das Kind Geschwister? Bitte Jahrgang angeben und ob es
+  institutionell fremdbetreut wird oder wurde.
+\end{itemize}
+
+Geschwister können als Vorbilder dienen und zugleich als interessante*r
+Spielpartner*in, welche neue Spielinputs liefern. Geschwister können
+aber eine Zusatzbelastung für Eltern bedeuten. Vielleicht kennen Eltern
+das Fremdbetreuungsangebot “Kita” dank älteren Geschwistern?
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Welche Indikationen für Heilpädagogische Früherziehung sind
+  gegeben?
+\end{itemize}
+
+Die gesammelten Indikationen können miteinander in der Auswertung
+verglichen werden. Sticht eine Indikation hervor? Stimmt die Hypothese,
+dass Kinder mit schwerer oder mehrfacher Behinderung selten bis gar
+nicht in Kindertagesstätten betreut werden?
+
+\hypertarget{sec:fremdbetreuungangaben}{%
+\subsection{Angaben zur
+Fremdbetreuung}\label{sec:fremdbetreuungangaben}}
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Wann hat das Kind mit der Kindertagesstätte gestartet?
+\end{itemize}
+
+Das Startdatum kann mit dem Datum des bewilligten KITAplus-Programms
+verglichen werden. Wie lange dauert es im Schnitt bis ein
+KITAplus-Coaching beantragt wird?
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Ist die Kindertagesstätte vor Aufnahme der HFE besucht worden?
+\end{itemize}
+
+Unterfrage: Ja: Wer hat das KITAplus vorgeschlagen/initiiert?
+
+Grundsätzlich müsste der Hauptinitiator die Kita selbst sein. Ist diese
+Annahme korrekt?
+
+Unterfrage: Nein: Wer hat den Besuch einer Kindertagesstätte
+vorgeschlagen/initiiert?
+
+Kam der Wunsch von den Eltern? Hat die Heilpädagogische Fachperson die
+Fremdbetreuung vorgeschlagen oder war es eine andere Instanz? Welche
+Tendenz zeichnet sich ab?
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Aus welchen Gründen wird die Kita besucht?
+\end{itemize}
+
+Dazu wurden folgende Überlegungen gemacht: Welche Vorteile wird einem
+Kita-Besuch zugeschrieben? Mehrere Antworten können dazu angekreuzt
+werden.
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Welches ist der Hauptgrund für den Kita Besuch?
+\end{itemize}
+
+Damit wird das Hauptanliegen für den Kita Besuch herausgefiltert. Im
+Wissen darum, dass die Heilpädagogische Fachperson den Fragebogen
+ausfüllt.
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Wie schätzt du die Beeinträchtigung des Kindes ein?
+\end{itemize}
+
+Welche Stufe der Beeinträchtigung ist bei KITAplus-Kindern
+vorherrschend? Beantragen Kitas das KITAplus auch bei Kindern mit einer
+leichten Beeinträchtigung?
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Wie hoch schätzt du den Unterstützungsbedarf des Kindes in der
+  Kita ein?
+\end{itemize}
+
+Die Indikation oder die Stufe der Beeinträchtigung sagen nichts darüber
+aus, wie hoch der Unterstützungsbedarf in der Kita ausfällt. Es wird von
+einer grossen Heterogenität innerhalb der Indikationen und der Stufen
+der Beeinträchtigungen ausgegangen. Folgende Frage stellt sich zum
+Beispiel: Wird KITAplus auch bei Kindern mit “keinem besonderen
+Unterstützungsbedarf” beantragt oder muss der Unterstützungsbedarf
+“hoch” oder “sehr hoch” betragen?
+
+Die Frage betreffend Unterstützungsbedarf wird den
+KITAplus-Mitarbeitenden sowie den Fachpersonen der Heilpädagogischen
+Früherziehung gestellt. Schätzen die Fachpersonen die Kinder gleich ein
+oder zeichnen sich Unterschiede ab?
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Ist oder wird eine Eins-zu-Eins-Betreuung beantragt?
+\end{itemize}
+
+Wie oft wird eine Eins-zu-Eins-Betreuung beantragt? Gibt es Kinder bei
+welchen der Beeinträchtigungsgrad hoch eingeschätzt wird und der
+Unterstützungsbedarf ebenso, aber keine Eins-zu-Eins-Betreuung beantragt
+wurde?
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Welche Herausforderung trifft die Kita im Alltag mit dem
+  KITAplus-Kind an?
+\end{itemize}
+
+Dies ist eine der zwei offenen Fragen. Mit welchen Herausforderungen
+oder Fragen beschäftigen sich Kita-Mitarbeitende? Kämpfen Kitas mit
+ähnlichen Fragen und Herausforderungen? Zeichnet sich eine Tendenz ab?
+Lassen sich die Antworten kategorisieren?
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Welches Hauptanliegen wird aktuell verfolgt?
+\end{itemize}
+
+Dies ist die zweite und letzte offene Frage. Lässt sich daraus ein Fazit
+ziehen? In welchen Bereichen zeichnet sich ein Schwerpunkt ab? Zeichnet
+sich überhaupt ein Schwerpunkt ab?
+
+\begin{itemize}
+\tightlist
+\item
+  Frage: Wie wird die Kita finanziert?
+\end{itemize}
+
+Mit welchen finanziellen Mitteln werden die Kita-Kosten gedeckt? Lassen
+sich anhand der Antworten Rückschlüsse auf den sozioökonomischen Status
+der Familien ziehen?
+
+Die Erhebung ist mit dem vorhandenen Datensatz des KITAplus ergänzt
+worden. Folgende Daten sind daraus entnommen:
+
+\begin{itemize}
+\tightlist
+\item
+  Initialen Kind
+\item
+  Geburtsdatum
+\item
+  Startdatum des KITAplus-Coaching
+\item
+  Anzahl Tage pro Woche, in welcher die Kita besucht wird
+\item
+  Name der Kita
+\end{itemize}
+
+\hypertarget{sec:datenerhebung}{%
+\section{Vorgehen der Datenerhebung}\label{sec:datenerhebung}}
+
+Als Erstes sind die Einverständniserklärungen der Stellenleitungen des
+Heilpädagogischen Früherziehungsdienstes Luzern, Sursee-Willisau, sowie
+des Visiopädagogischen Dienstes Luzern eingeholt worden
+(\cref{sec:einverstuxe4ndniserkluxe4rungen}). Parallel dazu wurden die
+Vertraulichkeitserklärungen unterzeichnet
+(\cref{sec:einverstuxe4ndniserkluxe4rungen}). Die Stellenleitungen sind
+zudem mit einem Informationsschreiben
+(\cref{sec:informationsschreibenleitungen}) über die Masterarbeit sowie
+deren Inhalt informiert worden.
+
+Erst danach wurden die Fragebögen persönlich abgegeben oder per Post
+verschickt. Dies war Ende Januar 2022 der Fall. Bei allen versendeten
+Fragebögen wurde ein frankierter Rückumschlag mitgeschickt mit dem Ziel,
+eine möglichst hohe Rücklaufquote zu erreichen. Dies empfiehlt auch
+Poscheschnik et al. (\protect\hyperlink{ref-hug2020}{2020}). Ein
+beigelegtes Schreiben informiert über Inhalt, Zweck und Ablauf der
+Studie (\cref{sec:begleitschreibenfragebogen}).
+
+Kurz darauf wurden alle Kindertagesstätten, welche zur Zeit ein Coaching
+durch eine KITAplus-Mitarbeitende erhalten, per Mail über die laufende
+Studie informiert. Das Informationsschreiben ist in
+\cref{sec:informationsschreibenkitas}.
+
+Die Probanden hatten drei Wochen Zeit, den ausgefüllten Fragebogen zu
+retournieren. Diese wurden bei Erhalt auf Vollständigkeit überprüft.
+
+\hypertarget{sec:datenaufbereitung}{%
+\section{Datenaufbereitung und
+Datenauswertung}\label{sec:datenaufbereitung}}
+
+Als Erstes wurden die Daten der Fragebögen codiert und als Eingangsdaten
+in einem \texttt{jupyter}-Notebook bereinigt. Ungültige oder fehlende
+Angaben wurden speziell gekennzeichnet, damit diese in den Auswertungen
+nicht berücksichtigt werden. Die Antworten der offenen Fragen (Welche
+Herausforderungen trifft die Kita im Alltag mit dem KITAplus-Kind an?
+Welches Hauptanliegen wird aktuell verfolgt?) wurden definierten
+Kategorien zugeordnet und im Anschluss codiert.
+
+Die Programmiersprache \texttt{python} wurde schrittweise erlernt
+(Übungen von “Computer Science Circle” sind dazu durchgearbeitet worden)
+und im Anschluss zusammen mit dem Modul \texttt{matplotlib} für die
+Erstellung der Grafiken verwendet. Danach wurde bestimmt, welche Daten
+miteinander verglichen werden sollten und welche Darstellungsform dazu
+notwendig sein werden (Balken-, Kreisdiagramm) um quantitative,
+deskriptive Aussagen zu erhalten.
+
+Einzig für den Vergleich der beiden Datensätze betreffend
+Unterstützungsbedarf wurde der Spearman’sche Rangkorrelationskoeffizient
+berechnet. Dies geschah mithilfe von aufgearbeiteter Literatur
+(\protect\hyperlink{ref-spearmancoeff}{Spearman, 1904}).
+
+Die Erarbeitung der Programmiersprache \texttt{python} ist ein grosses
+Unterfangen und nimmt viel Zeit in Anspruch. Bei dieser Vorgehensweise
+gibt es folgende Punkte zu bedenken oder zu kritisieren: Es kann nicht
+mit einem zusätzlichen Programm bewiesen werden, dass keine Messfehler
+unterlaufen sind. Der Code ist für Laien schwer nachvollziehbar. Das
+Programmieren basiert auf einer sauberen Datenaufbereitung und
+Arbeitsweise sowie logischen Überlegungen.
+
+Während der Auswertung wurde ein Denkfehler im Fragebogen der
+Heilpädagogischen Fachpersonen entdeckt. Es handelt sich um folgende
+gestellte Frage: “Ist die Kindertagesstätte vor Aufnahme der HFE besucht
+worden?” Dazu standen zwei Antwortformate bereit:
+
+\begin{itemize}
+\tightlist
+\item
+  “Ja: Wer hat das KITAplus vorgeschlagen/initiiert?”
+\item
+  “Nein: Wer hat den Besuch einer Kindertagesstätte
+  vorgeschlagen/initiiert?”
+\end{itemize}
+
+Wird die Frage verneint, wird nur diese beantwortet. Jedoch hätte auch
+die erste Frage beantwortet werden können. Fakt ist, dass beide Fragen
+jeweils nur von einem Teil der Befragten ausgefüllt worden sind. Wären
+beide Fragen von allen Beteiligten beantwortet worden, hätte das
+Kreisdiagramm möglicherweise eine andere Verteilung angegeben. Der
+Fragebogen müsste vor einer weiteren Erhebung sorgfältig überarbeitet
+werden.
+
+\hypertarget{sec:stichprobe}{%
+\section{Stichprobe}\label{sec:stichprobe}}
+
+Insgesamt werden 37 Kinder an der Erhebung Anfangs Februar 2022 erfasst.
+Es gilt anzumerken, dass Kinder fortlaufend Kitas verlassen, KITAplus
+beendet wird oder neue Kinder aufgenommen werden. Die Erhebung ist eine
+Momentaufnahme der Situation.
+
+Die Rücklaufquote der Fragebögen beträgt 100\%. Vier Kinder sind zu
+diesem Zeitpunkt noch nicht von der KITAplus-Mitarbeitenden besucht
+worden. Grund dafür ist die Corona-Pandemie. Abgemachte Termine mussten
+mehrere Male verschoben werden. Bei diesen Kindern wurde die
+Heilpädagogische Fachperson befragt. Drei Kinder nehmen keine
+Heilpädagogische Früherziehung in Anspruch. Bei einem weiteren Kind
+steht ein Früherziehungswechsel an. Die Fragebögen dieser vier Kinder
+wurde einzig von den KITAplus-Mitarbeitenden ausgefüllt.
+
+Die Fragebögen sind insgesamt von vier KITAplus-Mitarbeiterinnen
+ausgefüllt worden. Davon sind 24 Kinder dem Heilpädagogischen
+Früherziehungsdienst Luzern zugeordnet, ein Kind dem Visiopädagogischen
+Dienst Luzern und zwölf Kinder dem Heilpädagogischen
+Früherziehungsdienst Sursee-Willisau. Diese Informationen sind für die
+Erhebung relevant. Eine KITAplus-Mitarbeiterin füllt somit mindestens
+vier Fragebögen aus. Es kann davon ausgegangen werden, dass die
+Mitarbeiterin die Kinder untereinander unbewusst vergleicht. Dies kann
+einen Einfluss auf die Beantwortung der Fragen haben.
+
+An der Erhebung sind 21 Heilpädagogische Früherzieherinnen beteiligt.
+
+Die Stichprobe wird im Anschluss in zwei Unterkapitel aufgeteilt. Als
+Erstes werden die Personalangaben (\cref{sec:personalangabenstic})
+erläutert, danach die Angaben zur Fremdbetreuung
+(\cref{sec:fremdbetreuungsangabenstic}). Dabei werden die erhobenen
+Daten zuerst im Fliesstext beschrieben, bevor sie im Anschluss mit
+Diagrammen dargestellt werden.
+
+\hypertarget{sec:personalangabenstic}{%
+\subsection{Personalangaben}\label{sec:personalangabenstic}}
+
+Der Durchschnitt wird jeweils mit der Einheit \(\mu\) angegeben und die
+Gesamtzahl der Kinder mit \(n\).
+
+Das Durchschnittsalter der Kinder liegt bei 3.8 Jahren (siehe
+\cref{fig:altersverteilung}). Anfang Februar 2022 sind 67 \% Jungen und
+33 \% Mädchen im KITAplus-Programm (siehe
+\cref{fig:beeintraechtigungsgradVsMannFrau}). Von 35 \% der Kinder ist
+die Erstsprache Deutsch, 11 \% Tigrinya, jeweils 8 \% Italienisch und
+Albanisch. 38 \% haben eine andere Erstsprache (genauere Auffächerung
+siehe \cref{fig:erstsprache}). Die Geschwisterverteilung zeigt, dass bei
+insgesamt 39 \% jüngere Geschwister vorhanden sind (alle jüngeren
+Geschwister zusammen gezählt). Von diesen besuchen 28 \% eine Kita.
+Werden alle älteren Geschwister addiert ergibt sich ein Prozentsatz von
+45 \%. Ein Kita-Besuch wird bei ihnen mit 60 \% angegeben. 24 \% der
+KITAplus-Kinder haben keine Geschwister (siehe \cref{fig:geschwister}).
+
+Die Fachpersonen der Heilpädagogischen Früherziehung wurden im
+Fragebogen gebeten die Indikationen der Kinder anzugeben. Pro Kind
+wurden grösstenteils mehrere Indikationen ausgewählt, dies gilt es bei
+der Auswertung zu beachten. Im Kreisdiagramm (\cref{fig:indikationHFE})
+wird die Summe der kumulierten Aussagen gezeigt. Darin wird sichtbar,
+dass 19 \% der Kinder einen allgemeinen Entwicklungsrückstand, je 14 \%
+eine Sprachauffälligkeit und Wahrnehmungsproblematik aufweisen. Danach
+folgt die Verhaltensauffälligkeit mit 12 \% und bei 41 \% liegt eine
+andere Indikation vor.
+
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{files/diagrams/Altersverteilung.pdf}
+         \caption{Altersverteilung der Kinder ($n=37$, $\mu=3.8$ Jahre)}
+         \label{fig:altersverteilung}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{files/diagrams/Geschwister.pdf}
+         \caption{Geschwisterverteilung ($n=33$)}
+         \label{fig:geschwister}
+     \end{subfigure}
+     \caption{Altersverteilung und Geschwisterverteilung.}
+\end{figure}
+
+\imageWithCaption{files/diagrams/ErstspracheKind.pdf}{Welches ist die
+Erstsprache des Kindes?}{}[fig:erstsprache]
+\imageWithCaption{files/diagrams/IndikationHFE.pdf}{Indikation für
+Heilpädagogische Früherziehung (Angaben der Heilpäd.
+Fachpersonen)}{}[fig:indikationHFE]
+
+\hypertarget{sec:fremdbetreuungsangabenstic}{%
+\subsection{Angaben zur
+Fremdbetreuung}\label{sec:fremdbetreuungsangabenstic}}
+
+Diese 37 Kinder sind auf 24 verschiedene Kindertagesstätten im Kanton
+Luzern verteilt. 68 \% der Beantragungen für KITAplus sind dem
+Heilpädagogischen Früherziehungsdienst Luzern zuzuordnen und 32 \% der
+Dienststelle Sursee-Willisau.
+
+Im Durchschnitt wird die Kita 1.9 Tage besucht
+(\cref{fig:tagesverteilung}). 12 \% der Kinder beanspruchen eine
+Eins-zu-Eins-Betreuung (\cref{fig:beeintraechtigung1zu1}). Das
+Kreisdiagramm (\cref{fig:KitaVorHFE}) zeigt auf, dass 45 \% der Kinder
+(siehe gelbe Farbtöne im Diagramm) die Kita vor Aufnahme
+Heilpädagogischer Früherziehung besucht haben. 55 \% hingegen (siehe
+blaue Farbtöne im Diagramm) besuchen eine Kindertagesstätte nachdem
+Heilpädagogische Früherziehung initiiert worden ist.
+
+Die erste Unterfrage “Wer hat das KITAplus vorgeschlagen/initiiert?”
+ergibt, dass das KITAplus mit 56 \% von der Kita selbst initiiert wurde.
+Danach wird mit 31 \% Fachpersonen der Heilpädagogischen Früherziehung
+angegeben und bei 13 \% KITAplus-Mitarbeitende. Achtung, diese Frage
+wurde von denjenigen beantwortet, welche die Hauptfrage (“Ist die
+Kindertagesstätte vor Aufnahme der HFE besucht worden?”) mit “Ja”
+beantworteten. Die zweite Unterfrage wurde von diejenigen bearbeitet,
+welche die Hauptfrage verneinten. Die Frage “Wer hat den Besuch einer
+Kindertagesstätte vorgeschlagen/initiiert?” ergibt, dass Fachpersonen
+der Heilpädagogischen Früherziehung mit 55 \% als Hauptinitiator der
+Kita gilt, gefolgt von den Eltern mit 35 \%. In je 5 \% der Fälle ist
+ein*e Sozialarbeiter*in oder eine Familienberatungsstelle beteiligt.
+
+Die Arbeitstätigkeit der Eltern wird mit 36 \% als Hauptgrund für die
+Initiierung des Kita-Platzes angegeben (siehe
+\cref{fig:hauptgrundfuerKitaBesuch}). Danach folgt das
+Aufeinandertreffen von gleichaltrigen Spielpartner*innen mit 21 \% und
+an dritter Stelle mit 15 \% die Entlastung der Eltern. Das Diagramm in
+\cref{fig:GruendeKitaBesuch} zeigt andere Ergebnisse. In diesem standen
+die Gründe für die Kita-Initiierung im Vordergrund. Dabei konnten
+mehrere Antworten ausgewählt werden. An erster Stelle mit 18 \% steht
+das Treffen mit gleichaltrigen Spielpartner*innen, danach folgt mit 14
+\% Wunsch der Eltern und strukturierter Tagesablauf. Die Entlastung der
+Eltern erscheint mit 11 \% an fünfter Stelle.
+
+Wird die Finanzierung betrachtet, ergibt die Befragung, dass in 29 \%
+der Fälle Betreuungsgutscheine eingesetzt werden. In 24 \% finanzieren
+die Eltern die Kita selbst. In 18 \% übernimmt das Sozialamt die Kosten
+(für eine weitere Auffächerung siehe \cref{fig:finanzierung}). Eine
+Anmerkung zur Legende: Bei den Unterteilungen “Nothilfe, Gemeinde und
+Kifa Stiftung” wird davon ausgegangen, dass diese einen bestimmten
+Betrag für die Eltern übernehmen. Wie zum Beispiel die Gemeinde die
+Koordinationskosten oder die Kifa Stiftung die Kosten für den
+zusätzlichen Betreuungsaufwand oder zumindest einen Teil davon. Der
+violette Bereich, entspricht der alleinigen Kostenübernahme der Eltern.
+Die Grafik muss mit Vorsicht betrachtet werden. Die finanzielle
+Beteiligung der Kifa Stiftung wird höher eingeschätzt, als sie in der
+Erhebung angegeben ist. Es wird vermutet, dass die Fragestellung von den
+KITAplus-Mitarbeitenden unterschiedlich interpretiert wurde. Die Einen
+haben sich bei der Beantwortung der Fragestellung einzig auf die
+Kita-Kosten bezogen und die anderen haben die Eins-zu-Eins-Betreuung
+dazugezählt. Dieselbe Vorsicht gilt bei der Betrachtung des
+Gemeindebeitrages.
+
+\imageWithCaption{files/diagrams/Tagesverteilung.pdf}{Anzahl Tage in der
+Kita (\(n=37\), \(\mu=1.9\) Tage)}{}[fig:tagesverteilung]
+
+\imageWithCaption{files/diagrams/KitaVorHFE.pdf}{Ist die Kita vor
+Aufnahme der HFE besucht worden? - 55\% Nein: Wer hat den Besuch einer
+Kita initiiert? - 45\% Ja: Wer hat das KITAplus
+initiiert?}{}[fig:KitaVorHFE]
+
+\imageWithCaption{files/diagrams/HGrundfürKitaBesuch.pdf}{Welches ist
+der Hauptgrund für den Kita Besuch?}{}[fig:hauptgrundfuerKitaBesuch]
+
+\imageWithCaption{files/diagrams/GründeKitaBesuch.pdf}{Aus welchen
+Gründen wird die Kita besucht?}{}[fig:GruendeKitaBesuch]
+
+\imageWithCaption{files/diagrams/FinanzierungKita.pdf}{Wie wird die Kita
+finanziert?}{}[fig:finanzierung]
+
+\hypertarget{sec:evaluation}{%
+\chapter{Ergebnisse}\label{sec:evaluation}}
+
+In diesem Kapitel werden ausgewählte Daten einander gegenübergestellt
+und den drei Fragestellungen zugeordnet. Zuerst werden die entstandenen
+Diagramme beschrieben. Dabei wird z.T. auf Grafiken aus der Stichprobe
+(\cref{sec:stichprobe}) Bezug genommen. Danach folgt die Beantwortung
+der Fragestellung. Die Interpretation der Daten und die Reflexion stehen
+im \cref{sec:diskussion} (Diskussion) im Vordergrund. Der Abschluss der
+Arbeit bildet der Ausblick (\cref{sec:fazit}).
+
+Es gilt nochmals auf den kleinen Datensatz von 37 Kindern aufmerksam zu
+machen. Deswegen sind die Aussagen der Diagramme nicht repräsentativ.
+Sie beschreiben lediglich die Momentaufnahme des Datensatzes im Februar
+2022.
+
+\hypertarget{sec:1fragestellung}{%
+\section{Erste Fragestellung}\label{sec:1fragestellung}}
+
+\textbf{Welche Kinder mit sonderpädagogischem Förderbedarf nehmen im
+Kanton Luzern das KITAplus-Programm in Anspruch?}\\
+Die Grafik der Altersverteilung in \cref{fig:altersverteilung} zeigt,
+dass nur sehr wenige KITAplus-Kinder unter 36 Monate alt sind. Das
+Durchschnittsalter beträgt 3.8 Jahre. Wird das Augenmerk auf die
+Erstsprache gerichtet (siehe \cref{fig:erstsprache}), wird ersichtlich,
+dass 65 \% der KITAplus-Kinder Deutsch als Zweitsprache und 35 \%
+Deutsch als Erstsprache sprechen. Mit 11 \% ist Tigrynia die meist
+gesprochene Erstsprache. Insgesamt sind dreizehn Sprachen verzeichnet
+worden. In einem weiteren Schritt werden Erstsprache (Unterteilung in
+“Deutsch als Erstsprache” und “Deutsch als Zweitsprache”) der
+Finanzierungsart gegenübergestellt (siehe
+\cref{fig:erstspracheVsFinanzierung}).
+
+Der Balken “Deutsch als Erstsprache” zeigt, dass die Kostenübernahme
+Eltern mit 46 \% am höchsten ausgeprägt ist. Nicht vertreten sind in
+diesem Balken das Asyl- und Flüchtlingswesen und die Nothilfe. Diese
+kommen im Balken “Deutsch als Zweitsprache” vor. Betreuungsgutscheine
+werden mit 36 \% am häufigsten eingesetzt. Das Asyl- und
+Flüchtlingswesen wird mit 16 \% angegeben.
+
+Werden die beiden Balken miteinander verglichen fällt auf, dass die
+Gemeinde mit 4 \% bei “Deutsch als Zweitsprache” weniger involviert ist
+als bei “Deutsch als Erstsprache” mit 15 \%. Betreuungsgutscheine kommen
+bei Familien mit “Deutsch als Zweitsprache” doppelt so viel zum Einsatz
+wie bei deutschsprachigen Familien. Zudem werden Kita-Kosten von
+deutschsprachigen Familien knapp vier Mal mehr übernommen als von
+Familien mit Deutsch als Zweitsprache. Allgemein lässt sich festhalten,
+dass Kita-Kosten nur in wenigen Fällen von den Eltern alleine getragen
+werden. Die Grafik (\cref{fig:finanzierung}) zeigt, dass 76 \% der
+Eltern finanzielle Unterstützung erhalten.
+
+\imageWithCaption{files/diagrams/ErstspracheVsFinanzierung.pdf}{Erstsprache
+im Vergleich zur Finanzierungsart
+(\(n=37\))}{}[fig:erstspracheVsFinanzierung]
+
+Das KITAplus ist bei knapp der Hälfte der Kinder zeitgleich mit dem
+Kita-Start erfolgt (\cref{fig:kitaStartbisKPlus}). Bei sechs Kindern
+wird eine Zeitdifferenz von acht Monaten angegeben. Bei einzelnen
+Kindern sind jedoch bis zu drei Jahre zu verzeichnen. Der errechnete
+Durchschnitt des Kita-Starts bis zur Aufnahme des KITAplus-Coachings
+liegt bei 211 Tagen (sieben Monate).
+
+\imageWithCaption{files/diagrams/KitaStartbisKPlus.pdf}{Anzahl
+vergangene Tage seit Kita-Start bis KITAplus-Start (\(n=32\),
+\(\mu=211.4\) Tage)}{}[fig:kitaStartbisKPlus]
+
+Wie bereits in \cref{sec:personalangabenstic} erwähnt, ist das männliche
+Geschlecht mit 67 \% im KITAplus vorherrschend. Das biologische
+Geschlecht wird in \cref{fig:beeintraechtigungsgradVsMannFrau} mit dem
+eingeschätzten Beeinträchtigungsgrad verglichen. Dabei wird ersichtlich,
+dass das biologische Geschlecht “männlich” in allen Bereichen
+überdurchschnittlich und homogen vertreten ist, ausser bei der
+Einstufung “leicht”, wobei dort nur ein einziges Kind eingestuft wurde.
+
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{files/diagrams/BeinträchtigungsgradVsMannFrau.pdf}
+         \caption{Beeinträchtigungsgrad versus biologisches Geschlecht ($n=33$)}
+         \label{fig:beeintraechtigungsgradVsMannFrau}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{files/diagrams/BeinträchtigungsgradVs1zu1.pdf}
+         \caption{Beeinträchtigungsgrad versus 1:1 Betreuung ($n=33$)}
+         \label{fig:beeintraechtigung1zu1}
+     \end{subfigure}
+     \caption{Vergleiche mit dem Beeinträchtigungsgrad.}
+\end{figure}
+
+Die Faktoren “Beeinträchtigungsgrad” und “Eins-zu-Eins-Betreuung” sind
+in \cref{fig:beeintraechtigung1zu1} gegenüber gestellt. Daraus kann
+abgelesen werden, dass Kindern mit Eins-zu-Eins-Betreuung auch ein
+“starker” Beeinträchtigungsgrad zugeschrieben wird. Der
+Beeinträchtigungsgrad wird im Anschluss einzeln betrachtet. Dabei ist zu
+erkennen, dass die Abstufungen mittel und stark vorherrschend sind:
+
+Die Gesamtzahl der Kinder beträgt (\(n=33\)).
+
+\begin{itemize}
+\tightlist
+\item
+  Beeinträchtigungsgrad stark (18 Kinder) = 55 \%
+\item
+  Beeinträchtigungsgrad mittel (14 Kinder) = 42 \%
+\item
+  Beeinträchtigungsgrad leicht (1 Kind) = 3 \%
+\end{itemize}
+
+Bei der Gegenüberstellung der beiden Faktoren “Eins-zu-Eins-Betreuung”
+und “Unterstützungsbedarf” (siehe
+\cref{fig:unterstuetzungsbedarfKPlusVs1zu1}) wird ersichtlich, dass
+Kindern mit einer Eins-zu-Eins-Betreuung ein sehr hoher
+Unterstützungsbedarf zugeschrieben wird. Aber nicht alle Kinder mit
+einem sehr hohen Unterstützungsbedarf nehmen eine Eins-zu-Eins-Betreuung
+in Anspruch.
+
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{files/diagrams/UnterstützungsbedarfKPlusVs1zu1.pdf}
+         \caption{Unterstützungsbedarf versus 1:1 Betreuung ($n=32$)}
+         \label{fig:unterstuetzungsbedarfKPlusVs1zu1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{files/diagrams/BeinträchtigungsgradVsSuppKPlus.pdf}
+         \caption{Beeinträchtigungsgrad versus Unterstützungsbedarf (Einschätzung der KITAplus-Mitarbeitenden, $n=32$)}
+         \label{fig:beeintraechtigungsgradVsSuppKPlus}
+     \end{subfigure}
+     \caption{Vergleiche mit Unterstützungsbedarf nach KITAplus.}
+\end{figure}
+
+Die nächste Grafik entstand aus folgendem Gedankenspiel: Sind Kinder mit
+einer starken Beeinträchtigung immer auf eine sehr hohe Unterstützung
+seitens des Kita-Personals angewiesen? Dank der Grafik in
+\cref{fig:beeintraechtigungsgradVsSuppKPlus} wird ersichtlich, dass der
+Unterstützungsbedarf bei Kindern mit einer starken Beeinträchtigung zu
+jeweils 50 \% hoch und sehr hoch eingeschätzt wird. Der
+Unterstützungsbedarf von Kindern mit mittlerer Beeinträchtigung wird
+überwiegend hoch (69 \%) bewertet. Weiter lassen sich folgende Schlüsse
+aus der Grafik ableiten. Alle KITAplus-Kinder weisen einen erhöhten
+Unterstützungsbedarf auf, da die Abstufung “kein besonderer
+Unterstützungsbedarf” nie angekreuzt wurde. Kinder, welche einen
+leichten Unterstützungsbedarf benötigen sind in der Minderheit. Der
+Unterstützungsbedarf “hoch” sticht mit 56 \% aus der Gesamtwertung
+heraus. Anzumerken gilt es hier, dass die Einschätzung des
+Unterstützungsbedarfs sowie des Beeinträchtigungsgrades subjektiv sind.
+Damit eine klare und objektive Einschätzung vorgenommen werden kann,
+müssten die Abstufungen klaren Kriterien unterliegen.
+
+Als Nächstes stellte sich die Frage: “Benötigen Kinder mit einer
+bestimmten Indikation mehr Unterstützung als Kinder mit einer anderen
+Indikation?” Diese Frage kann aus folgendem Grund nicht beantwortet
+werden: Pro Kind sind immer mehrere Indikationen vorhanden. Es wäre
+daher nicht korrekt, einer einzelnen Indikation etwas zuzuschreiben ohne
+zu wissen, ob dieser Faktor ausschlaggebend für den erhöhten
+Unterstützungsbedarf ist oder nicht. Daher wird darauf verzichtet.
+
+Die gleiche Vorsicht gilt bei der Betrachtung des Kreisdiagramms, in
+welchem die Indikationen dargestellt sind (\cref{fig:indikationHFE} in
+\cref{sec:personalangabenstic}). Pro Kind sind mehrere Indikationen
+ausgewählt worden. In der Minderheit sind laut Grafik Kinder mit einer
+Sinnesbehinderung, einer Bewegungsstörung oder einer
+Entwicklungsgefährdung. Zudem fällt auf, dass der Verdacht und die
+bereits vorhandene Diagnose einer Autismus-Spektrums-Störung mit 7 \%
+gleich oft genannt wurden. Würden diese Werte zusammengezählt, wäre die
+Indikation Autismus-Spektrums-Störung mit 14 \% an zweiter Stelle,
+zusammen mit den Indikationen Sprachauffälligkeit und
+Wahrnehmungsproblematik. Weiter Gedanken und Interpretationen sind in
+\cref{sec:diskussion} zu finden.
+
+Wie bereits in \cref{sec:fremdbetreuungsangabenstic} erwähnt, wird die
+Kindertagesstätte im Durchschnitt 1.9 Tage pro Woche besucht.
+Kindertagesstätten empfehlen oftmals einen minimalen Aufenthalt von
+einem ganzen Tag oder zwei Halbtagen. Es stellt sich folgende Frage:
+“Wird die Kita von Kindern mit sehr hohem Unterstützungsbedarf länger
+besucht (Anzahl Tage in der Woche) als von Kindern mit leichtem oder
+hohem Unterstützungsbedarf?” Dazu wurden folgende Mittelwerte \(\mu\)
+berechnet:
+
+\begin{itemize}
+\tightlist
+\item
+  Kinder mit sehr hohem Unterstützungsbedarf (\(n = 9\)) besuchen die
+  Kita \(\mu\) = 2.3 Tage pro Woche
+\item
+  Kinder mit hohem Unterstützungsbedarf (\(n = 18\)) besuchen die Kita
+  \(\mu\) = 2.2 Tage pro Woche
+\item
+  Kinder mit leichtem Unterstützungsbedarf (\(n = 5\)) besuchen die Kita
+  \(\mu\) = 1.8 Tage pro Woche
+\end{itemize}
+
+Die Differenz von hohem zu sehr hohem Unterstützungsbedarf ist mit 0.1
+Tage minimal. Trotz allem spiegelt sich eine leichte Steigerung von
+leichtem bis sehr hohem Unterstützungsbedarf auch in der Anzahl Tage
+nieder.
+
+Der Unterstützungsbedarf wurde von Heilpädagogischen Fachpersonen und
+KITAplus-Mitarbeitenden eingeschätzt. In
+\cref{fig:unterstuetzungsbedarfHFEVsKPlus} werden die Antworten
+miteinander verglichen. Daraus resultiert, dass die höchste
+Übereinstimmung im Unterstützungsbedarf “hoch” erzielt wurde. Zudem
+schätzen die KITAplus-Mitarbeitenden den Unterstützungsbedarf der Kinder
+leicht höher ein als die Heilpädagogischen Fachpersonen. Der
+Spearman’sche Rangkorrelationskoeffizient
+(\protect\hyperlink{ref-spearmancoeff}{Spearman, 1904}) ergibt
+\(\rho = 0.21\), was einer schwach positiven Korrelation entspricht.
+
+\imageWithCaption{files/diagrams/UnterstützungsbedarfHFEVsKPlus.pdf}{Unterstützungsbedarf:
+Vergleich der Werte von KITAplus und Heilpäd. Fachpersonen
+(\(n=28\))}{}[fig:unterstuetzungsbedarfHFEVsKPlus]
+
+Die Fragestellung zu Beginn kann nicht innerhalb von ein oder zwei
+Sätzen beantwortet werden. Sie fällt so heterogen aus wie die Kinder,
+welche das KITAplus beanspruchen. Jedes Kind bringt seine individuelle
+Ausgangslage mit, wie auch die Kindertagesstätte selbst, in welcher sie
+betreut werden. Drei Gemeinsamkeiten verbindet sie alle: Es sind Kinder
+mit sonderpädagogischem Förderbedarf, welche ein institutionelles
+Fremdbetreuungsangebot im Kanton Luzern in Anspruch nehmen und Fragen
+bei den jeweiligen Fachpersonen betreffend Unterstützung auslösen.
+
+Folgende Punkte aus diesem Abschnitt und der Stichprobe
+(\cref{sec:stichprobe}) können zur gestellten Fragestellung
+zusammenfassend festgehalten werden:
+
+\begin{itemize}
+\tightlist
+\item
+  Das Durchschnittsalter beträgt 3.8 Jahre.
+\item
+  Die Kita wird im Durchschnitt 1.9 Tage besucht.
+\item
+  Das biologische Geschlecht “männlich” ist mit 67 \% und das Geschlecht
+  “weiblich” mit 33 \% vertreten.
+\item
+  Kinder mit Deutsch als Zweitsprache sind mit 65 \% und Kinder mit
+  Erstsprache Deutsch 35 \% vertreten.
+\item
+  Beeinträchtigungsgrade “mittel” (42 \%) und “stark” (55 \%) sind
+  vorherrschend.
+\item
+  22 \% der Kinder mit Beeinträchtigung “stark” beanspruchen eine
+  Eins-zu-Eins-Betreuung.
+\item
+  Der Unterstützungsbedarf “hoch” liegt mit 56 \% an erster Stelle.
+\item
+  75 \% der Familien werden bei der Finanzierung der Kita unterstützt.
+\item
+  76 \% der Kinder haben Geschwister, 24 \% haben keine Geschwister.
+\item
+  Bei 36 \% der Kinder wird Arbeitstätigkeit der Eltern als Hauptgrund
+  für den Kita-Besuch angegeben, bei 21 \% Aufeinandertreffen von Peers
+  und bei 15 \% Entlastung der Eltern.
+\end{itemize}
+
+\hypertarget{sec:fragestellung2beantwortung}{%
+\section{Zweite Fragestellung}\label{sec:fragestellung2beantwortung}}
+
+\textbf{Aufgrund welcher Anliegen wird das KITAplus im Kanton Luzern
+beantragt?}\\
+Dazu wurden im Fragebogen zwei offene Fragen gestellt. Die Erste
+ergründet die Herausforderungen mit welchen sich die Kita konfrontiert
+sieht. Die zweite Frage beschäftigt sich mit den aktuell verfolgten
+Hauptanliegen. Die Fragen werden im Anschluss mit Grafiken erläutert,
+sowie mit Aussagen aus den Fragebögen ergänzt. Die Fragestellung wird am
+Ende des Abschnitts beantwortet.
+
+Es gilt darauf hinzuweisen, dass die Befragten jeweils mehrere Antworten
+pro Kind notierten. Die Kita sieht sich demnach mit unterschiedlichen
+Herausforderungen oder Anliegen pro Kind konfrontiert. Die angegebenen
+Prozentsätze zeigen, wie viele Male die Kategorie insgesamt genannt
+wurde.
+
+\hypertarget{herausforderungen-kitas}{%
+\subsection{Herausforderungen Kitas}\label{herausforderungen-kitas}}
+
+\imageWithCaption{files/diagrams/HerausforderungenKita.pdf}{Welche
+Herausforderungen trifft die Kita im Alltag mit dem KITAplus-Kind an?
+(1. offene Fragestellung)}{}[fig:herausforderungenkita]
+
+Aus dem Kreisdiagramm (\cref{fig:herausforderungenkita}) geht hervor,
+dass Anliegen betreffend “sozialer Teilhabe” mit 33 \% am meisten
+genannt worden sind. Diese beinhalten Aussagen wie zum Beispiel:
+
+\begin{itemize}
+\tightlist
+\item
+  “Sozialverhalten im Freispiel”
+\item
+  “Begleitung, damit Kind angemessen am sozialem Geschehen teilhaben
+  kann”
+\item
+  “Einbinden in das Gruppengeschehen”
+\item
+  “Teilnehmen an Ritualen und Abläufen”
+\item
+  “Kontaktaufnahme mit anderen Kindern erschwert”
+\end{itemize}
+
+An zweiter Stelle mit 22 \% wird “Herausforderndes Verhalten” genannt.
+Diesbezüglich wurden Aussagen formuliert wie:
+
+\begin{itemize}
+\tightlist
+\item
+  “Einhalten von Regeln”
+\item
+  “Aufmerksamkeit auf Handlung lenken”
+\item
+  “weint schnell”
+\item
+  “sprunghaftes Spiel”
+\item
+  “lautes Schreien”
+\end{itemize}
+
+Danach folgt die Kategorie “Selbstständigkeit” mit 16 \%. Folgende
+Aussagen wurden dazu formuliert:
+
+\begin{itemize}
+\tightlist
+\item
+  “Selbstversorgung erschwert (An- und Ausziehen, Toilettengang)”
+\item
+  “Selbständigkeit: Langsam essen, Mund nicht vollstopfen, ab und zu mit
+  Löffel essen”
+\item
+  “Selbständigkeit”
+\end{itemize}
+
+Im Anschluss folgt die Kategorie “Kommunikation” mit 12 \%. Folgende
+Aussagen sind dieser Kategorie zugeordnet:
+
+\begin{itemize}
+\tightlist
+\item
+  “Interesse an Wörtern wecken”
+\item
+  “Sprachentwicklung: Sein Interesse an neuen Wörtern wahrnehmen oder
+  unterstützen”
+\item
+  “Kommunikation”
+\end{itemize}
+
+Die Kategorie “Andere” fasst unterschiedliche Herausforderungen der
+Kitas zusammen. Sie ist 6 \% genannt worden:
+
+\begin{itemize}
+\tightlist
+\item
+  “Langsame Entwicklung”
+\item
+  “Zeitaufwand bezüglich Unterstützung und Begleitung”
+\item
+  “Zeit für Coaching einplanen”
+\end{itemize}
+
+Die Kategorie “Körper-/Mehrfachbehinderung” mit 5 \% umfasst die
+Anliegen:
+
+\begin{itemize}
+\tightlist
+\item
+  “D. ist schwer mehrfachbehindert: Transport in den 3. Stock ohne Lift
+  ist körperlich anstrengend für die Betreuerinnen”
+\item
+  “Schwerst-mehrfachbehindertes Kind: Liegend/Sitzschale”
+\item
+  “Mehrfachbehinderungen”
+\end{itemize}
+
+Die Kategorie “Selbstregulation” ist mit 4 \% vertreten. Dazu wurde die
+Aussage formuliert: “Gefühlsregulation”. Den Abschluss mit 1 \% bildet
+die Kategorie “Bedürfnisse erkennen”.
+
+\hypertarget{hauptanliegen-kitas}{%
+\subsection{Hauptanliegen Kitas}\label{hauptanliegen-kitas}}
+
+Weiter wird die Frage “Welches Hauptanliegen wird aktuell verfolgt?”
+betrachtet. Die Erhebung zeigt, dass das Hauptanliegen “soziale
+Teilhabe” mit 36 \% hervorsticht (\cref{fig:hauptanliegenKitaBesuch}).
+Folgende Antworten wurden dazu genannt:
+
+\begin{itemize}
+\tightlist
+\item
+  “Einbinden in rituelle Abläufe”
+\item
+  “Interaktion: Gemeinsames Spiel anregen, begleiten, führen”
+\item
+  “Daran denken, dass er bei Kreissituation auch teilnimmt”
+\item
+  “Teilhabe an Aktivitäten”
+\item
+  “Soziales Spiel”
+\item
+  “In Spieltätigkeit mit anderen Kindern einbinden/unterstützen +
+  begleiten”
+\item
+  “Interaktion mit anderen Kindern”
+\end{itemize}
+
+Die Antworten aus den Fragebögen sind stichwortartig verfasst, deshalb
+sollen formulierte Fragen helfen, die Anliegen der Kitas
+zusammenzufassen:
+
+\begin{itemize}
+\tightlist
+\item
+  Welche Unterstützung oder Begleitung benötigt ein Kind mit
+  sonderpädagogischem Förderbedarf, damit Interaktionen oder
+  Spieltätigkeiten mit anderen Kindern möglich werden?
+\item
+  Wie und wann kann ein Kind mit sonderpädagogischem Förderbedarf in
+  Rituale der Kita miteinbezogen werden?
+\end{itemize}
+
+An nächster Stelle wird das Hauptanliegen “Strukturierter Tagesablauf”
+mit 15 \% genannt. Folgende Antworten sind der Kategorie zugeteilt:
+
+\begin{itemize}
+\tightlist
+\item
+  “Regeln und Strukturen”
+\item
+  “Strukturierter Tagesablauf (Rituale)”
+\item
+  “Klarer Rahmen/ Abläufe für Sicherheit und Regulation”
+\item
+  “Reframen: Wenn er Grenzen nicht einhält, noch 1 Chance geben, dann
+  Stillbeschäftigung”
+\end{itemize}
+
+Dazu lassen sich folgende Fragen ableiten:
+
+\begin{itemize}
+\tightlist
+\item
+  Welche Rituale helfen den Tag zu strukturieren?
+\item
+  Welche Regeln gelten in der Kita? Welche Konsequenzen folgen bei einem
+  Verstoss?
+\end{itemize}
+
+Mit 14 \% wird das Anliegen “Selbständigkeit” angegeben. Dieser
+Kategorie sind Themen rund um die Esssituation sowie allgemeine
+Selbständigkeit zugeordnet. Folgende Fragen können daraus abgeleitet
+werden:
+
+\begin{itemize}
+\tightlist
+\item
+  Mit welchen Massnahmen kann das Kind auf dem Weg zur Selbständigkeit
+  unterstützt werden?
+\item
+  Was kann /darf vom Kind gefordert werden, ohne das es überfordert
+  wird?
+\end{itemize}
+
+Die Kategorie “Kommunikation” folgt mit 12 \%. Diese Hauptanliegen
+wurden formuliert:
+
+\begin{itemize}
+\tightlist
+\item
+  “Möglichkeit haben (geben) Bedürfnisse mitzuteilen (Metacom/Gebärden)”
+\item
+  “Interaktion/ Kommunikation (Gebärden). Möglichkeiten anbieten
+  Bedürfnisse mitzuteilen”
+\item
+  “herausfinden, welche Kommunikationsmittel einsetzen (Fotos, Pictos,
+  Sprache..)”
+\item
+  “deutsche Sprache”
+\end{itemize}
+
+Daraus lässt sich die Fragestellung ableiten:
+
+\begin{itemize}
+\tightlist
+\item
+  Wie können Kinder mit sonderpädagogischem Förderbedarf in der
+  Kommunikation ihrer Bedürfnisse unterstützt werden? Wie und was kann
+  in der Kita umgesetzt werden?
+\end{itemize}
+
+Anschliessend folgt die Kategorie “Selbstregulation” mit 9 \%. Folgende
+Frage fasst das Hauptanliegen zusammen:
+
+\begin{itemize}
+\tightlist
+\item
+  Wie können Kita-Mitarbeitende die Kinder in Selbstregulation
+  unterstützen? Welche Strategien können sie den Kindern vermitteln?
+\end{itemize}
+
+Bei den letzten sechs Kategorien wird auf weitere Ausführungen
+verzichtet. Die gebildeten Kategorien sind zugleich die formulierten
+Aussagen der Befragten:
+
+\begin{itemize}
+\tightlist
+\item
+  “Spiel- \& Handlungsinputs geben”: 5 \%
+\item
+  “Lagerung des Kindes”: 3 \%
+\item
+  “Stärkung Team”: 3 \%
+\item
+  “Bedürfnisse des Kindes wahrnehmen”: 2 \%
+\item
+  “Ausdauer erweitern”: 2 \%
+\end{itemize}
+
+\imageWithCaption{files/diagrams/HauptanliegenKitaBesuch.pdf}{Welches
+Hauptanliegen wird aktuell verfolgt? (2. offene
+Fragestellung)}{}[fig:hauptanliegenKitaBesuch]
+
+Die beiden Grafiken (\cref{fig:herausforderungenkita} und
+\cref{fig:hauptanliegenKitaBesuch}) zeigen, dass Herausforderungen und
+Hauptanliegen der Kindertagesstätten in der Kategorie “soziale Teilhabe”
+anzusiedeln sind. Die beiden Kategorien “Selbständigkeit” und
+“Kommunikation” folgen in beiden Grafiken an dritter und vierter Stelle.
+
+Die Fragestellung zu Beginn des Abschnitts
+(\cref{sec:fragestellung2beantwortung}) kann wie folgt beantwortet
+werden: Das KITAplus-Coaching wird vorwiegend bezüglich Anliegen der
+sozialen Teilhabe beantragt. In den beiden Bereichen “Kommunikation” und
+“Selbständigkeit” ist ein weiterer hoher Coaching-Bedarf vorhanden.
+Grundsätzlich wird aus der Erhebung ersichtlich, dass Herausforderungen
+und Hauptanliegen je nach Kind variieren. Im KITAplus-Coaching werden
+pro Kind unterschiedliche Themen behandelt.
+
+\hypertarget{sec:fragestellung3beantwortung}{%
+\section{Dritte Fragestellung}\label{sec:fragestellung3beantwortung}}
+
+\textbf{Lassen sich Prädikatoren für eine Beantragung von KITAplus
+ausarbeiten?}\\
+Für die Beantwortung der Fragestellung sind die Erkenntnisse der 1.
+Fragestellung in \cref{sec:1fragestellung} zentral. In dieser
+Masterarbeit lassen sich keine Prädikatoren für die Beantragung von
+KITAplus ausarbeiten. Grund dafür ist der kleine Datensatz (\(n=33\)).
+Im Anschluss werden Ergebnisse aufgezählt, welche aus der Erhebung im
+Februar 2022 hervorstechen und auf eine Tendenz hinweisen.
+
+\begin{itemize}
+\tightlist
+\item
+  Biologisches Geschlecht “männlich”
+\item
+  Deutsch als Zweitsprache
+\item
+  Unterstützungsbedarf “hoch” oder “sehr hoch”
+\item
+  Herausforderung und Hauptanliegen der Kitas bezüglich Kinder mit
+  sonderpädagogischem Förderbedarf liegen im Bereich der “sozialen
+  Teilhabe”
+\end{itemize}
+
+Die Indikation wird bewusst weggelassen, da wie bereits erwähnt, jeweils
+mehrere Indikationen pro Kind genannt wurden. Die Beantragung eines
+KITAplus-Coaching hängt primär von der Kita ab. Nehmen sie die
+besonderen Bedürfnisse des Kindes wahr? Ist ihnen das KITAplus-Programm
+bekannt? Ist die Kita gegenüber externer, fachlicher Unterstützung
+offen? Hat das KITAplus-Programm freie Plätze?
+
+Grundsätzlich ist es nicht entscheidend welche Kinder das
+KITAplus-Programm beanspruchen. Schlussendlich ist es von Bedeutung,
+dass Kindertagesstätten die Bedürfnisse der Kinder wahrnehmen und bei
+Bedarf Hilfe in Form eines Coaching beanspruchen.
+
+Im anschliessenden Kapitel (\cref{sec:diskussion}), sind weitere
+Gedanken und Interpretationen zu finden.
+
+\hypertarget{sec:diskussion}{%
+\chapter{Diskussion}\label{sec:diskussion}}
+
+Die Fragestellungen wurden mithilfe der Ergebnisse beantwortet. Als
+Nächstes erfolgt die Interpretation und Reflexion ausgewählter Aspekte
+wie Indikation, Erstsprache, Unterstützungsbedarf, Finanzierung der Kita
+und Beeinträchtigungsgrad. Am Ende des Kapitels wird zudem auf
+Verbesserungsmöglichkeiten des Fragebogens eingegangen.
+
+Die Erhebung hat gezeigt, dass pro Kind selten eine Indikation angegeben
+wird. Meistens wird auf mehrere verwiesen. Die Situation gestaltet sich
+einfacher, sobald eine Diagnose oder ein Syndrom vorhanden ist. Es sind
+Zusammenhänge zwischen den Indikationen auszumachen. Die
+Wahrscheinlichkeit, dass zum Beispiel ein Kind mit einer
+Sprachauffälligkeit längerfristig im Verhalten negativ auffällt, ist
+gross. Ein Kind mit einer geistigen Behinderung bzw. Verdacht auf eine
+geistige Behinderung wird höchstwahrscheinlich einen homogen
+Entwicklungsrückstand aufweisen. Im Frühbereich besteht die Problematik
+oder Herausforderung, dass oftmals noch keine Diagnose gestellt werden
+kann, da die Kinder schlichtweg zu jung dafür sind. Die Auswertung in
+einem Kreisdiagramm wie in \cref{fig:indikationHFE} ist mit Vorsicht zu
+geniessen. Eine weitere Möglichkeit wäre ein Netzdiagramm zu erstellen.
+Damit könnten Behinderungsprofile von Kindern erschlossen und
+miteinander verglichen werden. Vielleicht gilt es aber die grosse
+Vielfalt und die Limitierungen in der Erfassung dieser zu akzeptieren.
+Auf methodische Limitierung weist bereits NSWDEC
+(\protect\hyperlink{ref-centreforeducation2014}{2014}) hin. Was jedoch
+verbessert oder klar definiert werden kann sind die einzelnen Begriffe
+der Indikationen. Am Heilpädagogischen Dienst Luzern sind keine
+Definitionen oder Beschreibungen dazu vorhanden. Wann wird die
+Indikation “Allgemeiner Entwicklungsrückstand” und wann
+“Entwicklungsverzögerung” verwendet? Dies ist unklar. Ein
+Kriterienkatalog oder Definitionen würden Klarheit verschaffen.
+
+Aus der Erhebung geht hervor, dass Kinder mit einem “Allgemeinen
+Entwicklungsrückstand” (19 \%) vorherrschend im KITAplus-Programm
+vertreten sind. Darauf folgen die Indikationen “Sprachauffälligkeit” und
+“Wahrnehmungsproblematik” mit je 14 \% und “Verhaltensauffälligkeit” mit
+12 \% (siehe \cref{fig:indikationHFE}).
+
+Die Ergebnisse aus der Erhebung weisen Ähnlichkeiten mit denen von
+Kißgen et al.
+(\protect\hyperlink{ref-studienvergleichbayernrheinland}{2021}) (siehe
+\cref{fig:Diagnostizierte-Behinderungen}) auf. Die Studien verdeutlichen
+die unterschiedlich verwendeten Indikationsbezeichnungen. Dies erschwert
+den Vergleich der Ergebnisse. Die ersten vier Indikationen der Erhebung
+sind auch unter den ersten vier in der Studie von Kißgen et al.
+(\protect\hyperlink{ref-studienvergleichbayernrheinland}{2021}) zu
+finden. Die Differenzierung zur Indikation Wahrnehmungsproblematik fehlt
+in der Studie.
+
+Eine eindeutige Übereinstimmung zeichnet sich in den wenig vertretenen
+Indikationen “Sinnesbehinderung” und “geistigen Behinderung” ab. In
+ihrer Studie sind zudem Kinder mit einer Mehrfachbehinderung an dritter
+Stelle. Diese Indikation fehlt in der Erhebung. Auf den ersten Blick
+wird nicht ersichtlich, wie viele Kinder mit einer Mehrfachbehinderung
+in Kitas betreut werden. Dazu müssen die Antworten der Fragestellung
+“Welche Herausforderung trifft die Kita im Alltag mit dem KITAplus-Kind
+an?” betrachtet werden. Dabei stellt sich heraus, dass insgesamt zwei
+Kinder mit einer schwer Mehrfachbehinderung und ein Kind mit einer
+Mehrfachbehinderung das Fremdbetreuungsangebot in Anspruch nehmen. Damit
+die beiden Studien miteinander verglichen werden können, müssten
+dieselben Indikationen verwendet werden.
+
+Wird der Beeinträchtigungsgrad und die Eins-zu-Eins-Betreuung
+betrachtet, ist erstaunlich, dass lediglich 12 \% der Kinder mit
+Beeinträchtigungsgrad stark eine Eins-zu-Eins-Betreuung beanspruchen.
+Gründe dafür könnten fehlendes Betreuungspersonal in der Kita oder die
+aufwändige Beantragung sein. Die Kita könnte deshalb versuchen ohne
+erhöhten Betreuungsschlüssel klarzukommen. Folgen davon könnten sein,
+dass dem Kind mit speziellen Bedürfnissen, den Peers und dem
+Betreuungspersonal der Kita nicht mehr gerecht werden kann. Daraus
+resultieren könnten Unzufriedenheit, Überforderung und starke Belastung
+der Betreuenden. Im schlimmsten Fall muss das Kind mit
+Mehrfachbehinderung die Kita verlassen. Deshalb sollten die
+Anforderungen für eine Eins-zu-Eins-Betreuung heruntergesetzt werden.
+Schlussendlich steht die Thematik “Vertrauen” im Vordergrund. Der Kanton
+muss gegenüber den Kindertagesstätten Vertrauen aufbringen, dass diese
+nur eine Eins-zu-Eins-Betreuung beantragen, wenn diese notwendig ist.
+Die KITAplus-Mitarbeitenden könnten in diesen Prozess miteinbezogen
+werden. Sie könnten die Situation vor Ort beurteilen und eine Empfehlung
+dazu abgeben.
+
+Als Nächstes wird auf den Unterstützungsbedarf eingegangen. Die
+Darstellung in \cref{fig:unterstuetzungsbedarfHFEVsKPlus} deutet darauf
+hin, dass KITAplus-Mitarbeitende den Unterstützungsbedarf höher
+einschätzen als die Heilpädagogischen Fachpersonen. Diese Tendenz könnte
+sich dadurch begründen, dass KITAplus-Mitarbeitende die Kinder in einer
+Gruppe erleben und die Herausforderungen, mit welchen die Kita
+konfrontiert ist, Eins-zu-Eins erfährt. Daraus kann abgeleitet werden,
+dass der Unterstützungsbedarf einzelner Kinder im Vordergrund stehen
+soll und nicht die jeweilige Beeinträchtigung. Der Betreuungsschlüssel
+soll sich daran richten und nicht am Grad der Beeinträchtigung. Es kann
+nicht davon ausgegangen werden, dass ein Kind mit einer leichten
+Beeinträchtigung einen leichten Unterstützungsbedarf beansprucht.
+Schlussendlich soll die Integration gelingen und den Kindern mit und
+ohne Beeinträchtigung sowie den Betreuenden in der Kita gerecht werden.
+
+Im Diagramm \cref{fig:KitaVorHFE} wird ersichtlich, dass
+Heilpädagogische Fachpersonen die Kita als Chance für ein Kind mit
+sonderpädagogischem Förderbedarf betrachten und den Besuch aktiv
+vorschlagen. Zudem betrachten sie das KITAplus-Programm als sinnvolle
+Massnahme und wertvolle Unterstützung für das betreffende Kind sowie
+auch für das Kita-Personal. Diese Interpretationen sind aus dem hohen
+Prozentsatz der Grafik \cref{fig:KitaVorHFE} zu entnehmen. 31 \% der
+Heilpädagogischen Fachpersonen geben an, das KITAplus initiiert zu
+haben. Die Gefahr besteht, dass Kitas sich verpflichtet fühlen, der
+Empfehlung der Aufnahme von KITAplus-Coaching, nachzukommen. Folge davon
+könnte sein, dass sich das Coaching als zäh erweist, da im Grunde
+genommen eine Kita das Coaching nicht wünscht. Die Grafik in
+\cref{fig:kitaStartbisKPlus} zeigt, dass bei knapp der Hälfte der Kinder
+das KITAplus zeitgleich mit dem Kita-Start initiiert wurde. Entweder
+haben die Kitas auf Empfehlung der Heilpädagogischen Fachperson das
+Coaching beantragt oder es tauchten bald Fragen auf, zu welchen sie
+Unterstützung benötigten.
+
+65 \% der KITAplus-Kinder haben Deutsch als Zweitsprache
+(\cref{fig:erstsprache}). Dies ist ein auffällig hoher Prozentsatz.
+Zudem sind 64 \% dieser Familien auf finanzielle Unterstützung
+angewiesen. Daraus lässt sich folgende Frage ableiten: “Welchen Einfluss
+nimmt ein tiefer sozioökonomischer Status auf die Entwicklung eines
+Kindes?” Die Frage kann in dieser Arbeit nicht beantwortet werden, sie
+wäre Ausgangslage für eine neue Forschungsstudie. Es ist jedoch davon
+auszugehen, dass der sozioökonomischer Status einer Familie zu den
+Risikofaktoren gezählt werden kann.
+
+Die Erhebung zeigt, dass der grösste Teil der Eltern bei der
+Finanzierung der Kita-Kosten auf Unterstützung angewiesen sind. Kitas
+sind teuer, für viele Eltern zu teuer. Dies ist tragisch. Der Kanton
+könnte diesem entgegenwirken indem er Kitas finanziell unterstützt oder
+subventioniert. Eltern wie auch Heilpädagogische Fachpersonen sehen in
+der Fremdbetreuung eine grosse Ressource für die Entwicklung des Kindes.
+Frühe Förderung und Betreuung sollten mehr Aufmerksamkeit und
+Wertschätzung erhalten. Kindertagesstätte sind nicht nur ein
+Entlastungsangebot für Eltern, ihnen wird wie in
+\cref{fig:hauptgrundfuerKitaBesuch} ersichtlich, vielfältige Aufgaben
+zugeschrieben. Es ist ein Ort, in welchem Kinder ausserhalb ihres
+vertrauten Umfelds Erfahrungen, Inputs, Regeln und soziale Kontakte
+knüpfen können.
+
+Bei einer erneuten Erhebung müssen die Fragebögen überarbeitet und
+angepasst werden. Einer der beiden offenen Frage könnte zum Beispiel
+weggelassen werden. Die Antworten fielen stichwortartig aus und die
+Kategorisierung der Antworten gestaltete sich aufwändig. Mit
+vorgegebenen Antworten, welche zur Auswahl stehen würden, könnte diesem
+entgegengewirkt werden. Zudem sollte wie bereits erwähnt die Hauptfrage
+mit den beiden Unterfragen (Ist die Kindertagesstätte vor Aufnahme der
+HFE besucht worden?) angepasst werden. Daraus könnten drei Hauptfragen
+entstehen und die Problematik wäre gelöst. Bei der Auswahl der
+Finanzierungsart könnte die Kategorie “Gemeinde” mit “Übernahme des
+Koordinationsbeitrag” ergänzt werden. Eine weitere Kategorie könnte wie
+folgt heissen: “Kifa Stiftung: Übernahme/Unterstützung für zusätzlichen
+Betreuungsaufwand”.
+
+Die Arbeit wird mit dem Kapitel Ausblick abgeschlossen.
+
+\hypertarget{sec:fazit}{%
+\chapter{Ausblick}\label{sec:fazit}}
+
+Es wäre wünschenswert eine weitere Studie, zum Beispiel mit allen
+KITAplus-Kindern in der Schweiz, zu lancieren. Ein grösserer Datensatz
+wäre vorhanden und somit könnten signifikante Aussagen formuliert
+werden. Die Ergebnisse könnten die Resultate der jetzigen Studie
+bestätigen oder widerlegen. Ausserdem könnte ein zweiter Versuch
+gestartet werden, Prädikatoren für das KITAplus zu formulieren, welches
+in dieser Studie nicht gelang.
+
+Weitere Forschungsprojekte bezüglich KITAplus könnten zum Beispiel in
+folgende Richtungen lanciert werden:
+
+\begin{itemize}
+\tightlist
+\item
+  Welche Erkenntnisse nehmen Kita-Mitarbeitende aus dem Coaching mit,
+  von denen sie sagen können, dass sie ihr Handeln nachhaltig
+  beeinflussen?
+\item
+  Welche Rolle nehmen Kindertagesstätten in der Früherkennung von
+  Entwicklungsauffälligkeiten ein?
+\item
+  Lassen sich Unterschiede im KITAplus zwischen Stadt und Land
+  unterscheiden?
+\end{itemize}
+
+Das KITAplus-Programm leistet ohne Diskussion einen wertvollen Beitrag
+zur Inklusionsthematik. Dies widerspiegelt sich in den folgenden
+positiven Bilanzen:
+
+\begin{itemize}
+\item
+  Auswertung der Pilotphase
+  (\protect\hyperlink{ref-konzeptKitaPlus}{KITAplus Luzern, 2020, S.
+  14})
+\item
+  Aktuell hohe Beteiligung von Kindertagesstätten (siehe
+  \cref{sec:fremdbetreuungsangabenstic})
+\item
+  Verordnung zum Gesetz über die Volksschulbildung (VBV,
+  \protect\hyperlink{ref-volksschulbildungsverordnung}{2022, S. 9}),
+  welche am 01.08.2022 in Kraft tritt. Es werden unter anderem die
+  anfallenden Mehrkosten von KITAplus geregelt. Es handelt sich dabei um
+  folgende Paragraphen:
+
+  \begin{itemize}
+  \item
+    \textbf{§ 1 Abs. 1:} \emph{Als Sonderschulung gelten: a)
+    heilpädagogische Früherziehung sowie Betreuung und Förderung von
+    Kindern mit Behinderung in familienergänzenden Betreuungsangeboten
+    (KITAplus).} (VBV,
+    \protect\hyperlink{ref-volksschulbildungsverordnung}{2022, S. 8})
+  \item
+    \textbf{§ 15 Abs. 1bis:} \emph{Die Fachstelle berät Fachpersonen bei
+    der Betreuung und Förderung von Kindern mit Behinderung in
+    familienergänzenden Betreuungsangeboten (KITAplus).}
+    (\protect\hyperlink{ref-volksschulbildungsverordnung}{Regierungsrat
+    Kanton Luzern, 2022, S. 8})
+  \item
+    \textbf{§ 30b:} \emph{Kanton und Gemeinde bezahlen je hälftig die
+    behinderungsbedingten Mehrkosten für die Betreuung von Kindern in
+    familienergänzenden Betreuungsangeboten (KITAplus) sowie die Kosten
+    der Beratung der Fachpersonen in solchen Betreuungsangeboten. Die
+    Aufteilung des Gemeindebeitrages richtet sich nach § 29.}
+    (\protect\hyperlink{ref-volksschulbildungsverordnung}{Regierungsrat
+    Kanton Luzern, 2022, S. 9})
+  \end{itemize}
+\end{itemize}
+
+Dank der Erlassung der Gesetzgebung gewinnt das KITAplus an Stellenwert.
+Erfreulich ist, dass die Finanzierung der Mehrkosten klar definiert ist.
+Dies könnte zur Entlastung der Kitas beitragen. Grundsätzlich kann die
+Gesetzgebung als Meilenstein und Startschuss der Inklusionsthematik in
+familienergänzenden Betreuungsangeboten im Kanton Luzern betrachtet
+werden. Der Kanton Luzern setzt ein klares Zeichen: Auch junge Kinder
+mit einer Beeinträchtigung haben ein Recht auf Teilhabe in
+institutionellen Fremdbetreuungsangeboten.
+
+Welche Veränderungen bringen die Erneuerungen im VBG und die Überführung
+in den Kanton mit sich? Folgende Fragen lassen sich diesbezüglich
+formulieren: Welche Kriterien müssen erfüllt sein, damit ein
+KITAplus-Coaching bewilligt wird? Welche Dokumente müssen eingereicht
+werden, damit die zuständige Person, welche das Coaching bewilligt, ein
+vollständiges Bild der Betreuungssituation erhält? Wie viel Einfluss
+haben die KITAplus-Mitarbeitenden dabei? Welche Rolle nehmen sie dabei
+ein? Das Angebot sollte weiterhin niederschwellig und schnell angeboten
+werden können, damit ein Abbruch der Fremdbetreuung verhindert wird.
+
+Für die Zukunft wäre es wünschenswert, wenn institutionelle
+Fremdbetreuungsangebote gefördert und ausgebaut würden, sodass allen
+Familien der Zugang erleichtert wird. Die Hoffnung besteht, dass die
+Politik Kindertagesstätte als Chance der frühen kindlichen Entwicklung
+und Bildung anerkennt und den Ausbau tatkräftig mit finanziellen Mitteln
+unterstützt.
+
+\hypertarget{literaturverzeichnis}{%
+\chapter{Literaturverzeichnis}\label{literaturverzeichnis}}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-albersmittendrin}{}}%
+Albers, T. (2011). \emph{Mittendrin statt nur dabei. Inklusion in Krippe
+und Kindergarten}. München: Ernst Reinhardt Verlag.
+
+\leavevmode\vadjust pre{\hypertarget{ref-albers_vielfalt_2012}{}}%
+Albers, T. (2012). Kinder mit Behinderungen in Krippe und Kita - von der
+Integration zur Inklusion. In T. Albers, S. Bree, E. Jung \& S. Seitz
+(Hrsg.), \emph{Vielfalt von Anfang an. Inklusion in Krippe und Kita} (S.
+51–57). Freiburg im Breisgau: Herder.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kinderbetreuungluzern}{}}%
+Amberg, H. \& Heller, R. (2018). Kinderbetreuung im Kanton Luzern –
+Betreuungsangebote Vorschulalter. Erhebung 2017 zuhanden der
+Dienststelle Soziales und Gesellschaft (DISG) des Kantons Luzern.
+\emph{Interface Politikstudien Forschung Beratung}. Verfügbar unter:
+\url{https://kinderbetreuung.lu.ch/-/media/Kinderbetreuung/Dokumente/Anbietende/Kinderbetr_Erhebungsbericht_Kinderbetreuung_Kanton_Luzern_2017.pdf?la=de-CH}
+
+\leavevmode\vadjust pre{\hypertarget{ref-anders_2013}{}}%
+Anders, Y. (2013). Stichwort: {Auswirkungen} frühkindlicher
+institutioneller {Betreuung} und {Bildung}. \emph{Zeitschrift für
+Erziehungswissenschaft}, \emph{16}(2), 237–275.
+https://doi.org/\href{https://doi.org/10.1007/s11618-013-0357-5}{10.1007/s11618-013-0357-5}
+
+\leavevmode\vadjust pre{\hypertarget{ref-europeanjournal}{}}%
+Avramidis, E. \& Norwich, B. (2002). Teachers’ attitudes towards
+integration/inclusion: a review of the literature. \emph{European
+Journal of Special Needs Education}, \emph{12}(2), 129–147.
+https://doi.org/\href{https://doi.org/10.1080/08856250210129056}{10.1080/08856250210129056}
+
+\leavevmode\vadjust pre{\hypertarget{ref-luzernerzeitung}{}}%
+Bischof, H. (2021). Stadt Luzern will familienergänzende Kinderbetreuung
+finanziell stärker unterstützen. Luzerner Zeitung. Verfügbar unter:
+\url{https://www.luzernerzeitung.ch/zentralschweiz/luzern/gutscheinsystem-stadt-luzern-will-familienergaenzende-kinderbetreuung-finanziell-staerker-unterstuetzen-ld.2141026}
+
+\leavevmode\vadjust pre{\hypertarget{ref-bfs}{}}%
+Bundesamt für Statistik. (2020). \emph{Vereinbarkeit von Beruf und
+Familie in der Schweiz und im europäischen Vergleich 2018}. Neuchâtel.
+Verfügbar unter:
+\url{https://www.bfs.admin.ch/bfsstatic/dam/assets/14877706/master}
+
+\leavevmode\vadjust pre{\hypertarget{ref-buysse}{}}%
+Buysse, V., Goldman, B. D. \& Skinner, M. L. (2002). Setting Effects on
+Friendship Formation among Young Children with and without Disabilities.
+\emph{Exceptional Children}, \emph{68}(4), 503–517.
+https://doi.org/\href{https://doi.org/10.1177/001440290206800406}{10.1177/001440290206800406}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ecoplan}{}}%
+Ecoplan. (2017). \emph{Kinder mit Behinderungen in Kindertagesstätten.
+Evaluation des Pilotsprojekts.} Bern: Jugendamt der Stadt Bern.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zakirova}{}}%
+Engstrand, R. \& Roll-Pettersson, L. (2012). Inclusion of preschool
+children with autism in Sweden: Attitudes and perceived efficacy of
+preschool teachers. \emph{Journal of Research in Special Educational
+Needs}, \emph{14}(3).
+https://doi.org/\href{https://doi.org/10.1111/j.1471-3802.2012.01252.x}{10.1111/j.1471-3802.2012.01252.x}
+
+\leavevmode\vadjust pre{\hypertarget{ref-europaischeagentur}{}}%
+European Agency for Special Needs and Inclusive Education. (2017).
+\emph{Inklusive frühkindliche Bildung und Erziehung: Neue Einblicke und
+Instrumente – Zusammenfassender Abschlussbericht.} (M. Kyriazopoulou, P.
+Bartolo, E. Björck-Åkesson, C. Giné \& F. Bellour, Hrsg.). Odense,
+Dänemark. Verfügbar unter:
+\url{https://www.european-agency.org/sites/default/files/iece-summary-de.pdf}
+
+\leavevmode\vadjust pre{\hypertarget{ref-web-selbstreflex}{}}%
+European Agency for Special Needs and Inclusive Education. (2022).
+Selbstreflexionsbogen. Verfügbar unter:
+\url{https://www.european-agency.org/Deutsch/publications}
+
+\leavevmode\vadjust pre{\hypertarget{ref-angebotsmangel}{}}%
+Fischer, A., Häfliger, M. \& Pestalozzi, A. (2021). Kinderbetreuung und
+Behinderung: Angebotsmangel trotz substanziellem Bedarf. \emph{FORUM},
+(104), 52–56.
+
+\leavevmode\vadjust pre{\hypertarget{ref-storytelllingprogram}{}}%
+Giagazoglou, P. \& Papadaniil, M. (2018). Effects of a Storytelling
+Program with Drama Techniques to Understand and Accept Intellectual
+Disability in Students 6 - 7 Years Old. A Pilot Study. \emph{Advances in
+Physical Education}, \emph{8}(2), 224–237.
+https://doi.org/\href{https://doi.org/10.4236/ape.2018.82020}{10.4236/ape.2018.82020}
+
+\leavevmode\vadjust pre{\hypertarget{ref-unerfullbarevision}{}}%
+Graumann, O. (2018). \emph{Inklusion - eine unerfüllbare Vision? Eine
+kritische Bestandesaufnahme.} Opladen: Barbara Budrich.
+
+\leavevmode\vadjust pre{\hypertarget{ref-schwerermehrfachbehinderung}{}}%
+Gutekunst, A., Schreier, S. \& Sarimski, K. (2012). Kinder mit schwerer
+und mehrfacher Behinderung im integrativen Kindergarten. Eine besondere
+Herausforderung. \emph{Frühförderung interdisziplinär}, \emph{31}(1),
+26–32. München: Reinhardt.
+https://doi.org/\href{https://doi.org/10.2378/fi2012.art03d}{10.2378/fi2012.art03d}
+
+\leavevmode\vadjust pre{\hypertarget{ref-inklusionQualituxe4t_Heimlich}{}}%
+Heimlich, U. (2015). Inklusion und Qualität. Auf dem Weg zur inklusiven
+Kindertageseinrichtung. \emph{Frühförderung interdisziplinär},
+\emph{35}(1), 28–39. München: Reinhardt.
+https://doi.org/\href{https://doi.org/10.2378/fi2016.art03d}{10.2378/fi2016.art03d}
+
+\leavevmode\vadjust pre{\hypertarget{ref-hinz2002}{}}%
+Hinz, A. (2002). Von der Integration zur Inklusion- terminologisches
+Spiel oder konzeptionelle Weiterentwicklung? Verfügbar unter:
+\url{http://www.jugendsozialarbeit.de/media/raw/hinz_inklusion.pdf}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Hinz2013}{}}%
+Hinz, A. (2013). Inklusion – von der Unkenntnis zur Unkenntlichkeit!? -
+Kritische Anmerkungen zu einem Jahrzehnt Diskurs über schulische
+Inklusion in Deutschland. \emph{Zeitschrift für Inklusion}, (1).
+Verfügbar unter:
+\url{https://www.inklusion-online.net/index.php/inklusion-online/article/view/26}
+
+\leavevmode\vadjust pre{\hypertarget{ref-kindergartenheute2019}{}}%
+Hundegger, V. (2019). Eine Kita für alle - Inklusion im pädagogischen
+Alltag. \emph{praxis kompakt}. Freiburg: Herder.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kallus2016}{}}%
+Kallus Wolfgang, K. (2016). \emph{Erstellung von Fragebogen.} (2.
+Auflage). Wien: facultas.
+
+\leavevmode\vadjust pre{\hypertarget{ref-studienvergleichbayernrheinland}{}}%
+Kißgen, R., Wirts, C., Limburg, D., Wertfein, M., Franke, S., Wölfl, J.
+et al. (2021). Zur inklusiven Betreuung von Kindern mit (drohender)
+Behinderung in Kindertageseinrichtungen in Bayern und im Rheinland. Ein
+Studienvergleich. \emph{Frühförderung interdisziplinär}, \emph{40}(2),
+64–77. Reinhardt.
+https://doi.org/\href{https://doi.org/10.2378/fi2021.art07d}{10.2378/fi2021.art07d}
+
+\leavevmode\vadjust pre{\hypertarget{ref-konzeptKitaPlus}{}}%
+KITAplus Luzern. (2020). \emph{Konzept. Familienergänzende
+Kinderbetreuung f{ü}r Kinder mit besonderen Bed{ü}rfnissen in Luzerner
+Kindertagesst{ä}tten}. Luzern: Stiftung Kind und Familie, Stadt Luzern,
+Heilpädagogischen Früherziehungsdienstes HFD, kibesuisse, Pädagogische
+Hochschule Luzern.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kleineva}{}}%
+Klein, E., Lorenz-Medick, H. \& Bamikol-Veit, H. (2012). \emph{Was
+Kinder im Rahmen einer inklusiven Tagesbetreuung benötigen.} Hessen: LAG
+Frühe Hilfen. Verfügbar unter:
+\url{http://www.fruehe-hilfen-hessen.de/uploads/media/SchriftenreiheLAGNr.2.pdf}
+
+\leavevmode\vadjust pre{\hypertarget{ref-alltagsTheorienUeberInklusion}{}}%
+Knauf, H. \& Graffe, S. (2016). Alltagstheorien über Inklusion.
+\emph{Frühe Bildung}, \emph{5}(4), 187–197. Göttingen: Hogrefe.
+https://doi.org/\href{https://doi.org/10.1026/2191-9186/a000281}{10.1026/2191-9186/a000281}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Koch2015}{}}%
+Koch, K. \& Ellinger, S. (2015). \emph{Empirische Forschungsmethoden in
+der Heil- und Sonderpädagogik.} Göttingen: Hogrefe. Verfügbar unter:
+\url{https://elibrary.hogrefe.com/book/99.110005/9783840922435}
+
+\leavevmode\vadjust pre{\hypertarget{ref-peer-learning}{}}%
+Kordulla, A. (2017). \emph{Peer-Learning im Übergang von der Kita in die
+Grundschule. Unter besonderer Berücksichtigung der Kinderperspektiven.}
+(Band 3). Bad Heilbrunn: Julius Klinkhardt.
+
+\leavevmode\vadjust pre{\hypertarget{ref-lanners}{}}%
+Lanners, R. (2018). Inklusion von klein auf. Das Projekt «Inklusive
+Frühkindliche Bildung» der European Agency. \emph{Schweizerische
+Zeitschrift für Heilpädagogik}, \emph{24 (4)}, 34–37. Bern. Verfügbar
+unter:
+\href{https://www.szh-csps.ch/z2018-04-05}{www.szh-csps.ch/z2018-04-05}
+
+\leavevmode\vadjust pre{\hypertarget{ref-luders2014}{}}%
+Lüders, C. (2014). „{Irgendeinen} {Begriff} braucht es ja….“*.
+\emph{Soziale Passagen}, \emph{6}(1), 21–53. Wiesbaden: Springer.
+https://doi.org/\href{https://doi.org/10.1007/s12592-014-0164-8}{10.1007/s12592-014-0164-8}
+
+\leavevmode\vadjust pre{\hypertarget{ref-beobachtungsstudie}{}}%
+Lütolf, M. \& Schaub, S. (2019). Soziale Teilhabe von Kindern mit
+Behinderung in der Kindertagesst{ä}tte. Eine Beobachtungsstudie.
+\emph{Fr{ü}hf{ö}rderung interdisziplin{ä}r}, \emph{38}(4), 176–190.
+München: Reinhardt.
+https://doi.org/\href{https://doi.org/10.2378/fi2019.art24d}{10.2378/fi2019.art24d}
+
+\leavevmode\vadjust pre{\hypertarget{ref-tiki}{}}%
+Lütolf, M. \& Schaub, S. (2021). Teilhabe in der Kindertagesstätte
+(TiKi) Schlussbericht. Zürich: Institut für Behinderung und
+Partizipation (HfH).
+
+\leavevmode\vadjust pre{\hypertarget{ref-miedander}{}}%
+Miedander, L. (1997). \emph{Gemeinsame Erziehung behinderter und nicht
+behinderter Kinder. Materialien zur pädagogischen Arbeit im
+Kindergarten.} München: DJI-Verlag.
+
+\leavevmode\vadjust pre{\hypertarget{ref-centreforeducation2014}{}}%
+NSW Department of Education and Communities. (2014). \emph{Children with
+disability in inclusive early childhood education and care}. Australia.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hug2020}{}}%
+Poscheschnik, G., Lederer, B., Perzy, A. \& Hug, T. (2020).
+Datenerhebung und Datenaufbereitung. In T. Hug \& G. Poscheschnik
+(Hrsg.), (3. Auflage, S. 125–187). München: UVK.
+
+\leavevmode\vadjust pre{\hypertarget{ref-raabsteiner}{}}%
+Raab-Steiner, E. \& Benesch, M. (2015). \emph{Der Fragebogen. Von der
+Forschungsidee zur SPSS-Auswertung} (4., aktualisierte und überarbeitete
+Aufl.). Wien: facultas.
+
+\leavevmode\vadjust pre{\hypertarget{ref-raffertyux5cux26Griffin2005}{}}%
+Rafferty, Y. \& Griffin, K. W. (2005). Benefits and Risks of Reverse
+Inclusion for Preschoolers with and without Disabilities: Perspectives
+of Parents and Providers. \emph{Journal of Early Intervention},
+\emph{27}(3), 173–192.
+https://doi.org/\href{https://doi.org/10.1177/105381510502700305}{10.1177/105381510502700305}
+
+\leavevmode\vadjust pre{\hypertarget{ref-volksschulbildungsverordnung}{}}%
+Regierungsrat Kanton Luzern. (2022). \emph{Verordnung zum Gesetz über
+die Volksschulbildung (Volksschulbildungsverordnung, VBV). Änderung vom
+4. Januar 2022.} Verfügbar unter:
+\url{https://volksschulbildung.lu.ch/-/media/Volksschulbildung/Dokumente/recht_finanzen/schulrecht/Aenderung_SRL_405_und_409_Beschluss_RR.pdf?la=de-CH}
+
+\leavevmode\vadjust pre{\hypertarget{ref-fachkraftkindinteraktion}{}}%
+Reyhing, Y., Frei, D., Burkhardt Bossi, C. \& Perren, S. (2019). Die
+Bedeutung situativer Charakteristiken und struktureller
+Rahmenbedingungen für die Qualität der unterstützenden
+Fachkraft-Kind-Interaktion in Kindertagesstätten. \emph{Zeitschrift für
+Pädagogische Psychologie}, \emph{33}(1), 33–47. Göttingen: Hogrefe.
+https://doi.org/\href{https://doi.org/10.1024/1010-0652/a000233}{10.1024/1010-0652/a000233}
+
+\leavevmode\vadjust pre{\hypertarget{ref-rohrmann_inklusion_2014}{}}%
+Rohrmann, E. (2014). Inklusion? {Inklusion}! \emph{Soziale Passagen},
+\emph{6}(1), 161–166. Wiesbaden: Springer.
+https://doi.org/\href{https://doi.org/10.1007/s12592-014-0161-y}{10.1007/s12592-014-0161-y}
+
+\leavevmode\vadjust pre{\hypertarget{ref-saalfrank_inklusion_2017}{}}%
+Saalfrank, W. T. \& Zierer, K. (2017). \emph{Inklusion}. Paderborn:
+Ferdinand Schöningh.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sarimskiBehinderteKinder2011}{}}%
+Sarimski, K. (2011). \emph{Behinderte Kinder in inklusiven
+Kindertagesstätten}. Stuttgart: Kohlhammer.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dabeiseinIstNichtAllesOderDoch}{}}%
+Sarimski, K. (2015). Dabeisein ist nicht alles – oder doch?
+\emph{Frühförderung interdisziplinär}, \emph{34}(3), 141–151. München:
+Reinhardt.
+https://doi.org/\href{https://doi.org/10.2378/fi2015.art18d}{10.2378/fi2015.art18d}
+
+\leavevmode\vadjust pre{\hypertarget{ref-schattenmann_inklusion_2014}{}}%
+Schattenmann, E. (2014). \emph{Inklusion und {Bewusstseinsbildung}:
+{Die} {Notwendigkeit} bewusstseinsbildender {Maßnahmen} zur
+{Verwirklichung} von {Inklusion} in {Deutschland}} (4. Auflage).
+Oberhausen: ATHENA.
+
+\leavevmode\vadjust pre{\hypertarget{ref-uno}{}}%
+Schweizerische Eidgenossenschaft.Übereinkommen der UNO über die Rechte
+von Menschen mit Behinderungen. Verfügbar unter:
+\url{https://www.edi.admin.ch/edi/de/home/fachstellen/ebgb/recht/international0/uebereinkommen-der-uno-ueber-die-rechte-von-menschen-mit-behinde.html}
+
+\leavevmode\vadjust pre{\hypertarget{ref-seitzfinnern}{}}%
+Seitz, S. \& Finnern, N. (2012). Inklusion in Kindertageseinrichtungen -
+eigentlich ganz normal. In nifbe (Hrsg.), (S. 15–25). Freiburg: Herder.
+
+\leavevmode\vadjust pre{\hypertarget{ref-siperstein2007}{}}%
+Siperstein, G. N., Parker, R. C., Bardon, J. N. \& Widaman, K. F.
+(2007). A National Study of Youth Attitudes toward the Inclusion of
+Students with Intellectual Disabilities. \emph{Exceptional Children},
+\emph{73}(4), 435–455.
+https://doi.org/\href{https://doi.org/10.1177/001440290707300403}{10.1177/001440290707300403}
+
+\leavevmode\vadjust pre{\hypertarget{ref-spearmancoeff}{}}%
+Spearman, C. (1904). The Proof and Measurement of Association between
+Two Things. \emph{The American Journal of Psychology}, \emph{15}(1),
+72–101. University of Illinois Press. Verfügbar unter:
+\url{http://www.jstor.org/stable/1412159}
+
+\leavevmode\vadjust pre{\hypertarget{ref-logopuxe4dieKantonLuzern}{}}%
+Stadt Luzern. (2022a). \emph{Logopädie Luzern}. Verfügbar unter:
+\url{https://www.logopaedieluzern.ch/schulkinder-1}
+
+\leavevmode\vadjust pre{\hypertarget{ref-psychomotorik}{}}%
+Stadt Luzern. (2022b). \emph{Psychomotorik Therapiestelle}. Verfügbar
+unter: \url{https://www.stadtluzern.ch/dienstleistungeninformation/555}
+
+\leavevmode\vadjust pre{\hypertarget{ref-stamm}{}}%
+Stamm, M. (2009). \emph{Frühkindliche Bildung in der Schweiz. Eine
+Grundlagenstudie im Auftrag der UNESCO-Kommission Schweiz}. (Universität
+Fribourg, Hrsg.). Fribourg: o. V. Verfügbar unter:
+\url{https://www.margritstamm.ch/images/Grundlagenstudie.pdf}
+
+\leavevmode\vadjust pre{\hypertarget{ref-stiftungkifa}{}}%
+Stiftung Kifa Schweiz. (2022). \emph{KITAplus: Für Kinder mit Besonderen
+Bedürfnissen}. Zofingen. Verfügbar unter:
+\url{https://www.stiftung-kifa.ch/de/entlastung/kitaplus.html}
+
+\leavevmode\vadjust pre{\hypertarget{ref-evalPilotphase}{}}%
+Tanner Merlo, S., Buholzer, A. \& Näpflin, C. (2014). \emph{Evaluation
+der Pilotphase von Kita plus - Bericht zuhanden der Stiftung Kind und
+Familie KiFa Schweiz}. Nr. 42. Luzern: PH Luzern. Verfügbar unter:
+\url{https://kipdf.com/evaluation-der-pilotphase-von-kita-plus_5aaff4641723dd389ca3f985.html}
+
+\leavevmode\vadjust pre{\hypertarget{ref-eineKriseDieKeineSeinDarf}{}}%
+Trescher, H. (2018). Inklusion in der Kita. Eine Krise, die keine sein
+darf? \emph{Der pädagogische Blick}, \emph{26}(03), 176–187. Frankfurt:
+Beltz Juventa.
+
+\leavevmode\vadjust pre{\hypertarget{ref-richtlinienKindertagessstuxe4tten_2020}{}}%
+Verband Kinderbetreuung Schweiz. (2020). \emph{Richtlinien für die
+Betreuung von Kindern in Kindertagesstätten.} Verfügbar unter:
+\url{https://www.kibesuisse.ch/fileadmin/Dateiablage/kibesuisse_Publikationen_Deutsch/2020_kibesuisse_Richtlinien_Kita.pdf}
+
+\leavevmode\vadjust pre{\hypertarget{ref-walker}{}}%
+Walker, S. \& Berthelsen, D. (2007). The social participation of young
+children with developmental disabilities in inclusive early childhood
+programs. \emph{Electronic Journal for Inclusive Education},
+\emph{2}(2). Verfügbar unter:
+\url{https://www.researchgate.net/publication/27472112_The_social_participation_of_young_children_with_developmental_disabilities_in_inclusive_early_childhood_programs}
+
+\leavevmode\vadjust pre{\hypertarget{ref-einstellungPuxe4dagogischerFachkruxe4ften_Weltzien}{}}%
+Weltzien, D. \& Söhnen, S. A. (2020). \emph{Einstellungen pädagogischer
+Fachkräfte zur Inklusion: Welchen Einfluss haben individuelle
+Erfahrungen und teambezogene Faktoren in Kindertageseinrichtungen?
+Sonderauswertungen aus dem Projekt InkluKiT}. Nr. 2. (D. Weltzien \& K.
+Fröhlich-Gildhoff, Hrsg.)\emph{Perspektiven der empirischen Kinder- und
+Jugenforschung} (Band 6, S. 86–106). Freiburg: FEL.
+
+\leavevmode\vadjust pre{\hypertarget{ref-wiedebusch2015}{}}%
+Wiedebusch, S., Lohmann, A. \& Hensen, G. (2015). Chronisch kranke
+Kinder in Kindertageseinrichtungen. Eine Befragung pädagogischer
+Fachkräfte. \emph{Frühförderung interdisziplinär}, \emph{34}(3),
+152–163. München: Ernst Reinhardt Verlag.
+https://doi.org/\href{https://doi.org/10.2378/fi2015.art19d}{10.2378/fi2015.art19d}
+
+\leavevmode\vadjust pre{\hypertarget{ref-wocken}{}}%
+Wocken, H. (2009). Inklusion \& Integration. Ein Versuch, die
+Integration vor der Abwertung und die Inklusion vor Träumereien zu
+bewahren. Frankfurt. Verfügbar unter:
+\url{https://inklusion20.de/material/inklusion/Inklusion\%20vs\%20Integration_Wocken.pdf}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ivo-studie}{}}%
+Wölfl, J., Wertfein, M. \& Wirts, C. (2017). \emph{IVO – Eine Studie zur
+Umsetzung von Inklusion als gemeinsame Aufgabe von
+Kindertageseinrichtungen und Frühförderung in Bayern.
+Kita-Ergebnisbericht}. Nr. 30. (Staatsinstitut für Frühpädagogik (IFP),
+Hrsg.). München. Verfügbar unter:
+\url{https://www.ifp.bayern.de/imperia/md/content/stmas/ifp/projektbericht_ivo_nr_30.pdf}
+
+\leavevmode\vadjust pre{\hypertarget{ref-worldhealthorganisation}{}}%
+World Health Organization. (2005). \emph{Internationale Klassifikation
+der Funktionsfähigkeit, Behinderung und Gesundheit (ICF). Deutsche
+Übersetzung.} Köln: Deutschen Institut für Medizinische Dokumentation
+und Information (DIMDI). Verfügbar unter:
+\url{https://www.soziale-initiative.net/wp-content/uploads/2013/09/icf_endfassung-2005-10-01.pdf}
+
+\leavevmode\vadjust pre{\hypertarget{ref-zimmermannExpertise}{}}%
+Zimmermann, M. (2021). \emph{Expertise über Kosten und Finanzierung
+eines Programms zur inklusiven Vorschulbetreuung von Kindern mit
+besonderen Bedürfnissen im Kanton Luzern}. Hochschule Luzern. Verfügbar
+unter:
+\url{https://www.kindertagesstaette-plus.ch/fileadmin/images/01_Startseite/04_Politik-und-Recht/20210901_KITAplus_Expertise_HSLU.pdf}
+
+\end{CSLReferences}
+
+\listoffigures
+
+\listoftables
+
+\appendix
+\lehead{Anhang \thechapter}
+
+\hypertarget{sec:informationsschreibenleitungen}{%
+\chapter{Informationsschreiben
+Dienststellenleitungen}\label{sec:informationsschreibenleitungen}}
+
+\includePDF{files/Sample.pdf}[1]{1}[width=0.8\textwidth]
+
+\hypertarget{sec:begleitschreibenfragebogen}{%
+\chapter{Begleitschreiben für den
+Fragebogen}\label{sec:begleitschreibenfragebogen}}
+
+\includePDF{files/Sample.pdf}[1]{1}[width=0.8\textwidth]
+
+\hypertarget{sec:informationsschreibenkitas}{%
+\chapter{Informationsschreiben
+Kindertagesstätten}\label{sec:informationsschreibenkitas}}
+
+\includePDF{files/Sample.pdf}[1]{1}[width=0.8\textwidth]
+
+\hypertarget{sec:erhebungsfragebogen}{%
+\chapter{Erhebungsfragebogen
+KITAplus-Mitarbeitenden}\label{sec:erhebungsfragebogen}}
+
+Alle Fragen betreffen die aktuelle Fremdbetreuungssituation. Bitte
+beantworte die Fragen aus deiner Sicht (KITAplus Mitarbeiter*in) und mit
+deinem Hintergrundwissen, welches du aus der Zusammenarbeit mit der Kita
+gewonnen hast.
+
+\hypertarget{personalangaben}{%
+\section*{Personalangaben}\label{personalangaben}}
+
+Diesen Fragebogen füllst du für folgendes Kind aus:
+
+\begin{itemize}
+\tightlist
+\item
+  Laufnummer: \xhrule[,fill=2cm,thickness=0.5pt]
+\item
+  Initialen Kind: \xhrule[,fill=2cm,thickness=0.5pt]
+\end{itemize}
+
+\hypertarget{angaben-zur-fremdbetreuung}{%
+\section*{Angaben zur Fremdbetreuung}\label{angaben-zur-fremdbetreuung}}
+
+\hypertarget{wie-schuxe4tzt-du-die-beeintruxe4chtigung-des-kindes-ein}{%
+\subsection*{Wie schätzt du die Beeinträchtigung des Kindes
+ein?}\label{wie-schuxe4tzt-du-die-beeintruxe4chtigung-des-kindes-ein}}
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  leicht
+\item[$\square$]
+  mittel
+\item[$\square$]
+  stark
+\end{itemize}
+
+\hypertarget{wie-hoch-schuxe4tzt-du-den-unterstuxfctzungsbedarf-des-kindes-in-der-kita-ein}{%
+\subsection*{Wie hoch schätzt du den Unterstützungsbedarf des Kindes in
+der Kita
+ein?}\label{wie-hoch-schuxe4tzt-du-den-unterstuxfctzungsbedarf-des-kindes-in-der-kita-ein}}
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  kein besonderer Unterstützungsbedarf
+\item[$\square$]
+  leicht
+\item[$\square$]
+  hoch
+\item[$\square$]
+  sehr hoch
+\end{itemize}
+
+\hypertarget{ist-oder-wird-eine-11-betreuung-beantragt}{%
+\subsection*{Ist oder wird eine 1:1 Betreuung
+beantragt?}\label{ist-oder-wird-eine-11-betreuung-beantragt}}
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  Ja
+\item[$\square$]
+  Nein
+\end{itemize}
+
+\hypertarget{welche-herausforderung-trifft-die-kita-im-alltag-mit-dem-kitaplus-kind-an}{%
+\subsection*{Welche Herausforderung trifft die Kita im Alltag mit dem
+KITAplus Kind
+an?}\label{welche-herausforderung-trifft-die-kita-im-alltag-mit-dem-kitaplus-kind-an}}
+
+\xhrule[,fill=1.0000\textwidth,thickness=0.5pt]\\
+\xhrule[,fill=1.0000\textwidth,thickness=0.5pt]\\
+\xhrule[,fill=1.0000\textwidth,thickness=0.5pt]\\
+\xhrule[,fill=1.0000\textwidth,thickness=0.5pt]\\
+\xhrule[,fill=1.0000\textwidth,thickness=0.5pt]
+
+\hypertarget{welches-hauptanliegen-wird-aktuell-verfolgt}{%
+\subsection*{Welches Hauptanliegen wird aktuell
+verfolgt?}\label{welches-hauptanliegen-wird-aktuell-verfolgt}}
+
+\xhrule[,fill=1.0000\textwidth,thickness=0.5pt]\\
+\xhrule[,fill=1.0000\textwidth,thickness=0.5pt]
+
+\hypertarget{wie-wird-die-kita-finanziert}{%
+\subsection*{Wie wird die Kita
+finanziert?}\label{wie-wird-die-kita-finanziert}}
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  Eltern
+\item[$\square$]
+  Einsatz von Betreuungsgutscheinen
+\item[$\square$]
+  Sozialamt
+\item[$\square$]
+  Asyl- und Flüchtlingswesen
+\item[$\square$]
+  \xhrule[,fill=8cm,thickness=0.5pt]
+\end{itemize}
+
+Du hast es geschafft!
+
+\textbf{Herzlichen Dank, dass du dir Zeit genommen hast. Bitte
+retourniere nun den ausgefüllten Fragebogen an mich direkt oder per
+beigelegtem Couvert bis spätestens Freitag, 18. Februar.}
+
+\hypertarget{sec:erhebungsfragebogenallgemein}{%
+\chapter{Erhebungsfragebogen Heilpädagogische
+Fachpersonen}\label{sec:erhebungsfragebogenallgemein}}
+
+Der Fragebogen besteht aus zwei Teilen. Als erstes werden Informationen
+zum Kind, der vorhandenen Beeinträchtigung und der Familie erfragt. In
+einem zweiten Schritt steht die Fremdbetreuungssituation im Vordergrund.
+Bitte fülle den Fragebogen für dich aus, ohne Rücksprache mit den Eltern
+zu nehmen.
+
+\hypertarget{personalangaben-1}{%
+\section*{Personalangaben}\label{personalangaben-1}}
+
+Diesen Fragebogen füllst du für folgendes Kind aus:
+
+\begin{itemize}
+\tightlist
+\item
+  Laufnummer: \xhrule[,fill=2cm,thickness=0.5pt]
+\item
+  Initialen Kind: \xhrule[,fill=2cm,thickness=0.5pt]
+\end{itemize}
+
+\hypertarget{biologisches-geschlecht}{%
+\subsection*{Biologisches Geschlecht?}\label{biologisches-geschlecht}}
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  Weiblich
+\item[$\square$]
+  Männlich
+\end{itemize}
+
+\hypertarget{alter-des-kindes}{%
+\subsection*{Alter des Kindes?}\label{alter-des-kindes}}
+
+Bitte in Jahr und Monat angeben (z.B. 3;4 Jahre):
+\xhrule[,fill=3cm,thickness=0.5pt]
+
+\hypertarget{welches-ist-die-erstsprache-des-kindes}{%
+\subsection*{Welches ist die Erstsprache des
+Kindes?}\label{welches-ist-die-erstsprache-des-kindes}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3375}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4750}}@{}}
+\toprule
+\endhead
+\begin{minipage}[t]{\linewidth}\raggedright
+\vspace{0.3cm}
+
+\begin{itemize}
+\item[$\square$]
+  Deutsch
+\item[$\square$]
+  Italienisch
+\item[$\square$]
+  Französisch
+\item[$\square$]
+  Portugiesisch
+\item[$\square$]
+  Englisch
+\item[$\square$]
+  Albanisch
+\item[$\square$]
+  Serbisch
+\item[$\square$]
+  Türkisch
+
+  \vspace{0.3cm}
+\end{itemize}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\vspace{0.3cm}
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  Pashto
+\item[$\square$]
+  Tamil
+\item[$\square$]
+  Tibetisch
+\item[$\square$]
+  Tigrinya
+\item[$\square$]
+  Persisch
+\item[$\square$]
+  Griechisch
+\item[$\square$]
+  Andere: \xhrulefill[,fill=3cm,thickness=0.5pt]
+\end{itemize}
+\end{minipage} \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{hat-das-kind-geschwister-bitte-jahrgang-angeben-und-ob-es-institutionell-fremdbetreut-wird-oder-wurde.}{%
+\subsection*{Hat das Kind Geschwister? Bitte Jahrgang angeben und ob es
+institutionell fremdbetreut wird oder
+wurde.}\label{hat-das-kind-geschwister-bitte-jahrgang-angeben-und-ob-es-institutionell-fremdbetreut-wird-oder-wurde.}}
+
+\begin{itemize}
+\item[$\square$]
+  Nein
+\item[$\square$]
+  Ja:
+
+  \begin{itemize}
+  \item
+    Jahrgang: \xhrule[,fill=2cm,thickness=0.5pt] Wird oder wurde sie/er
+    institutionell fremdbetreut?
+
+    \begin{itemize}
+    \tightlist
+    \item[$\square$]
+      Ja
+    \item[$\square$]
+      Nein
+    \end{itemize}
+  \item
+    Jahrgang: \xhrule[,fill=2cm,thickness=0.5pt] Wird oder wurde sie/er
+    institutionell fremdbetreut?
+
+    \begin{itemize}
+    \tightlist
+    \item[$\square$]
+      Ja
+    \item[$\square$]
+      Nein
+    \end{itemize}
+  \item
+    Jahrgang: \xhrule[,fill=2cm,thickness=0.5pt] Wird oder wurde sie/er
+    institutionell fremdbetreut?
+
+    \begin{itemize}
+    \tightlist
+    \item[$\square$]
+      Ja
+    \item[$\square$]
+      Nein
+    \end{itemize}
+  \item
+    Jahrgang: \xhrule[,fill=2cm,thickness=0.5pt] Wird oder wurde sie/er
+    institutionell fremdbetreut?
+
+    \begin{itemize}
+    \tightlist
+    \item[$\square$]
+      Ja
+    \item[$\square$]
+      Nein
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{welche-indikationen-fuxfcr-heilpuxe4dagogische-fruxfcherziehung-sind-gegeben}{%
+\subsection*{Welche Indikationen für Heilpädagogische Früherziehung sind
+gegeben?}\label{welche-indikationen-fuxfcr-heilpuxe4dagogische-fruxfcherziehung-sind-gegeben}}
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  Allgemeiner Entwicklungsrückstand
+\item[$\square$]
+  Entwicklungsverzögerung
+\item[$\square$]
+  Entwicklungsgefährdung
+\item[$\square$]
+  Bewegungsstörung
+\item[$\square$]
+  Geistige Behinderung
+\item[$\square$]
+  Sinnesbehinderung (Hör-/Sehbehinderung)
+\item[$\square$]
+  Sprachauffälligkeit
+\item[$\square$]
+  Verhaltensauffälligkeit
+\item[$\square$]
+  Wahrnehmungsproblematik
+\item[$\square$]
+  Autismus-Spektrum-Störung
+\item[$\square$]
+  Verdacht ASS
+\item[$\square$]
+  Syndromale Störung: \xhrulefill[,fill=8cm,thickness=0.5pt]
+\item[$\square$]
+  Andere: \xhrulefill[,fill=8cm,thickness=0.5pt]
+\end{itemize}
+
+\hypertarget{angaben-zur-fremdbetreuung-1}{%
+\section*{Angaben zur
+Fremdbetreuung}\label{angaben-zur-fremdbetreuung-1}}
+
+\hypertarget{wann-hat-das-kind-mit-der-kindertagesstuxe4tte-gestartet}{%
+\subsection*{Wann hat das Kind mit der Kindertagesstätte
+gestartet?}\label{wann-hat-das-kind-mit-der-kindertagesstuxe4tte-gestartet}}
+
+Notiere das ungefähre Startdatum: \xhrule[,fill=3cm,thickness=0.5pt]
+
+\hypertarget{ist-die-kindertagesstuxe4tte-vor-aufnahme-der-hfe-besucht-worden}{%
+\subsection*{Ist die Kindertagesstätte vor Aufnahme der HFE besucht
+worden?}\label{ist-die-kindertagesstuxe4tte-vor-aufnahme-der-hfe-besucht-worden}}
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  Ja: Wer hat das KITAplus vorgeschlagen/initiiert?
+\end{itemize}
+
+Notiere: \xhrulefill[,fill=8cm,thickness=0.5pt]
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  Nein: Wer hat den Besuch einer Kindertagesstätte
+  vorgeschlagen/initiiert?
+\end{itemize}
+
+Notiere: \xhrulefill[,fill=8cm,thickness=0.5pt]
+
+\hypertarget{wie-hoch-schuxe4tzt-du-den-unterstuxfctzungsbedarf-des-kindes-in-der-kita-ein-1}{%
+\subsection*{Wie hoch schätzt du den Unterstützungsbedarf des Kindes in
+der Kita
+ein?}\label{wie-hoch-schuxe4tzt-du-den-unterstuxfctzungsbedarf-des-kindes-in-der-kita-ein-1}}
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  kein besonderer Unterstützungsbedarf
+\item[$\square$]
+  leicht
+\item[$\square$]
+  hoch
+\item[$\square$]
+  sehr hoch
+\end{itemize}
+
+\hypertarget{aus-welchen-gruxfcnden-wird-die-kita-besucht}{%
+\subsection*{Aus welchen Gründen wird die Kita
+besucht?}\label{aus-welchen-gruxfcnden-wird-die-kita-besucht}}
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  Die Eltern wünschen dies (1)
+\item[$\square$]
+  Die Eltern sind arbeitstätig (2)
+\item[$\square$]
+  Die Eltern sollen entlastet werden (3)
+\item[$\square$]
+  Das Kind soll auf gleichaltrige Spielpartner*innen treffen (4)
+\item[$\square$]
+  Das Kind soll in Kontakt kommen mit der Deutschen Sprache (5)
+\item[$\square$]
+  Das Kind soll neue Spielinputs erhalten (6)
+\item[$\square$]
+  Das Kind soll einen strukturierten Tagesablauf erhalten (7)
+\item[$\square$]
+  Das Kind soll auf den Kindergarten vorbereitet werden (8)
+\item[$\square$]
+  Die Familie und das Kind sollen einen Erstkontakt mit dem
+  schweizerischen Bildungssystem erhalten (9)
+\end{itemize}
+
+\hypertarget{welches-ist-der-hauptgrund-fuxfcr-den-kita-besuch}{%
+\subsection*{Welches ist der Hauptgrund für den Kita
+Besuch?}\label{welches-ist-der-hauptgrund-fuxfcr-den-kita-besuch}}
+
+\begin{itemize}
+\tightlist
+\item
+  Notiere \textbf{eine} Nummer der vorherigen genannten Antworten:
+  \xhrule[,fill=2cm,thickness=0.5pt]
+\end{itemize}
+
+Du hast es geschafft!
+
+\textbf{Herzlichen Dank, dass du dir Zeit genommen hast. Bitte
+retourniere nun den ausgefüllten Fragebogen an mich direkt oder per
+beigelegtem Couvert bis spätestens Freitag, 18. Februar.}
+
+\hypertarget{sec:einverstuxe4ndniserkluxe4rungen}{%
+\chapter{Einverständnis- und
+Vertraulichkeitserklärungen}\label{sec:einverstuxe4ndniserkluxe4rungen}}
+
+\includePDF{files/Sample.pdf}[1]{1}[width=0.8\textwidth]
+
+\hypertarget{eigenstuxe4ndigkeitserkluxe4rung}{%
+\chapter{Eigenständigkeitserklärung}\label{eigenstuxe4ndigkeitserkluxe4rung}}
+
+\includePDF{files/Sample.pdf}[1]{1}[width=0.8\textwidth]
+%
+
+
+\end{document}

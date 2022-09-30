@@ -1,0 +1,108 @@
+/** Globales Cyfex CSS für Markdown */
+@import (inline) "fonts.less";
+
+@import "abstract.less";
+@import "acknowledgement.less";
+@import "button.less";
+@import "code.less";
+@import "collapsable-list.less";
+@import "defines.less";
+@import "github.less";
+@import "header.less";
+@import "images.less";
+@import "links.less";
+@import "lists.less";
+@import "math.less";
+@import "numbered-headings.less";
+@import "quotes.less";
+@import "references.less";
+@import "rulers.less";
+@import "scrollbar.less";
+@import "sidenav.less";
+@import "table.less";
+@import "toc.less";
+
+.define-title-style() {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: @main-heading-color;
+    font-family: @main-font-headers, "Fira Sans", "Helvetica", sans-serif;
+    font-weight: bold;
+  }
+}
+
+.define-markdown-style() {
+  /* base style */
+  .github(#1d1d1d, #fdf6e3, #08c, @main-font-text, @main-font-size, @main-line-height);
+
+  .define-title-style();
+
+  p {
+    text-align: justify;
+    text-justify: auto;
+  }
+
+  .define-header();
+  .define-acknowledgement();
+  .define-abstract();
+  .define-images();
+  .define-math();
+  .define-definition-list();
+  .define-quotes();
+  .define-blockquote();
+  .define-tables();
+  .define-rulers();
+  .define-references();
+
+  // custom styles applied
+  // with pandoc attributing in 2.10
+  .define-centering();
+
+  .define-code();
+}
+
+html {
+  .define-scrollbar();
+
+  #main {
+    font-family: @main-font-text, "Fira Sans", "Helvetica", serif;
+
+    .define-button();
+    .define-sidenav();
+
+    .define-links();
+
+    #sidenav-content > #TOC {
+      .define-toc-style(@main-heading-color, 1.2*@main-font-size);
+      .define-collapsable-list(18pt, @topShift:2.5pt);
+      padding-left: 3ex;
+      padding-right: 2ex;
+      padding-bottom: 3em;
+    }
+  }
+
+  #main-markdown {
+    max-width: 21cm - 2 * 1.5cm;
+    margin: auto;
+
+    #nav-content > #TOC {
+      .define-toc-style(@main-heading-color, @main-font-size);
+    }
+
+    .define-markdown-style();
+  }
+
+  #main-markdown-numbered {
+    max-width: 21cm - 2 * 1.5cm;
+    margin: auto;
+
+    .define-markdown-style();
+
+    .define-numbered-headings();
+    .define-numbered-images();
+  }
+}
