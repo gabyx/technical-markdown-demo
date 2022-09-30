@@ -1,8 +1,8 @@
-# TechnicalMarkdown Sample Master Thesis
+# Technical lMarkdown Demo
 
 Markdown setup of a master thesis which was submitted.
 
-See the [TechnicalMarkdown](https://github.com/gabyx/TechnicalMarkdown) project.
+See the [Technical Markdown](https://github.com/gabyx/technical-markdown) project.
 
 # Output
 
