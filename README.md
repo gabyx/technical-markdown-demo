@@ -9,4 +9,4 @@ See the [TechnicalMarkdown](https://github.com/gabyx/TechnicalMarkdown) project.
   - **export to PDF** with `pandoc` to `xelatex` using `latexmk`
     [See Output](docs/output/thesis/Content.pdf)
   - **export to HTML** with `pandoc` to `html`
-    [See Output](https://gabyx.github.io/TechnicalMarkdown-Thesis/docs/html-package/thesis/Content.html)
+    [See Output](https://gabyx.github.io/technical-markdown-demo/docs/html-package/thesis/Content.html)
